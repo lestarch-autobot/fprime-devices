@@ -54,6 +54,7 @@ implemented by the camera (§7.4.3) and is not commanded.
 | REQ-SunCamMgr-034 | The camera's power-on line (Table 4) received while READY shall cause NOT_SETUP with a WARNING_HI event. | Unit Test |
 | REQ-SunCamMgr-035 | In HD, `CAPTURE` and `DOWNLOAD` shall be rejected with a WARNING_LO event unless slot is SLOT_0. | Unit Test |
 | REQ-SunCamMgr-036 | Capture shall be sent only while READY. | Unit Test |
+| REQ-SunCamMgr-037 | `DOWNLOAD` shall set the `Image` product priority to its `priority` argument, or `IMAGE_DP_PRIORITY` when zero. | Unit Test |
 
 ## 3. Design
 
@@ -171,7 +172,8 @@ TLM_PERIOD_TICKS ticks.
 ## 4. Data Product Format
 
 One `Image` container per downloaded image, allocated at the `DOWNLOAD` command and sent when the download completes, aborts
-or fails (the records received so far are delivered).
+or fails (the records received so far are delivered). The product priority is the `DOWNLOAD` `priority` argument, or
+`KissCamConfig.IMAGE_DP_PRIORITY` when it is 0.
 
 | Container | Record id | Record | Type | Count |
 |---|---|---|---|---|
@@ -209,7 +211,7 @@ Table 2 — Commands (ground operations)
 | SLEEP | — | no | Set Mode Sleep |
 | PING | type: MCU, MCU_AND_SENSOR | no | Ping |
 | CAPTURE | slot: SLOT_0..SLOT_3 (SLOT_0 only in HD, REQ-035), testPattern: OFF/ON | yes | Capture |
-| DOWNLOAD | slot: SLOT_0..SLOT_3 (SLOT_0 only in HD, REQ-035), resolution: FULL/PREVIEW | yes | Download × FULL_LINES / PREVIEW_LINES of the commanded slot; in HD of slots 0, 1, 2, 3 in order |
+| DOWNLOAD | slot: SLOT_0..SLOT_3 (SLOT_0 only in HD, REQ-035), resolution: FULL/PREVIEW, priority: FwDpPriorityType (0 = KissCamConfig.IMAGE_DP_PRIORITY) | yes | Download × FULL_LINES / PREVIEW_LINES of the commanded slot; in HD of slots 0, 1, 2, 3 in order |
 | DOWNLOAD_ABORT | — | no (accepted only during a download) | none; the download stops after the pending line |
 | READ_REGISTER | address U16 | yes | Read Register |
 
@@ -282,7 +284,7 @@ sequenceDiagram
     participant M as SunCamMgr
     participant U as UART driver
     participant D as DpManager
-    G->>M: DOWNLOAD(slot, FULL)
+    G->>M: DOWNLOAD(slot, FULL, priority)
     M->>D: productGetOut(Image, size for mode and resolution)
     loop every slot and line (retry ≤ LINE_RETRIES on timeout / error)
         Note over M,U: slot s = the commanded slot (SD, Zoom) or 0, 1, 2, 3 (HD), line = 0..479 (FULL) or 0..47 (PREVIEW)

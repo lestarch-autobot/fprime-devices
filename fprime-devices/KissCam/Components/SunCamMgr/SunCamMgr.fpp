@@ -100,8 +100,9 @@ module KissCam {
         async command CAPTURE(slot: Slot, testPattern: TestPattern) hook
 
         @ Download an image into one Image data product (needs READY): 480 (FULL) or 48 (PREVIEW) line requests in order
-        @ of the commanded slot, or of slots 0, 1, 2, 3 in HD (slot must be SLOT_0); the header mode is the first reply's mode byte
-        async command DOWNLOAD(slot: Slot, resolution: Resolution) hook
+        @ of the commanded slot, or of slots 0, 1, 2, 3 in HD (slot must be SLOT_0); the header mode is the first reply's mode byte.
+        @ priority is the product's priority; 0 selects KissCamConfig.IMAGE_DP_PRIORITY
+        async command DOWNLOAD(slot: Slot, resolution: Resolution, priority: FwDpPriorityType) hook
 
         @ Stop the download in progress after the pending line; the lines received are still delivered (ACTIVITY_HI)
         async command DOWNLOAD_ABORT hook
