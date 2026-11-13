@@ -9,22 +9,22 @@
   "component": "SunCamMgr",
   "owner": "",
   "contributors": "",
-  "project": "/home/ubuntu/repos/fprime-devices-reference",
-  "commit": "69c71bf16019428656b30eaeb7e6c022855518ee",
+  "project": "/home/ubuntu/work/ref",
+  "commit": "564b2a9110cee1f494e1435ea6f0357cbcf55d63",
   "fingerprints": {
     "1": "3a517334b335",
     "2": "22356b5a2956",
-    "3": "c339e82a56c3",
-    "4": "db8e3700c740",
-    "5": "e2eca10c892b"
+    "3": "9154444e47a8",
+    "4": "ba333d52c9b8",
+    "5": "a89190c3a5f8"
   },
-  "stage": "design",
+  "stage": "implementation",
   "summary": {
-    "YES": 48,
+    "YES": 52,
     "NO": 14,
-    "N/A": 1,
-    "REVIEW": 5,
-    "UNCHECKED": 5
+    "N/A": 3,
+    "REVIEW": 0,
+    "UNCHECKED": 4
   },
   "items": [
     {
@@ -1543,22 +1543,22 @@
       "text": "All pointer arguments to functions are checked to be not nullptr using FW_ASSERT",
       "status": "NO",
       "notes": [
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:682 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:683 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:684 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:768 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:769 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:770 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:686 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:687 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:688 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:772 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:773 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:774 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
         "... 5 more"
       ],
       "tool_status": "NO",
       "tool_notes": [
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:682 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:683 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:684 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:768 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:769 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:770 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:686 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:687 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:688 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:772 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:773 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:774 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
         "... 5 more"
       ]
     },
@@ -1570,15 +1570,15 @@
       "notes": [
         "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:133 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event.",
         "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:197 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event.",
-        "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:619 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event.",
-        "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:1014 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event."
+        "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:623 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event.",
+        "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:1018 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event."
       ],
       "tool_status": "NO",
       "tool_notes": [
         "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:133 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event.",
         "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:197 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event.",
-        "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:619 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event.",
-        "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:1014 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event."
+        "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:623 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event.",
+        "`cpp/fprime/jpl-c/use-of-assertions-density` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:1018 All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event."
       ]
     },
     {
@@ -1624,14 +1624,25 @@
       "id": "3.21",
       "section": "3",
       "text": "Verify any software state that's expected upon receive of an interrupt is configured prior to enabling/setting conditions that would allow the interrupt to trigger.",
-      "status": "REVIEW",
+      "status": "N/A",
       "notes": [
-        "CL-1: ISR state before enable (3.21): for every ISR-named function (*_isr, *interrupt_handler*, *_irq*) find the code that enables its interrupt; every variable the ISR reads or writes must be assigned on a path that completes before that enable call."
+        "no interrupt handlers: SunCamMgr is driven by Drv.ByteStreamDriver ports and the scheduler tick (no *_isr/*irq* functions in SunCamMgr.cpp/.hpp)"
       ],
       "tool_status": "REVIEW",
       "tool_notes": [
         "CL-1: ISR state before enable (3.21): for every ISR-named function (*_isr, *interrupt_handler*, *_irq*) find the code that enables its interrupt; every variable the ISR reads or writes must be assigned on a path that completes before that enable call."
-      ]
+      ],
+      "decision": {
+        "status": "N/A",
+        "notes": [
+          "no interrupt handlers: SunCamMgr is driven by Drv.ByteStreamDriver ports and the scheduler tick (no *_isr/*irq* functions in SunCamMgr.cpp/.hpp)"
+        ],
+        "kind": "review",
+        "commit": "564b2a9110cee1f494e1435ea6f0357cbcf55d63",
+        "fingerprint": "9154444e47a8",
+        "stage": "implementation",
+        "date": "2026-11-13"
+      }
     },
     {
       "id": "3.22",
@@ -1650,14 +1661,25 @@
       "id": "3.23",
       "section": "3",
       "text": "Verify any relevant interrupt enables and interrupts are cleared during initialization and re-enabled selectively as needed.",
-      "status": "REVIEW",
+      "status": "N/A",
       "notes": [
-        "CL-2: Interrupt enables cleared at init (3.23): in the constructor/init/configure/preamble, interrupt-enable bits must be explicitly cleared or masked before peripheral configuration, not assumed clear from reset."
+        "no interrupt enables: no peripheral or ISR configuration in the component (UART owned by the driver component)"
       ],
       "tool_status": "REVIEW",
       "tool_notes": [
         "CL-2: Interrupt enables cleared at init (3.23): in the constructor/init/configure/preamble, interrupt-enable bits must be explicitly cleared or masked before peripheral configuration, not assumed clear from reset."
-      ]
+      ],
+      "decision": {
+        "status": "N/A",
+        "notes": [
+          "no interrupt enables: no peripheral or ISR configuration in the component (UART owned by the driver component)"
+        ],
+        "kind": "review",
+        "commit": "564b2a9110cee1f494e1435ea6f0357cbcf55d63",
+        "fingerprint": "9154444e47a8",
+        "stage": "implementation",
+        "date": "2026-11-13"
+      }
     },
     {
       "id": "3.24",
@@ -1704,12 +1726,12 @@
       "text": "Verify that all divisions first check for small numbers (including zero)",
       "status": "NO",
       "notes": [
-        "`cpp/fprime/division-guard` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:537 The divisor m_linesPerSlot is not checked against zero before this % operation.",
+        "`cpp/fprime/division-guard` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:541 The divisor m_linesPerSlot is not checked against zero before this % operation.",
         "`cpp/fprime/float-division-guard` 0 findings"
       ],
       "tool_status": "NO",
       "tool_notes": [
-        "`cpp/fprime/division-guard` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:537 The divisor m_linesPerSlot is not checked against zero before this % operation.",
+        "`cpp/fprime/division-guard` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:541 The divisor m_linesPerSlot is not checked against zero before this % operation.",
         "`cpp/fprime/float-division-guard` 0 findings"
       ]
     },
@@ -1720,21 +1742,21 @@
       "status": "NO",
       "notes": [
         "`cpp/fprime/unchecked-array-index` 0 findings",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:682 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:683 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:684 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:768 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:769 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:686 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:687 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:688 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:772 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:773 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
         "... 6 more"
       ],
       "tool_status": "NO",
       "tool_notes": [
         "`cpp/fprime/unchecked-array-index` 0 findings",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:682 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:683 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:684 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:768 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:769 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:686 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:687 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:688 Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:772 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "`cpp/fprime/checking-parameter-values` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:773 Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
         "... 6 more"
       ]
     },
@@ -1806,14 +1828,23 @@
       "id": "3.33",
       "section": "3",
       "text": "Verify units are incorporated into variable name, where applicable",
-      "status": "REVIEW",
-      "notes": [
-        "CL-3: Units in names (3.33): every variable, member, parameter, telemetry channel and command argument carrying a physical quantity must encode its unit in the name (timeoutMs, angleRad, sizeBytes) or in an FPP annotation."
-      ],
+      "status": "YES",
+      "notes": [],
       "tool_status": "REVIEW",
       "tool_notes": [
         "CL-3: Units in names (3.33): every variable, member, parameter, telemetry channel and command argument carrying a physical quantity must encode its unit in the name (timeoutMs, angleRad, sizeBytes) or in an FPP annotation."
-      ]
+      ],
+      "decision": {
+        "status": "YES",
+        "notes": [
+          "m_ticksWaiting/m_tickCount (ticks), m_discardedBytes/DiscardedBytes (bytes), m_linesPerSlot/m_pixelsPerLine/m_linesExpected (lines, pixels), CameraUptime format '{} s'; Exposure/EXPOSURE are camera register steps annotated in the FPP (steps of 89.5 us, 2..960); DOWNLOAD priority is a dimensionless FwDpPriorityType"
+        ],
+        "kind": "review",
+        "commit": "564b2a9110cee1f494e1435ea6f0357cbcf55d63",
+        "fingerprint": "9154444e47a8",
+        "stage": "implementation",
+        "date": "2026-11-13"
+      }
     },
     {
       "id": "3.34",
@@ -1821,14 +1852,14 @@
       "text": "Verify that all invariant numbers are in enums, static constexpr or #defines. Enums or static constexpr must be used unless #define is only way to specify constant.",
       "status": "NO",
       "notes": [
-        "`cpp/fprime/magic-numbers` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:484 Magic number 5; consider a named constant (enum, static constexpr, or #define).",
-        "`cpp/fprime/magic-numbers` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:485 Magic number 6; consider a named constant (enum, static constexpr, or #define).",
+        "`cpp/fprime/magic-numbers` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:488 Magic number 5; consider a named constant (enum, static constexpr, or #define).",
+        "`cpp/fprime/magic-numbers` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:489 Magic number 6; consider a named constant (enum, static constexpr, or #define).",
         "`cpp/fprime/define-constant` 0 findings"
       ],
       "tool_status": "NO",
       "tool_notes": [
-        "`cpp/fprime/magic-numbers` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:484 Magic number 5; consider a named constant (enum, static constexpr, or #define).",
-        "`cpp/fprime/magic-numbers` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:485 Magic number 6; consider a named constant (enum, static constexpr, or #define).",
+        "`cpp/fprime/magic-numbers` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:488 Magic number 5; consider a named constant (enum, static constexpr, or #define).",
+        "`cpp/fprime/magic-numbers` lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:489 Magic number 6; consider a named constant (enum, static constexpr, or #define).",
         "`cpp/fprime/define-constant` 0 findings"
       ]
     },
@@ -1864,22 +1895,22 @@
       "text": "Does the component pass static analysis?",
       "status": "NO",
       "notes": [
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:682: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:683: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:684: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:768: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:769: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:770: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:686: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:687: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:688: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:772: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:773: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:774: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
         "... 17 more"
       ],
       "tool_status": "NO",
       "tool_notes": [
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:682: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:683: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:684: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:768: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:769: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:770: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:686: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:687: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:688: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:772: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:773: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "I4: lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:774: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
         "... 17 more"
       ]
     },
@@ -1887,14 +1918,23 @@
       "id": "3.38",
       "section": "3",
       "text": "Does the implementation address all component requirements and remains consistent with the documented design?",
-      "status": "REVIEW",
-      "notes": [
-        "CL-4: Implementation matches requirements and design (3.38): for each requirement row locate the handler(s) that satisfy it and confirm the behaviour including each error path the SDD describes; report requirements with no implementing code and handler behaviour the SDD does not describe."
-      ],
+      "status": "YES",
+      "notes": [],
       "tool_status": "REVIEW",
       "tool_notes": [
         "CL-4: Implementation matches requirements and design (3.38): for each requirement row locate the handler(s) that satisfy it and confirm the behaviour including each error path the SDD describes; report requirements with no implementing code and handler behaviour the SDD does not describe."
-      ]
+      ],
+      "decision": {
+        "status": "YES",
+        "notes": [
+          "REQ-SunCamMgr-001..036 each traced to a passing SDD \u00a78.2 unit test (34/34 fprime-util check); REQ-SunCamMgr-037 -> DOWNLOAD_cmdHandler SunCamMgr.cpp:246-248 (setPriority when non-zero after dpGet_Image, default IMAGE_DP_PRIORITY kept when zero; allocation-failure path unchanged) verified by testDownloadPriority"
+        ],
+        "kind": "review",
+        "commit": "564b2a9110cee1f494e1435ea6f0357cbcf55d63",
+        "fingerprint": "9154444e47a8",
+        "stage": "implementation",
+        "date": "2026-11-13"
+      }
     },
     {
       "id": "4.1",
@@ -1926,14 +1966,23 @@
       "id": "4.3",
       "section": "4",
       "text": "Have input data ranges been tested for boundary conditions?",
-      "status": "REVIEW",
-      "notes": [
-        "CL-5: Boundary tests (4.3): for each bounded quantity (array sizes, FW_ASSERT limits, configuration constants, command-argument ranges, queue depths) a unit test must exercise the limit value and one past it."
-      ],
+      "status": "YES",
+      "notes": [],
       "tool_status": "REVIEW",
       "tool_notes": [
         "CL-5: Boundary tests (4.3): for each bounded quantity (array sizes, FW_ASSERT limits, configuration constants, command-argument ranges, queue depths) a unit test must exercise the limit value and one past it."
-      ]
+      ],
+      "decision": {
+        "status": "YES",
+        "notes": [
+          "priority 0 (sentinel) and 0xFFFFFFFF (U32 max) in testDownloadPriority; HD slot limit SLOT_0 vs SLOT_1..3 in testDownloadHdFourSlots; line retry limit and one past in testDownloadLineRetryAndFail; line number 255/256 in testCommandFrameBytes; queue depth in testQueueFullHooks; product full in testDownloadFailedSendAndProductFull; EXPOSURE 2..960 bounds in testParameterPushFailure"
+        ],
+        "kind": "review",
+        "commit": "564b2a9110cee1f494e1435ea6f0357cbcf55d63",
+        "fingerprint": "ba333d52c9b8",
+        "stage": "implementation",
+        "date": "2026-11-13"
+      }
     },
     {
       "id": "4.4",
@@ -1952,13 +2001,13 @@
       "id": "4.5",
       "section": "4",
       "text": "Is there sufficient code coverage?",
-      "status": "UNCHECKED",
+      "status": "YES",
       "notes": [
-        "U5 not run: not done yet: no coverage/summary.txt; 'fprime-util check --coverage' has not been run for the module"
+        "U5 pass (line coverage 98.49% (threshold 80.00%))"
       ],
-      "tool_status": "UNCHECKED",
+      "tool_status": "YES",
       "tool_notes": [
-        "U5 not run: not done yet: no coverage/summary.txt; 'fprime-util check --coverage' has not been run for the module"
+        "U5 pass (line coverage 98.49% (threshold 80.00%))"
       ]
     },
     {
@@ -2049,7 +2098,7 @@
       "id": "R1",
       "name": "Requirement per command",
       "category": "requirements",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "command 'READ_REGISTER' has no requirement referencing it (add a requirement mentioning 'READ_REGISTER')"
@@ -2060,7 +2109,7 @@
       "id": "R2",
       "name": "Requirement per telemetry channel",
       "category": "requirements",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "telemetry channel 'SetupState' has no requirement referencing it (add a requirement mentioning 'SetupState')",
@@ -2087,7 +2136,7 @@
       "id": "R3",
       "name": "Requirement per event",
       "category": "requirements",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "event 'SetupComplete' has no requirement referencing it (add a requirement mentioning 'SetupComplete')",
@@ -2120,7 +2169,7 @@
       "id": "R4",
       "name": "Requirement per parameter",
       "category": "requirements",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "2 parameter(s) traced against 36 requirement(s)"
@@ -2129,7 +2178,7 @@
       "id": "R5",
       "name": "Requirement per data product",
       "category": "requirements",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "data product 'ImageHeader' has no requirement referencing it (add a requirement mentioning 'ImageHeader')",
@@ -2141,7 +2190,7 @@
       "id": "R6",
       "name": "Requirement per port/interface",
       "category": "requirements",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "7 port(s) traced against 36 requirement(s); 7 covered by companion/SDD evidence"
@@ -2150,45 +2199,45 @@
       "id": "R7",
       "name": "Requirement parent traceability",
       "category": "requirements",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
-        "requirement 'REQ-SunCamMgr-001' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:22) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-002' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:23) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-003' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:24) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-004' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:25) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-005' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:26) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-006' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:27) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-007' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:28) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-008' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:29) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-009' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:30) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-010' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:31) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-011' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:32) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-012' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:33) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-013' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:34) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-014' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:35) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-015' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:36) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-016' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:37) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-017' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:38) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-018' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:39) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-019' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:40) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-020' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:41) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-021' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:42) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-022' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:43) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-023' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:44) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-024' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:45) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-025' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:46) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-026' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:47) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-027' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:48) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-028' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:49) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-029' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:50) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-030' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:51) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-031' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:52) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-033' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:53) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-034' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:54) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-035' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:55) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-036' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:56) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
-        "requirement 'REQ-SunCamMgr-037' (/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:57) has no parent trace (add a Parent/Trace column entry linking a parent requirement)"
+        "requirement 'REQ-SunCamMgr-001' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:22) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-002' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:23) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-003' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:24) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-004' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:25) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-005' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:26) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-006' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:27) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-007' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:28) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-008' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:29) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-009' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:30) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-010' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:31) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-011' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:32) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-012' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:33) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-013' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:34) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-014' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:35) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-015' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:36) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-016' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:37) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-017' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:38) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-018' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:39) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-019' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:40) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-020' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:41) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-021' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:42) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-022' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:43) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-023' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:44) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-024' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:45) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-025' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:46) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-026' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:47) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-027' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:48) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-028' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:49) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-029' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:50) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-030' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:51) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-031' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:52) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-033' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:53) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-034' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:54) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-035' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:55) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-036' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:56) has no parent trace (add a Parent/Trace column entry linking a parent requirement)",
+        "requirement 'REQ-SunCamMgr-037' (/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/docs/sdd.md:57) has no parent trace (add a Parent/Trace column entry linking a parent requirement)"
       ],
       "detail": "36 requirement(s) checked"
     },
@@ -2196,7 +2245,7 @@
       "id": "R8",
       "name": "Requirement verification method",
       "category": "requirements",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "36 requirement(s) checked"
@@ -2205,7 +2254,7 @@
       "id": "D1",
       "name": "Input port handlers defined",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "4 input port(s) checked"
@@ -2214,7 +2263,7 @@
       "id": "D2",
       "name": "Command handlers defined",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "7 command(s) checked"
@@ -2223,7 +2272,7 @@
       "id": "D3",
       "name": "State machine actions defined",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "skip",
       "failures": [],
       "detail": "no state machines declared"
@@ -2232,7 +2281,7 @@
       "id": "D4",
       "name": "Data product containers have default priority",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "1 container(s) checked"
@@ -2241,7 +2290,7 @@
       "id": "D5",
       "name": "Requirements mapped to design artifacts",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "36 requirement(s) checked"
@@ -2250,7 +2299,7 @@
       "id": "D7",
       "name": "SDD port table matches FPP",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "7 port(s) checked"
@@ -2259,7 +2308,7 @@
       "id": "D8",
       "name": "SDD dictionary tables match FPP",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "SDD command table lists 'Set Exposure', which the FPP model does not declare",
@@ -2279,7 +2328,7 @@
       "id": "D9",
       "name": "SDD design sections present",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "no External References table; cited inline: datasheet 2000"
@@ -2288,7 +2337,7 @@
       "id": "D10",
       "name": "Input port behaviour documented",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "4 input port(s) checked"
@@ -2297,7 +2346,7 @@
       "id": "I1",
       "name": "Source dependencies listed in CMakeLists",
       "category": "implementation",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "dependency 'Os' (from #include \"Os/Mutex.hpp\") is not declared in CMakeLists.txt (add it to DEPENDS as Os)"
@@ -2308,7 +2357,7 @@
       "id": "I3",
       "name": "Data product priorities configurable",
       "category": "implementation",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "container 'Image' priority is not configurable: no command or parameter mentioning 'priority' found"
@@ -2319,7 +2368,7 @@
       "id": "U3",
       "name": "Unit-test dependencies in CMakeLists",
       "category": "unit-testing",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "unit-test dependency 'Fw/Dp' (from #include \"Fw/Dp/DpContainer.hpp\") is not declared in the module's CMake files (add it to UT_DEPENDS/DEPENDS)"
@@ -2330,7 +2379,7 @@
       "id": "C2",
       "name": "Hardware run record",
       "category": "close-out",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
         "no docs/hardware-run.md: record the hardware run (Platform, Deployment, Commit, Date, Result, Tester)"
@@ -2341,7 +2390,7 @@
       "id": "D6",
       "name": "FPP compiles and generates auto-code",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "1 FPP file(s) checked"
@@ -2350,32 +2399,32 @@
       "id": "I4",
       "name": "Passes static analysis",
       "category": "implementation",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "fail",
       "failures": [
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:682: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:683: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:684: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:768: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:769: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:770: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:806: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:807: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:955: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:956: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:957: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:537: [medium] cpp/fprime/division-guard: The divisor m_linesPerSlot is not checked against zero before this % operation.",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:686: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:687: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:688: [medium] cpp/fprime/checking-parameter-values: Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:772: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:773: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:774: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:810: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:811: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:959: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:960: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:961: [medium] cpp/fprime/checking-parameter-values: Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition).",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:541: [medium] cpp/fprime/division-guard: The divisor m_linesPerSlot is not checked against zero before this % operation.",
         "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:115: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memset is not checked.",
         "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:116: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memset is not checked.",
         "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:117: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memset is not checked.",
         "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:118: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memset is not checked.",
         "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:119: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memset is not checked.",
         "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:120: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memset is not checked.",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:296: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memcpy is not checked.",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:297: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memset is not checked.",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:616: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memcpy is not checked.",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:670: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memcpy is not checked.",
-        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:957: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memcpy is not checked."
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:300: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memcpy is not checked.",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:301: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memset is not checked.",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:620: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memcpy is not checked.",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:674: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memcpy is not checked.",
+        "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp:961: [medium] cpp/fprime/jpl-c/checking-return-values: The return value of non-void function memcpy is not checked."
       ],
       "detail": "29 finding(s) in module; threshold medium"
     },
@@ -2383,7 +2432,7 @@
       "id": "I2",
       "name": "Compiles without warnings",
       "category": "implementation",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "1 log(s) scanned"
@@ -2391,17 +2440,17 @@
     "U5": {
       "id": "U5",
       "name": "Sufficient code coverage",
-      "category": "unit-test",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
-      "status": "skip",
+      "category": "unit-testing",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "status": "pass",
       "failures": [],
-      "detail": "not done yet: no coverage/summary.txt; 'fprime-util check --coverage' has not been run for the module"
+      "detail": "line coverage 98.49% (threshold 80.00%)"
     },
     "U4": {
       "id": "U4",
       "name": "Unit tests pass a memory leak check",
       "category": "unit-test",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "skip",
       "failures": [],
       "detail": "not done yet: the leak check (unit-test executable under LeakSanitizer/valgrind) has not been run"
@@ -2410,7 +2459,7 @@
       "id": "C1",
       "name": "Component builds in the topology",
       "category": "close-out",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "skip",
       "failures": [],
       "detail": "not done yet: no topology build performed by this run (pass --deployment with --build, or the process builds the deployment)"
@@ -2419,7 +2468,7 @@
       "id": "U1",
       "name": "Unit-test results published",
       "category": "unit-test",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "skip",
       "failures": [],
       "detail": "not done yet: no published unit-test artifacts given (--artifacts-dir)"
@@ -2428,7 +2477,7 @@
       "id": "C3",
       "name": "CI passes",
       "category": "close-out",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "skip",
       "failures": [],
       "detail": "not done yet: CI status not consulted (needs the repository, the commit and GITHUB_TOKEN)"
@@ -2437,7 +2486,7 @@
       "id": "SDD",
       "name": "SDD structural grade",
       "category": "design",
-      "module": "/home/ubuntu/repos/fprime-devices-reference/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
+      "module": "/home/ubuntu/work/ref/lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr",
       "status": "pass",
       "failures": [],
       "detail": "tier platinum"
@@ -2499,67 +2548,67 @@
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 682,
+          "line": 686,
           "message": "Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 683,
+          "line": 687,
           "message": "Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 684,
+          "line": 688,
           "message": "Parameter frame is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 768,
+          "line": 772,
           "message": "Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 769,
+          "line": 773,
           "message": "Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 770,
+          "line": 774,
           "message": "Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 806,
+          "line": 810,
           "message": "Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 807,
+          "line": 811,
           "message": "Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 955,
+          "line": 959,
           "message": "Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 956,
+          "line": 960,
           "message": "Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         },
         {
           "rule": "cpp/fprime/checking-parameter-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 957,
+          "line": 961,
           "message": "Parameter payload is dereferenced without first being checked (e.g. with FW_ASSERT or a condition)."
         }
       ],
@@ -2567,7 +2616,7 @@
         {
           "rule": "cpp/fprime/division-guard",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 537,
+          "line": 541,
           "message": "The divisor m_linesPerSlot is not checked against zero before this % operation."
         }
       ],
@@ -2611,31 +2660,31 @@
         {
           "rule": "cpp/fprime/jpl-c/checking-return-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 296,
+          "line": 300,
           "message": "The return value of non-void function memcpy is not checked."
         },
         {
           "rule": "cpp/fprime/jpl-c/checking-return-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 297,
+          "line": 301,
           "message": "The return value of non-void function memset is not checked."
         },
         {
           "rule": "cpp/fprime/jpl-c/checking-return-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 616,
+          "line": 620,
           "message": "The return value of non-void function memcpy is not checked."
         },
         {
           "rule": "cpp/fprime/jpl-c/checking-return-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 670,
+          "line": 674,
           "message": "The return value of non-void function memcpy is not checked."
         },
         {
           "rule": "cpp/fprime/jpl-c/checking-return-values",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 957,
+          "line": 961,
           "message": "The return value of non-void function memcpy is not checked."
         }
       ],
@@ -2655,13 +2704,13 @@
         {
           "rule": "cpp/fprime/jpl-c/use-of-assertions-density",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 619,
+          "line": 623,
           "message": "All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event."
         },
         {
           "rule": "cpp/fprime/jpl-c/use-of-assertions-density",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 1014,
+          "line": 1018,
           "message": "All functions of more than 10 lines should have at least one assertion, unless they handle errors by returning a status enum or bool, or by emitting a WARNING/FATAL event."
         }
       ],
@@ -2669,13 +2718,13 @@
         {
           "rule": "cpp/fprime/magic-numbers",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 484,
+          "line": 488,
           "message": "Magic number 5; consider a named constant (enum, static constexpr, or #define)."
         },
         {
           "rule": "cpp/fprime/magic-numbers",
           "file": "lib/fprime-devices/fprime-devices/KissCam/Components/SunCamMgr/SunCamMgr.cpp",
-          "line": 485,
+          "line": 489,
           "message": "Magic number 6; consider a named constant (enum, static constexpr, or #define)."
         }
       ],

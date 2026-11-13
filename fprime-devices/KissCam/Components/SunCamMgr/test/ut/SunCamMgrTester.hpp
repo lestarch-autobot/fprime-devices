@@ -82,6 +82,7 @@ class SunCamMgrTester final : public SunCamMgrGTestBase {
     void testOutcomeEventPerCommand();
     void testDownloadFullAndPreview();
     void testDownloadHdFourSlots();
+    void testDownloadPriority();
     void testDownloadLineRetryAndFail();
     void testDownloadFailedSendAndProductFull();
     void testDownloadAbortCommanded();
@@ -179,7 +180,10 @@ class SunCamMgrTester final : public SunCamMgrGTestBase {
     U32 checkProduct(const KissCam::ImageHeader& expectedHeader, U16 pixels, U32 expectedLines, U8 firstSlot);
 
     //! Send DOWNLOAD and dispatch it; asserts the first line request (slot, resolution, line 0) left
-    void startDownload(Slot slot, Resolution resolution, U32 cmdSeq = 0);
+    void startDownload(Slot slot, Resolution resolution, U32 cmdSeq = 0, FwDpPriorityType priority = 0);
+
+    //! Download SLOT_1 PREVIEW at the commanded priority; asserts the sent product carries the expected one
+    void downloadPreviewAtPriority(FwDpPriorityType priority, FwDpPriorityType expected, U32 cmdSeq);
 
   private:
     // ----------------------------------------------------------------------

@@ -253,11 +253,25 @@ void SunCamMgrTester::setupNominal(U8 modeByte, U16 exposure) {
     this->clearHistory();
 }
 
-void SunCamMgrTester::startDownload(Slot slot, Resolution resolution, U32 cmdSeq) {
+void SunCamMgrTester::startDownload(Slot slot, Resolution resolution, U32 cmdSeq, FwDpPriorityType priority) {
     const U32 base = this->m_frameCount;
-    this->sendCmd_DOWNLOAD(0, cmdSeq, slot, resolution);
+    this->sendCmd_DOWNLOAD(0, cmdSeq, slot, resolution, priority);
     this->dispatch();
     this->assertFrame(CMD_DOWNLOAD, static_cast<U8>(slot.e), static_cast<U8>(resolution.e), 0, 0, base + 1);
+}
+
+void SunCamMgrTester::downloadPreviewAtPriority(FwDpPriorityType priority, FwDpPriorityType expected, U32 cmdSeq) {
+    this->clearHistory();
+    this->m_frameCount = 0;
+    this->startDownload(Slot::SLOT_1, Resolution::PREVIEW, cmdSeq, priority);
+    for (U16 line = 0; line < PREVIEW_LINES; line++) {
+        this->lineReply(line, PREVIEW_PIXELS, static_cast<U8>(line));
+    }
+    ASSERT_EQ(this->productSendHistory->size(), 1u);
+    Fw::DpContainer container(0, this->productSendHistory->at(0).buffer);
+    ASSERT_EQ(container.deserializeHeader(), Fw::FW_SERIALIZE_OK);
+    ASSERT_EQ(container.getPriority(), expected);
+    ASSERT_CMD_RESPONSE(0, SunCamMgr::OPCODE_DOWNLOAD, cmdSeq, Fw::CmdResponse::OK);
 }
 
 U32 SunCamMgrTester::checkProduct(const KissCam::ImageHeader& expectedHeader,
@@ -449,7 +463,7 @@ void SunCamMgrTester::testNoFramesBeforeSetup() {
     ASSERT_EQ(this->m_frameCount, 0u);
 
     this->sendCmd_CAPTURE(0, 2, Slot::SLOT_1, TestPattern::OFF);
-    this->sendCmd_DOWNLOAD(0, 3, Slot::SLOT_1, Resolution::FULL);
+    this->sendCmd_DOWNLOAD(0, 3, Slot::SLOT_1, Resolution::FULL, 0);
     this->sendCmd_READ_REGISTER(0, 4, 0x3012);
     this->dispatch(3);
     ASSERT_EQ(this->m_frameCount, 0u);
@@ -512,7 +526,7 @@ void SunCamMgrTester::testBusyRejection() {
     this->sendCmd_SLEEP(0, 11);
     this->sendCmd_PING(0, 12, PingType::MCU);
     this->sendCmd_CAPTURE(0, 13, Slot::SLOT_2, TestPattern::ON);
-    this->sendCmd_DOWNLOAD(0, 14, Slot::SLOT_1, Resolution::FULL);
+    this->sendCmd_DOWNLOAD(0, 14, Slot::SLOT_1, Resolution::FULL, 0);
     this->sendCmd_READ_REGISTER(0, 15, 0x3012);
     this->dispatch(6);
     ASSERT_EVENTS_CommandRejected_SIZE(6);
@@ -686,7 +700,7 @@ void SunCamMgrTester::testCommandFrameBytes() {
     this->assertFrame(CMD_READ_REGISTER, 0xBE, 0xEF, 0, 0, 9);
     this->registerReply(0xBEEF, 1, MODE_HD);
     // HD preview download: slot byte 0..3, resolution byte 1, line number 16-bit MSB first
-    this->sendCmd_DOWNLOAD(0, 0, Slot::SLOT_0, Resolution::PREVIEW);
+    this->sendCmd_DOWNLOAD(0, 0, Slot::SLOT_0, Resolution::PREVIEW, 0);
     this->dispatch();
     this->assertFrame(CMD_DOWNLOAD, 0x00, 0x01, 0x00, 0x00, 10);
     this->lineReply(0, PREVIEW_PIXELS, 0, MODE_HD);
@@ -702,7 +716,7 @@ void SunCamMgrTester::testCommandFrameBytes() {
     this->lineReply(0, PREVIEW_PIXELS, 0, MODE_HD);
     ASSERT_EVENTS_DownloadAborted_SIZE(1);
     // a full-resolution line request past 255 carries the MSB
-    this->sendCmd_DOWNLOAD(0, 0, Slot::SLOT_0, Resolution::FULL);
+    this->sendCmd_DOWNLOAD(0, 0, Slot::SLOT_0, Resolution::FULL, 0);
     this->dispatch();
     for (U16 line = 0; line < 0x0100; line++) {
         this->lineReply(line, FULL_PIXELS, static_cast<U8>(line), MODE_HD);
@@ -840,7 +854,7 @@ void SunCamMgrTester::testDownloadHdFourSlots() {
     this->setupNominal(MODE_HD);
     // in HD only SLOT_0 names the image (REQ-035)
     this->sendCmd_CAPTURE(0, 1, Slot::SLOT_1, TestPattern::OFF);
-    this->sendCmd_DOWNLOAD(0, 2, Slot::SLOT_3, Resolution::PREVIEW);
+    this->sendCmd_DOWNLOAD(0, 2, Slot::SLOT_3, Resolution::PREVIEW, 0);
     this->dispatch(2);
     ASSERT_EVENTS_CommandRejected_SIZE(2);
     ASSERT_EVENTS_CommandRejected(0, Operation::CAPTURE, RejectCause::HD_SLOT);
@@ -851,7 +865,7 @@ void SunCamMgrTester::testDownloadHdFourSlots() {
     ASSERT_EQ(this->m_frameCount, 5u);
     this->clearHistory();
     // PREVIEW: slots 0, 1, 2, 3 in order into one product
-    this->sendCmd_DOWNLOAD(0, 3, Slot::SLOT_0, Resolution::PREVIEW);
+    this->sendCmd_DOWNLOAD(0, 3, Slot::SLOT_0, Resolution::PREVIEW, 0);
     this->dispatch();
     const U16 hdLines = 4 * PREVIEW_LINES;
     ASSERT_PRODUCT_GET(0, 0, Fw::DpContainer::getPacketSizeForDataSize(imageDataSize(hdLines, PREVIEW_PIXELS)));
@@ -869,7 +883,7 @@ void SunCamMgrTester::testDownloadHdFourSlots() {
     ASSERT_CMD_RESPONSE(0, SunCamMgr::OPCODE_DOWNLOAD, 3, Fw::CmdResponse::OK);
     // FULL HD header geometry and line count
     this->clearHistory();
-    this->sendCmd_DOWNLOAD(0, 4, Slot::SLOT_0, Resolution::FULL);
+    this->sendCmd_DOWNLOAD(0, 4, Slot::SLOT_0, Resolution::FULL, 0);
     this->dispatch();
     ASSERT_PRODUCT_GET(0, 0, Fw::DpContainer::getPacketSizeForDataSize(imageDataSize(4 * FULL_LINES, FULL_PIXELS)));
     this->sendCmd_DOWNLOAD_ABORT(0, 5);
@@ -878,6 +892,14 @@ void SunCamMgrTester::testDownloadHdFourSlots() {
     ASSERT_EVENTS_DownloadStarted(0, Slot::SLOT_0, Mode::HD, Resolution::FULL, 4 * FULL_LINES);
     const ImageHeader fullHeader(Slot::SLOT_0, Mode::HD, Resolution::FULL, 1280, 960, DEFAULT_EXPOSURE, 4 * FULL_LINES);
     ASSERT_EQ(this->checkProduct(fullHeader, FULL_PIXELS, 1, 0), 1u);
+}
+
+void SunCamMgrTester::testDownloadPriority() {
+    this->setupNominal();
+    this->downloadPreviewAtPriority(7, 7, 1);
+    this->downloadPreviewAtPriority(1, 1, 2);
+    this->downloadPreviewAtPriority(0xFFFFFFFF, 0xFFFFFFFF, 3);
+    this->downloadPreviewAtPriority(0, static_cast<FwDpPriorityType>(KissCamConfig::IMAGE_DP_PRIORITY), 4);
 }
 
 void SunCamMgrTester::testDownloadLineRetryAndFail() {
@@ -1057,7 +1079,7 @@ void SunCamMgrTester::testDownloadFailedSendAndProductFull() {
     this->setupNominal();
     // Download frame refused by the driver: the product allocated at the command is delivered empty
     this->m_sendStatus = Drv::ByteStreamStatus::OTHER_ERROR;
-    this->sendCmd_DOWNLOAD(0, 1, Slot::SLOT_1, Resolution::PREVIEW);
+    this->sendCmd_DOWNLOAD(0, 1, Slot::SLOT_1, Resolution::PREVIEW, 0);
     this->dispatch();
     this->m_sendStatus = Drv::ByteStreamStatus::OP_OK;
     ASSERT_EVENTS_SendFailed_SIZE(1);
@@ -1138,7 +1160,7 @@ void SunCamMgrTester::testDownloadAbortCommanded() {
     ASSERT_CMD_RESPONSE(1, SunCamMgr::OPCODE_DOWNLOAD_ABORT, 5, Fw::CmdResponse::OK);
     // abort before the first line reply; a second abort while one is pending is refused BUSY
     this->clearHistory();
-    this->sendCmd_DOWNLOAD(0, 6, Slot::SLOT_2, Resolution::PREVIEW);
+    this->sendCmd_DOWNLOAD(0, 6, Slot::SLOT_2, Resolution::PREVIEW, 0);
     this->dispatch();
     this->sendCmd_DOWNLOAD_ABORT(0, 7);
     this->sendCmd_DOWNLOAD_ABORT(0, 8);
@@ -1470,7 +1492,7 @@ void SunCamMgrTester::testSendAndAllocationFailure() {
               Operation::NONE);
     // the first frame of every READY command refused; SLEEP refused ends in NOT_SETUP
     this->sendCmd_CAPTURE(0, 4, Slot::SLOT_1, TestPattern::OFF);
-    this->sendCmd_DOWNLOAD(0, 5, Slot::SLOT_1, Resolution::FULL);
+    this->sendCmd_DOWNLOAD(0, 5, Slot::SLOT_1, Resolution::FULL, 0);
     this->sendCmd_READ_REGISTER(0, 6, 0x3012);
     this->dispatch(3);
     ASSERT_EVENTS_SendFailed_SIZE(4);
@@ -1503,7 +1525,7 @@ void SunCamMgrTester::testSendAndAllocationFailure() {
     this->setupNominal(MODE_SD, 10);
     this->m_productGetStatus = Fw::Success::FAILURE;
     const U32 frames = this->m_frameCount;
-    this->sendCmd_DOWNLOAD(0, 3, Slot::SLOT_1, Resolution::FULL);
+    this->sendCmd_DOWNLOAD(0, 3, Slot::SLOT_1, Resolution::FULL, 0);
     this->dispatch();
     ASSERT_EVENTS_ProductAllocationFailed_SIZE(1);
     ASSERT_EVENTS_ProductAllocationFailed(0, static_cast<U32>(imageDataSize(FULL_LINES, FULL_PIXELS)));
@@ -1523,7 +1545,7 @@ void SunCamMgrTester::testQueueFullHooks() {
     this->sendCmd_SLEEP(0, 101);
     this->sendCmd_PING(0, 102, PingType::MCU);
     this->sendCmd_CAPTURE(0, 103, Slot::SLOT_1, TestPattern::OFF);
-    this->sendCmd_DOWNLOAD(0, 104, Slot::SLOT_1, Resolution::FULL);
+    this->sendCmd_DOWNLOAD(0, 104, Slot::SLOT_1, Resolution::FULL, 0);
     this->sendCmd_DOWNLOAD_ABORT(0, 105);
     this->sendCmd_READ_REGISTER(0, 106, 0x3012);
     const FwOpcodeType opcodes[7] = {SunCamMgr::OPCODE_SETUP_CAMERA, SunCamMgr::OPCODE_SLEEP,

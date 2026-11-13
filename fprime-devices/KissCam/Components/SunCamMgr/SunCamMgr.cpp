@@ -214,7 +214,8 @@ void SunCamMgr::CAPTURE_cmdHandler(FwOpcodeType opCode,
 void SunCamMgr::DOWNLOAD_cmdHandler(FwOpcodeType opCode,
                                     U32 cmdSeq,
                                     const KissCam::Slot& slot,
-                                    const KissCam::Resolution& resolution) {
+                                    const KissCam::Resolution& resolution,
+                                    FwDpPriorityType priority) {
     if (!this->acceptCommand(opCode, cmdSeq, Operation::DOWNLOAD, Admission::READY_ONLY)) {
         return;
     }
@@ -241,6 +242,9 @@ void SunCamMgr::DOWNLOAD_cmdHandler(FwOpcodeType opCode,
         this->respond(Fw::CmdResponse::EXECUTION_ERROR);
         this->endOperation();
         return;
+    }
+    if (priority != 0) {
+        this->m_container.setPriority(priority);
     }
     this->m_downloadPhase = DL_FIRST_LINE;
     this->requestLine();

@@ -97,7 +97,8 @@ class SunCamMgr final : public SunCamMgrComponentBase {
     void DOWNLOAD_cmdHandler(FwOpcodeType opCode,
                              U32 cmdSeq,
                              const KissCam::Slot& slot,
-                             const KissCam::Resolution& resolution) override;
+                             const KissCam::Resolution& resolution,
+                             FwDpPriorityType priority) override;
     void DOWNLOAD_ABORT_cmdHandler(FwOpcodeType opCode, U32 cmdSeq) override;
     void READ_REGISTER_cmdHandler(FwOpcodeType opCode, U32 cmdSeq, U16 address) override;
 
