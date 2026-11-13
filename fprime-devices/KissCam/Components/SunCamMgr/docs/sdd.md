@@ -135,6 +135,7 @@ Table 4 — Constants and data-product records
 |---|---|---|
 | REPLY_TIMEOUT_TICKS | 20 (configurable) | `run` ticks allowed per camera reply (datasheet: 2000 ms) |
 | LINE_RETRIES | 3 (configurable) | re-requests of one image line before the download fails |
+| IMAGE_DP_PRIORITY | 10 (configurable) | `Image` product priority when `DOWNLOAD` is commanded with priority 0 (REQ-037) |
 | TLM_PERIOD_TICKS | 10 (configurable) | `run` ticks between periodic writes of the component state and counter channels (1 s at 10 Hz) |
 | EXPOSURE_MIN, EXPOSURE_MAX | 2, 960 | EXPOSURE values the component sends (datasheet §7.4.4) |
 | FULL_LINES, PREVIEW_LINES | 480, 48 | Download line requests per slot (`KissCam` constant; §7.1); an HD image is 4 slots: 1920 / 192 |
