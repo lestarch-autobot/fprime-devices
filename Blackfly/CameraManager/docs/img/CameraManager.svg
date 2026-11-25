@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="522" height="190" viewBox="-8 -8 522 190">
+<style>
+    text { font-family: Helvetica, Arial, sans-serif; font-size: 11px; font-weight: normal; }
+    .sprotty-node { fill: #dbe9f9; stroke: #1b1b1b; stroke-width: 1.5; }
+    .sprotty-label { fill: #1b1b1b; stroke: none; }
+    .node-label { fill: #1b1b1b; }
+    .sprotty-port { fill: #1b1b1b; stroke: #7b337d; stroke-width: 1; }
+    .sprotty-edge { fill: none; stroke: #3b3b3b; }
+    .sprotty-edge-arrow { fill: #3b3b3b; stroke-width: 0; }
+    .component-active { stroke: #3FB984; }
+    .component-passive { stroke: #fe92a8; }
+    .topology-node { fill: #f1f1f1; stroke: #1b1b1b; stroke-dasharray: 8 4; }
+    .boundary-port { stroke: #1b1b1b; stroke-width: 1; }
+    .boundary-input { fill: #9cc8ff; }
+    .boundary-output { fill: #f5c58a; }
+    .sprotty-edge path.edge-implicit { stroke-dasharray: 5 4; opacity: 0.85; }
+    .sprotty-edge path.edge-bus { stroke-width: 3px; }
+    .sprotty-edge path.edge-bus.edge-implicit { stroke-dasharray: 8 5; }
+    .sprotty-edge .edge-bus-slash { stroke-width: 1.5px; }
+    .port-sync { fill: #fe92a8; }
+    .port-guarded { fill: #FDD35C; }
+    </style>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse" class="sprotty-edge-arrow"><path d="M 0 0 L 10 5 L 0 10 z"/></marker>
+</defs>
+<rect x="-8" y="-8" width="522" height="190" fill="#ffffff"/>
+<g id="Blackfly.CameraManager" transform="translate(195,12)"><rect class="sprotty-node task component-active" width="93" height="150" rx="10"/><text class="sprotty-label node-label" x="5" y="78">CameraManager</text><g id="Blackfly.CameraManager.bufferReturnOut.0" transform="translate(93,19.60)"><title>Blackfly.CameraManager.bufferReturnOut.0 (output)</title><rect class="sprotty-port" width="10" height="10"/><text class="sprotty-label" x="15" y="8">bufferReturnOut: Fw.BufferSend</text></g><g id="Blackfly.CameraManager.captureIn.0" transform="translate(-10,34)"><title>Blackfly.CameraManager.captureIn.0 (async)</title><rect class="sprotty-port port-async" width="10" height="10"/><text class="sprotty-label" x="-173" y="8">captureIn: Blackfly.CaptureControl</text></g><g id="Blackfly.CameraManager.frameReceived.0" transform="translate(-10,58)"><title>Blackfly.CameraManager.frameReceived.0 (internal)</title><rect class="sprotty-port" width="10" height="10"/><text class="sprotty-label" x="-79" y="8">frameReceived</text></g><g id="Blackfly.CameraManager.framesDropped.0" transform="translate(-10,82)"><title>Blackfly.CameraManager.framesDropped.0 (internal)</title><rect class="sprotty-port" width="10" height="10"/><text class="sprotty-label" x="-81" y="8">framesDropped</text></g><g id="Blackfly.CameraManager.imageStoredOut.0" transform="translate(93,53.20)"><title>Blackfly.CameraManager.imageStoredOut.0 (output)</title><rect class="sprotty-port" width="10" height="10"/><text class="sprotty-label" x="15" y="8">imageStoredOut: Blackfly.ImageStored</text></g><g id="Blackfly.CameraManager.pingIn.0" transform="translate(-10,106)"><title>Blackfly.CameraManager.pingIn.0 (async)</title><rect class="sprotty-port port-async" width="10" height="10"/><text class="sprotty-label" x="-85" y="8">pingIn: Svc.Ping</text></g><g id="Blackfly.CameraManager.pingOut.0" transform="translate(93,86.80)"><title>Blackfly.CameraManager.pingOut.0 (output)</title><rect class="sprotty-port" width="10" height="10"/><text class="sprotty-label" x="15" y="8">pingOut: Svc.Ping</text></g><g id="Blackfly.CameraManager.schedIn.0" transform="translate(-10,130)"><title>Blackfly.CameraManager.schedIn.0 (async)</title><rect class="sprotty-port port-async" width="10" height="10"/><text class="sprotty-label" x="-103" y="8">schedIn: Svc.Sched</text></g><g id="Blackfly.CameraManager.statusOut.0" transform="translate(93,120.40)"><title>Blackfly.CameraManager.statusOut.0 (output)</title><rect class="sprotty-port" width="10" height="10"/><text class="sprotty-label" x="15" y="8">statusOut: Blackfly.SlotStatus</text></g><g id="Blackfly.CameraManager.streamFailed.0" transform="translate(-10,10)"><title>Blackfly.CameraManager.streamFailed.0 (internal)</title><rect class="sprotty-port" width="10" height="10"/><text class="sprotty-label" x="-69" y="8">streamFailed</text></g></g>
+</svg>
