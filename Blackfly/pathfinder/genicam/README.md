@@ -7,7 +7,7 @@
 | `genicam-file-01908168.zip`, `genicam-file-017F4EC3.zip` (not committed; pull with `u3vprobe xml`) | Manifest entry 0 exactly as downloaded from each camera with `u3vprobe xml` (address 0x60000000, 67623 bytes). |
 | `public_camxml.xml` (not committed) | The one file inside the zip (876103 bytes, dated 2021-03-29 in the zip). |
 | `gen_regtable.py` | Design-time generator, Python 3 standard library only. |
-| `blackfly_regtable.json` | Generated table, machine readable, complete (109 features). |
+| `blackfly_regtable.json` | Generated table, machine readable, complete (142 features, from `flight_features.txt`). |
 | `BlackflyRegTable.h` | Generated C header with the same table (compiles as C11 and C++). |
 | `regmap.tsv` | Generated flat name/address map used by `u3vprobe -m` (`get NAME`, `set NAME VALUE`). |
 
@@ -27,7 +27,7 @@ backend can refuse a camera whose manifest SHA-1 differs.
 
 ```sh
 cd genicam
-python3 gen_regtable.py -o . public_camxml.xml          # the flight feature list (default)
+python3 gen_regtable.py -o . --features flight_features.txt public_camxml.xml   # the flight feature list
 python3 gen_regtable.py -o /tmp/all --all public_camxml.xml   # every feature in the XML, for exploration
 ```
 

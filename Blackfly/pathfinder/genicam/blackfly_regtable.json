@@ -1,6 +1,6 @@
 {
  "source": {
-  "file": "public_camxml.xml",
+  "file": "/home/ubuntu/work/genicam-local/public_camxml.xml",
   "sha256": "9be43bbdcd76435a93e9dce4dd64e3535f0889b56e96095d0007616f98ffd4ad",
   "ModelName": "BFS_U3_244S8",
   "MajorVersion": "1",
@@ -12479,6 +12479,4078 @@
    "command_value": 1,
    "selected_by": [],
    "access": "WO"
+  },
+  {
+   "name": "AutoExposureTargetGreyValueAuto",
+   "type": "Enumeration",
+   "value": {
+    "reg": {
+     "node": "AeAutoReference_Val",
+     "address": 795816,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "AeAutoReference_Imp",
+    "address": 795808,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeAutoReference_Avl",
+    "address": 795808,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeAutoReference_Lck",
+    "address": 795808,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "entries": [
+    {
+     "name": "Off",
+     "value": 0,
+     "available": {
+      "node": "AeAutoReference_Off_Avl",
+      "address": 795820,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Continuous",
+     "value": 1,
+     "available": {
+      "node": "AeAutoReference_Continuous_Avl",
+      "address": 795820,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     }
+    }
+   ],
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureTargetGreyValue",
+   "type": "Float",
+   "unit": "%",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AeUserTargetMean_Val",
+     "address": 795876,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "formula",
+     "from_register": "TO*100/SCALE",
+     "unflattened": true,
+     "to_register": "ROUND(FROM*SCALE/100)",
+     "variables": {
+      "SCALE": "AeImageMeanScalar_Val"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AeImageMeanScalar_Val",
+     "address": 795848,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "reciprocal",
+     "scale": 100.0,
+     "numerator": {
+      "node": "AeUserTargetMean_Min",
+      "address": 795880,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AeImageMeanScalar_Val",
+     "address": 795848,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "reciprocal",
+     "scale": 100.0,
+     "numerator": {
+      "node": "AeUserTargetMean_Max",
+      "address": 795884,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "AeUserTargetMean_Imp",
+    "address": 795872,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeUserTargetMean_Avl",
+    "address": 795872,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeUserTargetMean_Lck",
+    "address": 795872,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureLightingMode",
+   "type": "Enumeration",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AutoExposureLightingMode_Val",
+     "address": 795656,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "available": {
+    "node": "AutoExposureLightingMode_Avl",
+    "address": 795648,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AutoExposureLightingMode_Lck",
+    "address": 795648,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "entries": [
+    {
+     "name": "AutoDetect",
+     "value": 0,
+     "implemented": {
+      "node": "AutoExposureLightingMode_AutoDetect_Imp",
+      "address": 795664,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureLightingMode_AutoDetect_Avl",
+      "address": 795660,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Backlight",
+     "value": 1,
+     "implemented": {
+      "node": "AutoExposureLightingMode_Backlight_Imp",
+      "address": 795664,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureLightingMode_Backlight_Avl",
+      "address": 795660,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Frontlight",
+     "value": 2,
+     "implemented": {
+      "node": "AutoExposureLightingMode_Frontlight_Imp",
+      "address": 795664,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureLightingMode_Frontlight_Avl",
+      "address": 795660,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Normal",
+     "value": 3,
+     "implemented": {
+      "node": "AutoExposureLightingMode_Normal_Imp",
+      "address": 795664,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 3,
+      "msb": 3,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureLightingMode_Normal_Avl",
+      "address": 795660,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 3,
+      "msb": 3,
+      "kind": "int"
+     }
+    }
+   ],
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureMeteringMode",
+   "type": "Enumeration",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AutoExposureMeteringMode_Val",
+     "address": 795688,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "available": {
+    "node": "AutoExposureMeteringMode_Avl",
+    "address": 795680,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AutoExposureMeteringMode_Lck",
+    "address": 795680,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "entries": [
+    {
+     "name": "Average",
+     "value": 0,
+     "implemented": {
+      "node": "AutoExposureMeteringMode_Average_Imp",
+      "address": 795696,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureMeteringMode_Average_Avl",
+      "address": 795692,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Spot",
+     "value": 1,
+     "implemented": {
+      "node": "AutoExposureMeteringMode_Spot_Imp",
+      "address": 795696,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureMeteringMode_Spot_Avl",
+      "address": 795692,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Partial",
+     "value": 2,
+     "implemented": {
+      "node": "AutoExposureMeteringMode_Partial_Imp",
+      "address": 795696,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureMeteringMode_Partial_Avl",
+      "address": 795692,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "CenterWeighted",
+     "value": 3,
+     "implemented": {
+      "node": "AutoExposureMeteringMode_CenterWeighted_Imp",
+      "address": 795696,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 3,
+      "msb": 3,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureMeteringMode_CenterWeighted_Avl",
+      "address": 795692,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 3,
+      "msb": 3,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "HistgramPeak",
+     "value": 4,
+     "implemented": {
+      "node": "AutoExposureMeteringMode_HistgramPeak_Imp",
+      "address": 795696,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 4,
+      "msb": 4,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureMeteringMode_HistgramPeak_Avl",
+      "address": 795692,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 4,
+      "msb": 4,
+      "kind": "int"
+     }
+    }
+   ],
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureExposureTimeLowerLimit",
+   "type": "Float",
+   "unit": "us",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AeExposureTimeLowerLimit_Val",
+     "address": 796900,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AeExposureTimeLowerLimit_Min",
+     "address": 796904,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AeExposureTimeLowerLimit_Max",
+     "address": 796908,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "AeExposureTimeLowerLimit_Imp",
+    "address": 796896,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeExposureTimeLowerLimit_Avl",
+    "address": 796896,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeExposureTimeLowerLimit_Lck",
+    "address": 796896,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureExposureTimeUpperLimit",
+   "type": "Float",
+   "unit": "us",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AeExposureTimeUpperLimit_Val",
+     "address": 796932,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AeExposureTimeUpperLimit_Min",
+     "address": 796936,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AeExposureTimeUpperLimit_Max",
+     "address": 796940,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "AeExposureTimeUpperLimit_Imp",
+    "address": 796928,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeExposureTimeUpperLimit_Avl",
+    "address": 796928,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeExposureTimeUpperLimit_Lck",
+    "address": 796928,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureGainLowerLimit",
+   "type": "Float",
+   "unit": "dB",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AeGainLowerLimit_Val",
+     "address": 796964,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "linear",
+     "scale": 0.0003674682564086914
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AeGainLowerLimit_Min",
+     "address": 796968,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "linear",
+     "scale": 0.0003674682564086914
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AeGainLowerLimit_Max",
+     "address": 796972,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "linear",
+     "scale": 0.0003674682564086914
+    }
+   },
+   "implemented": {
+    "node": "AeGainLowerLimit_Imp",
+    "address": 796960,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeGainLowerLimit_Avl",
+    "address": 796960,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeGainLowerLimit_Lck",
+    "address": 796960,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureGainUpperLimit",
+   "type": "Float",
+   "unit": "dB",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AeGainUpperLimit_Val",
+     "address": 796996,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "linear",
+     "scale": 0.0003674682564086914
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AeGainUpperLimit_Min",
+     "address": 797000,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "linear",
+     "scale": 0.0003674682564086914
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AeGainUpperLimit_Max",
+     "address": 797004,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "linear",
+     "scale": 0.0003674682564086914
+    }
+   },
+   "implemented": {
+    "node": "AeGainUpperLimit_Imp",
+    "address": 796992,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeGainUpperLimit_Avl",
+    "address": 796992,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeGainUpperLimit_Lck",
+    "address": 796992,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureGreyValueLowerLimit",
+   "type": "Float",
+   "unit": "%",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AeImageLumaMin_Val",
+     "address": 795908,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "formula",
+     "from_register": "TO*100/SCALE",
+     "unflattened": true,
+     "to_register": "ROUND(FROM*SCALE/100)",
+     "variables": {
+      "SCALE": "AeImageMeanScalar_Val"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AeImageMeanScalar_Val",
+     "address": 795848,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "reciprocal",
+     "scale": 100.0,
+     "numerator": {
+      "node": "AeImageLumaMin_Min",
+      "address": 795912,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AeImageMeanScalar_Val",
+     "address": 795848,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "reciprocal",
+     "scale": 100.0,
+     "numerator": {
+      "node": "AeImageLumaMin_Max",
+      "address": 795916,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "AeImageLumaMin_Imp",
+    "address": 795904,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeImageLumaMin_Avl",
+    "address": 795904,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeImageLumaMin_Lck",
+    "address": 795904,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureGreyValueUpperLimit",
+   "type": "Float",
+   "unit": "%",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AeImageLumaMax_Val",
+     "address": 795940,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "formula",
+     "from_register": "TO*100/SCALE",
+     "unflattened": true,
+     "to_register": "ROUND(FROM*SCALE/100)",
+     "variables": {
+      "SCALE": "AeImageMeanScalar_Val"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AeImageMeanScalar_Val",
+     "address": 795848,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "reciprocal",
+     "scale": 100.0,
+     "numerator": {
+      "node": "AeImageLumaMax_Min",
+      "address": 795944,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AeImageMeanScalar_Val",
+     "address": 795848,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "reciprocal",
+     "scale": 100.0,
+     "numerator": {
+      "node": "AeImageLumaMax_Max",
+      "address": 795948,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "AeImageLumaMax_Imp",
+    "address": 795936,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeImageLumaMax_Avl",
+    "address": 795936,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeImageLumaMax_Lck",
+    "address": 795936,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureEVCompensation",
+   "type": "Float",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "EvComp_Val",
+     "address": 795780,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "formula",
+     "from_register": "TO/SCALE",
+     "unflattened": true,
+     "to_register": "ROUND(FROM*SCALE)",
+     "variables": {
+      "SCALE": "EvCompScalar_Val"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "EvCompScalar_Val",
+     "address": 795752,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "reciprocal",
+     "scale": 1.0,
+     "numerator": {
+      "node": "EvComp_Min",
+      "address": 795784,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "EvCompScalar_Val",
+     "address": 795752,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "reciprocal",
+     "scale": 1.0,
+     "numerator": {
+      "node": "EvComp_Max",
+      "address": 795788,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "EvComp_Imp",
+    "address": 795776,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "EvComp_Avl",
+    "address": 795776,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "EvComp_Lck",
+    "address": 795776,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureControlLoopDamping",
+   "type": "Float",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AeCtrlDamp_Val",
+     "address": 796676,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AeCtrlDamp_Posn",
+      "address": 796692,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AeCtrlDamp_Min",
+     "address": 796680,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AeCtrlDamp_Posn",
+      "address": 796692,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AeCtrlDamp_Max",
+     "address": 796684,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AeCtrlDamp_Posn",
+      "address": 796692,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "AeCtrlDamp_Imp",
+    "address": 796672,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AeCtrlDamp_Avl",
+    "address": 796672,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AeCtrlDamp_Lck",
+    "address": 796672,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AutoExposureControlPriority",
+   "type": "Enumeration",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "AutoExposureControlPriority_Val",
+     "address": 796776,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "available": {
+    "node": "AutoExposureControlPriority_Avl",
+    "address": 796768,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AutoExposureControlPriority_Lck",
+    "address": 796768,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "entries": [
+    {
+     "name": "Gain",
+     "value": 0,
+     "implemented": {
+      "node": "AutoExposureControlPriority_Gain_Imp",
+      "address": 796784,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureControlPriority_Gain_Avl",
+      "address": 796780,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "ExposureTime",
+     "value": 1,
+     "implemented": {
+      "node": "AutoExposureControlPriority_ExposureTime_Imp",
+      "address": 796784,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     },
+     "available": {
+      "node": "AutoExposureControlPriority_ExposureTime_Avl",
+      "address": 796780,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     }
+    }
+   ],
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "AasRoiEnable",
+   "type": "Boolean",
+   "value": {
+    "reg": {
+     "node": "AasRoiEnable_Val",
+     "address": 798724,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 798724
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 798756
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "AasRoiEnable_Imp",
+    "address": 798720,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 798720
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 798752
+     }
+    ],
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AasRoiEnable_Avl",
+    "address": 798720,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 798720
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 798752
+     }
+    ],
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AasRoiEnable_Lck",
+    "address": 798720,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 798720
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 798752
+     }
+    ],
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [
+    "AutoAlgorithmSelector"
+   ],
+   "access": "RW"
+  },
+  {
+   "name": "AasRoiOffsetX",
+   "type": "Integer",
+   "value": {
+    "reg": {
+     "node": "AasRoiOffsetX_Val",
+     "address": 799748,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 799748
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 799780
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AasRoiOffsetX_Min",
+     "address": 799752,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 799752
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 799784
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AasRoiOffsetX_Max",
+     "address": 799756,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 799756
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 799788
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "AasRoiOffsetX_Imp",
+    "address": 799744,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 799744
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 799776
+     }
+    ],
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AasRoiOffsetX_Avl",
+    "address": 799744,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 799744
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 799776
+     }
+    ],
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AasRoiOffsetX_Lck",
+    "address": 799744,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 799744
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 799776
+     }
+    ],
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [
+    "AutoAlgorithmSelector"
+   ],
+   "access": "RW"
+  },
+  {
+   "name": "AasRoiOffsetY",
+   "type": "Integer",
+   "value": {
+    "reg": {
+     "node": "AasRoiOffsetY_Val",
+     "address": 800772,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 800772
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 800804
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AasRoiOffsetY_Min",
+     "address": 800776,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 800776
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 800808
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AasRoiOffsetY_Max",
+     "address": 800780,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 800780
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 800812
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "AasRoiOffsetY_Imp",
+    "address": 800768,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 800768
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 800800
+     }
+    ],
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AasRoiOffsetY_Avl",
+    "address": 800768,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 800768
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 800800
+     }
+    ],
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AasRoiOffsetY_Lck",
+    "address": 800768,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 800768
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 800800
+     }
+    ],
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [
+    "AutoAlgorithmSelector"
+   ],
+   "access": "RW"
+  },
+  {
+   "name": "AasRoiWidth",
+   "type": "Integer",
+   "value": {
+    "reg": {
+     "node": "AasRoiWidth_Val",
+     "address": 801796,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 801796
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 801828
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AasRoiWidth_Min",
+     "address": 801800,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 801800
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 801832
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AasRoiWidth_Max",
+     "address": 801804,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 801804
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 801836
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "AasRoiWidth_Imp",
+    "address": 801792,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 801792
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 801824
+     }
+    ],
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AasRoiWidth_Avl",
+    "address": 801792,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 801792
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 801824
+     }
+    ],
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AasRoiWidth_Lck",
+    "address": 801792,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 801792
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 801824
+     }
+    ],
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [
+    "AutoAlgorithmSelector"
+   ],
+   "access": "RW"
+  },
+  {
+   "name": "AasRoiHeight",
+   "type": "Integer",
+   "value": {
+    "reg": {
+     "node": "AasRoiHeight_Val",
+     "address": 802820,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 802820
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 802852
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AasRoiHeight_Min",
+     "address": 802824,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 802824
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 802856
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AasRoiHeight_Max",
+     "address": 802828,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "selectors": [
+      "AutoAlgorithmSelector"
+     ],
+     "variants": [
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Awb"
+       },
+       "address": 802828
+      },
+      {
+       "selector": {
+        "AutoAlgorithmSelector": "Ae"
+       },
+       "address": 802860
+      }
+     ],
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "AasRoiHeight_Imp",
+    "address": 802816,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 802816
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 802848
+     }
+    ],
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AasRoiHeight_Avl",
+    "address": 802816,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 802816
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 802848
+     }
+    ],
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AasRoiHeight_Lck",
+    "address": 802816,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "selectors": [
+     "AutoAlgorithmSelector"
+    ],
+    "variants": [
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Awb"
+      },
+      "address": 802816
+     },
+     {
+      "selector": {
+       "AutoAlgorithmSelector": "Ae"
+      },
+      "address": 802848
+     }
+    ],
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [
+    "AutoAlgorithmSelector"
+   ],
+   "access": "RW"
+  },
+  {
+   "name": "BalanceWhiteAutoProfile",
+   "type": "Enumeration",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "BalanceWhiteAutoProfile_Val",
+     "address": 1082376,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "BalanceWhiteAutoProfile_Imp",
+    "address": 1082368,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "BalanceWhiteAutoProfile_Avl",
+    "address": 1082368,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "BalanceWhiteAutoProfile_Lck",
+    "address": 1082368,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "entries": [
+    {
+     "name": "Indoor",
+     "value": 0,
+     "implemented": {
+      "node": "BalanceWhiteAutoProfile_Indoor_Imp",
+      "address": 1082384,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     },
+     "available": {
+      "node": "BalanceWhiteAutoProfile_Indoor_Imp",
+      "address": 1082384,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Outdoor",
+     "value": 1,
+     "implemented": {
+      "node": "BalanceWhiteAutoProfile_Outdoor_Imp",
+      "address": 1082384,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     },
+     "available": {
+      "node": "BalanceWhiteAutoProfile_Outdoor_Avl",
+      "address": 1082380,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     }
+    }
+   ],
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "BalanceWhiteAutoDamping",
+   "type": "Float",
+   "representation": "Linear",
+   "value": {
+    "reg": {
+     "node": "AwbDamping_Val",
+     "address": 1082404,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbDamping_Posn",
+      "address": 1082420,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AwbDamping_Min",
+     "address": 1082408,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbDamping_Posn",
+      "address": 1082420,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AwbDamping_Max",
+     "address": 1082412,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbDamping_Posn",
+      "address": 1082420,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "AwbDamping_Imp",
+    "address": 1082400,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AwbDamping_Avl",
+    "address": 1082400,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AwbDamping_Lck",
+    "address": 1082400,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "BalanceWhiteAutoLowerLimit",
+   "type": "Float",
+   "representation": "Linear",
+   "value": {
+    "reg": {
+     "node": "AwbLowerLimit_Val",
+     "address": 1082692,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbLowerLimit_Posn",
+      "address": 1082708,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AwbLowerLimit_Min",
+     "address": 1082696,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbLowerLimit_Posn",
+      "address": 1082708,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AwbLowerLimit_Max",
+     "address": 1082700,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbLowerLimit_Posn",
+      "address": 1082708,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "AwbLowerLimit_Imp",
+    "address": 1082688,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AwbLowerLimit_Avl",
+    "address": 1082688,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AwbLowerLimit_Lck",
+    "address": 1082688,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "BalanceWhiteAutoUpperLimit",
+   "type": "Float",
+   "representation": "Linear",
+   "value": {
+    "reg": {
+     "node": "AwbUpperLimit_Val",
+     "address": 1082724,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbUpperLimit_Posn",
+      "address": 1082740,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "AwbUpperLimit_Min",
+     "address": 1082728,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbUpperLimit_Posn",
+      "address": 1082740,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "AwbUpperLimit_Max",
+     "address": 1082732,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "AwbUpperLimit_Posn",
+      "address": 1082740,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "AwbUpperLimit_Imp",
+    "address": 1082720,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "AwbUpperLimit_Avl",
+    "address": 1082720,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "AwbUpperLimit_Lck",
+    "address": 1082720,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "ExposureActiveMode",
+   "type": "Enumeration",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "ExposureActiveMode_Val",
+     "address": 791560,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "ExposureActiveMode_Imp",
+    "address": 791552,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "ExposureActiveMode_Avl",
+    "address": 791552,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "entries": [
+    {
+     "name": "Line1",
+     "value": 0,
+     "implemented": {
+      "node": "ExposureActiveMode_Line1_Imp",
+      "address": 791568,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     },
+     "available": {
+      "node": "ExposureActiveMode_Line1_Avl",
+      "address": 791564,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "AnyPixels",
+     "value": 1,
+     "implemented": {
+      "node": "ExposureActiveMode_AnyPixels_Imp",
+      "address": 791568,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     },
+     "available": {
+      "node": "ExposureActiveMode_AnyPixels_Avl",
+      "address": 791564,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "AllPixels",
+     "value": 2,
+     "implemented": {
+      "node": "ExposureActiveMode_AllPixels_Imp",
+      "address": 791568,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     },
+     "available": {
+      "node": "ExposureActiveMode_AllPixels_Avl",
+      "address": 791564,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     }
+    }
+   ],
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "ColorTransformationEnable",
+   "type": "Boolean",
+   "value": {
+    "reg": {
+     "node": "ColorTransformationEnable_Val",
+     "address": 722948,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "ColorTransformationEnable_Imp",
+    "address": 722944,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "ColorTransformationEnable_Avl",
+    "address": 722944,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "ColorTransformationEnable_Lck",
+    "address": 722944,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [
+    "ColorTransformationSelector"
+   ],
+   "access": "RW"
+  },
+  {
+   "name": "RgbTransformLightSource",
+   "type": "Enumeration",
+   "value": {
+    "reg": {
+     "node": "RgbTransformLightSource_Val",
+     "address": 722056,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "available": {
+    "node": "RgbTransformLightSource_Avl",
+    "address": 722048,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "RgbTransformLightSource_Lck",
+    "address": 722048,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "entries": [
+    {
+     "name": "General",
+     "value": 0,
+     "implemented": {
+      "node": "RgbTransformLightSource_General_Imp",
+      "address": 722064,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     },
+     "available": {
+      "node": "RgbTransformLightSource_General_Avl",
+      "address": 722060,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Tungsten2800K",
+     "value": 1,
+     "implemented": {
+      "node": "RgbTransformLightSource_Tungsten2800K_Imp",
+      "address": 722064,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     },
+     "available": {
+      "node": "RgbTransformLightSource_Tungsten2800K_Avl",
+      "address": 722060,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "WarmFluorescent3000K",
+     "value": 2,
+     "implemented": {
+      "node": "RgbTransformLightSource_WarmFluorescent3000K_Imp",
+      "address": 722064,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     },
+     "available": {
+      "node": "RgbTransformLightSource_WarmFluorescent3000K_Avl",
+      "address": 722060,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "CoolFluorescent4000K",
+     "value": 3,
+     "implemented": {
+      "node": "RgbTransformLightSource_CoolFluorescent4000K_Imp",
+      "address": 722064,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 3,
+      "msb": 3,
+      "kind": "int"
+     },
+     "available": {
+      "node": "RgbTransformLightSource_CoolFluorescent4000K_Avl",
+      "address": 722060,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 3,
+      "msb": 3,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Daylight5000K",
+     "value": 4,
+     "implemented": {
+      "node": "RgbTransformLightSource_Daylight5000K_Imp",
+      "address": 722064,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 4,
+      "msb": 4,
+      "kind": "int"
+     },
+     "available": {
+      "node": "RgbTransformLightSource_Daylight5000K_Avl",
+      "address": 722060,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 4,
+      "msb": 4,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Cloudy6500K",
+     "value": 5,
+     "implemented": {
+      "node": "RgbTransformLightSource_Cloudy6500K_Imp",
+      "address": 722064,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 5,
+      "msb": 5,
+      "kind": "int"
+     },
+     "available": {
+      "node": "RgbTransformLightSource_Cloudy6500K_Avl",
+      "address": 722060,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 5,
+      "msb": 5,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Shade8000K",
+     "value": 6,
+     "implemented": {
+      "node": "RgbTransformLightSource_Shade8000K_Imp",
+      "address": 722064,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 6,
+      "msb": 6,
+      "kind": "int"
+     },
+     "available": {
+      "node": "RgbTransformLightSource_Shade8000K_Avl",
+      "address": 722060,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 6,
+      "msb": 6,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Custom",
+     "value": 7,
+     "implemented": {
+      "node": "RgbTransformLightSource_Custom_Imp",
+      "address": 722064,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 7,
+      "msb": 7,
+      "kind": "int"
+     },
+     "available": {
+      "node": "RgbTransformLightSource_Custom_Avl",
+      "address": 722060,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 7,
+      "msb": 7,
+      "kind": "int"
+     }
+    }
+   ],
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "SaturationEnable",
+   "type": "Boolean",
+   "value": {
+    "reg": {
+     "node": "SaturationEnable_Val",
+     "address": 723972,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "SaturationEnable_Imp",
+    "address": 723968,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "SaturationEnable_Avl",
+    "address": 723968,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "SaturationEnable_Lck",
+    "address": 723968,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "Saturation",
+   "type": "Float",
+   "representation": "Linear",
+   "value": {
+    "reg": {
+     "node": "Saturation_Val",
+     "address": 724004,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "Saturation_Posn",
+      "address": 724020,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "Saturation_Min",
+     "address": 724008,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "Saturation_Posn",
+      "address": 724020,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "Saturation_Max",
+     "address": 724012,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "Saturation_Posn",
+      "address": 724020,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "Saturation_Imp",
+    "address": 724000,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "Saturation_Avl",
+    "address": 724000,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "Saturation_Lck",
+    "address": 724000,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "SharpeningEnable",
+   "type": "Boolean",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "SharpEnable_Val",
+     "address": 720964,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "SharpEnable_Imp",
+    "address": 720960,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "SharpEnable_Avl",
+    "address": 720960,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "SharpEnable_Lck",
+    "address": 720960,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "SharpeningAuto",
+   "type": "Boolean",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "SharpAuto_Val",
+     "address": 2097156,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "SharpAuto_Imp",
+    "address": 2097152,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "SharpAuto_Avl",
+    "address": 2097152,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "SharpAuto_Lck",
+    "address": 2097152,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "Sharpening",
+   "type": "Float",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "SharpMult_Val",
+     "address": 720996,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "SharpMult_Posn",
+      "address": 721012,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "SharpMult_Min",
+     "address": 721000,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "SharpMult_Posn",
+      "address": 721012,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "SharpMult_Max",
+     "address": 721004,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "signed",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "SharpMult_Posn",
+      "address": 721012,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "SharpMult_Imp",
+    "address": 720992,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "SharpMult_Avl",
+    "address": 720992,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "SharpMult_Lck",
+    "address": 720992,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "SharpeningThreshold",
+   "type": "Float",
+   "representation": "Linear",
+   "imposedaccessmode": "RW",
+   "value": {
+    "reg": {
+     "node": "NoiseOffset_Val",
+     "address": 721060,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "NoiseOffset_Posn",
+      "address": 721076,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "min": {
+    "reg": {
+     "node": "NoiseOffset_Min",
+     "address": 721064,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "NoiseOffset_Posn",
+      "address": 721076,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "max": {
+    "reg": {
+     "node": "NoiseOffset_Max",
+     "address": 721068,
+     "length": 4,
+     "access": "RO",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "fixed_point",
+     "scale": 1.0,
+     "fraction_bits": {
+      "node": "NoiseOffset_Posn",
+      "address": 721076,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "signed",
+      "port": "Device",
+      "kind": "int"
+     }
+    }
+   },
+   "implemented": {
+    "node": "NoiseOffset_Imp",
+    "address": 721056,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "NoiseOffset_Avl",
+    "address": 721056,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "NoiseOffset_Lck",
+    "address": 721056,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "DefectCorrectStaticEnable",
+   "type": "Boolean",
+   "value": {
+    "reg": {
+     "node": "DefectCorrectStaticEnable_Val",
+     "address": 2752516,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "DefectCorrectStaticEnable_Imp",
+    "address": 2752512,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "DefectCorrectStaticEnable_Avl",
+    "address": 2752512,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "DefectCorrectStaticEnable_Lck",
+    "address": 2752512,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "selected_by": [],
+   "access": "RW"
+  },
+  {
+   "name": "DefectCorrectionMode",
+   "type": "Enumeration",
+   "value": {
+    "reg": {
+     "node": "DefectCorrectionMode_Val",
+     "address": 2752552,
+     "length": 4,
+     "access": "RW",
+     "endianness": "little",
+     "sign": "unsigned",
+     "port": "Device",
+     "kind": "int"
+    },
+    "conv": {
+     "kind": "identity"
+    }
+   },
+   "implemented": {
+    "node": "DefectCorrectionMode_Imp",
+    "address": 2752544,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 31,
+    "msb": 31,
+    "kind": "int"
+   },
+   "available": {
+    "node": "DefectCorrectionMode_Avl",
+    "address": 2752544,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 30,
+    "msb": 30,
+    "kind": "int"
+   },
+   "locked": {
+    "node": "DefectCorrectionMode_Lck",
+    "address": 2752544,
+    "length": 4,
+    "access": "RO",
+    "endianness": "little",
+    "sign": "unsigned",
+    "port": "Device",
+    "lsb": 28,
+    "msb": 28,
+    "kind": "int"
+   },
+   "entries": [
+    {
+     "name": "Average",
+     "value": 0,
+     "implemented": {
+      "node": "DefectCorrectionMode_Average_Imp",
+      "address": 2752560,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     },
+     "available": {
+      "node": "DefectCorrectionMode_Average_Avl",
+      "address": 2752556,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 0,
+      "msb": 0,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Highlight",
+     "value": 1,
+     "implemented": {
+      "node": "DefectCorrectionMode_Highlight_Imp",
+      "address": 2752560,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     },
+     "available": {
+      "node": "DefectCorrectionMode_Highlight_Avl",
+      "address": 2752556,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 1,
+      "msb": 1,
+      "kind": "int"
+     }
+    },
+    {
+     "name": "Zero",
+     "value": 2,
+     "implemented": {
+      "node": "DefectCorrectionMode_Zero_Imp",
+      "address": 2752560,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     },
+     "available": {
+      "node": "DefectCorrectionMode_Zero_Avl",
+      "address": 2752556,
+      "length": 4,
+      "access": "RO",
+      "endianness": "little",
+      "sign": "unsigned",
+      "port": "Device",
+      "lsb": 2,
+      "msb": 2,
+      "kind": "int"
+     }
+    }
+   ],
+   "selected_by": [],
+   "access": "RW"
   }
  ]
 }
