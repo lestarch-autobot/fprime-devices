@@ -1,0 +1,55 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+ABRM GenCPVersion                  @0x00000 len  4: 0x00010000 (65536)
+ABRM ManufacturerName              @0x00004 len 64: "FLIR"
+ABRM ModelName                     @0x00044 len 64: "Blackfly S BFS-U3-244S8C"
+ABRM FamilyName                    @0x00084 len 64: "GEN3-USB"
+ABRM DeviceVersion                 @0x000c4 len 64: "2103.0.628.0"
+ABRM ManufacturerInfo              @0x00104 len 64: "Mar 29 2021 11:45:45"
+ABRM SerialNumber                  @0x00144 len 64: "26247528"
+ABRM UserDefinedName               @0x00184 len 64: ""
+ABRM DeviceCapability              @0x001c4 len  8: 0x0000000000000f0d (3853)
+ABRM MaxDeviceResponseTime(ms)     @0x001cc len  4: 0x000000c8 (200)
+ABRM ManifestTableAddress          @0x001d0 len  8: 0x0000000000040000 (262144)
+ABRM SBRMAddress                   @0x001d8 len  8: 0x0000000000010000 (65536)
+ABRM DeviceConfiguration           @0x001e0 len  8: 0x0000000000000000 (0)
+  ack: status=0x8003 INVALID_ADDRESS cmd=0x0801 len=0 id=25
+ABRM HeartbeatTimeout              @0x001e8 len  4: status 0x8003 INVALID_ADDRESS
+ABRM MessageChannelID              @0x001ec len  4: 0x00000000 (0)
+ABRM Timestamp                     @0x001f0 len  8: 0x0000000000000000 (0)
+  ack: status=0x8002 INVALID_PARAMETER cmd=0x0801 len=0 id=28
+ABRM TimestampLatch                @0x001f8 len  4: status 0x8002 INVALID_PARAMETER
+ABRM TimestampIncrement            @0x001fc len  8: 0x00000000000003e8 (1000)
+ABRM AccessPrivilege               @0x00204 len  4: 0x00000000 (0)
+ABRM ProtocolEndianness            @0x00208 len  4: 0xffffffff (4294967295)
+ABRM ImplementationEndianness      @0x0020c len  4: 0xffffffff (4294967295)
+  ack: status=0x8003 INVALID_ADDRESS cmd=0x0801 len=0 id=33
+ABRM DeviceSoftwareInterfaceVersion @0x00210 len 64: status 0x8003 INVALID_ADDRESS
+SBRM U3VVersion                    @0x10000 len  4: 0x00010000 (65536)
+SBRM U3VCPCapability               @0x10004 len  8: 0x0000000000000003 (3)
+SBRM U3VCPConfiguration            @0x1000c len  8: 0x0000000000000000 (0)
+SBRM MaxCmdTransferLength          @0x10014 len  4: 0x00000400 (1024)
+SBRM MaxAckTransferLength          @0x10018 len  4: 0x00000400 (1024)
+SBRM NumStreamChannels             @0x1001c len  4: 0x00000001 (1)
+SBRM SIRMAddress                   @0x10020 len  8: 0x0000000000020000 (131072)
+SBRM SIRMLength                    @0x10028 len  4: 0x00000030 (48)
+SBRM EIRMAddress                   @0x1002c len  8: 0x0000000000028000 (163840)
+SBRM EIRMLength                    @0x10034 len  4: 0x0000000c (12)
+  ack: status=0x8003 INVALID_ADDRESS cmd=0x0801 len=0 id=44
+SBRM IIDC2Address                  @0x10038 len  8: status 0x8003 INVALID_ADDRESS
+SBRM CurrentSpeed                  @0x10040 len  4: 0x00000008 (8)
+SIRM Info                       0x03000000 (payload alignment 8 bytes)
+SIRM Control                    0x00000000
+SIRM RequiredPayloadSize        24472000
+SIRM RequiredLeaderSize         52
+SIRM RequiredTrailerSize        36
+SIRM MaximumLeaderSize          0
+SIRM PayloadTransferSize        0
+SIRM PayloadTransferCount       0
+SIRM PayloadFinalTransfer1Size  0
+SIRM PayloadFinalTransfer2Size  0
+SIRM MaximumTrailerSize         0
+EIRM Control                    0x00000001
+EIRM MaxEventTransferLength     280
+EIRM EventTestControl           0x00000000
+MANIFEST entries                1
+MANIFEST[0] file version 1.0.0 format 0x01010400 (file type 1: zip, schema 1.1) address 0x60000000 size 67623 sha1 ad4370397be7c60b6c00af21b3baa24054daebf1

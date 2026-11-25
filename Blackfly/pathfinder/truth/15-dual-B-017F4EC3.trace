@@ -1,0 +1,1846 @@
+# u3vprobe serial=017F4EC3 libusb 1.0.27.11882
+      4662 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 00 00 d0 01 00 00 00 00 00 00 00 00 08 00
+      4891 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 00 00 00 00 04 00 00 00 00 00
+      4947 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 00 d8 01 00 00 00 00 00 00 00 00 08 00
+      5196 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 01 00 00 00 01 00 00 00 00 00
+      5286 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 02 00 14 00 01 00 00 00 00 00 00 00 04 00
+      5422 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 02 00 00 04 00 00
+      5525 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 03 00 18 00 01 00 00 00 00 00 00 00 04 00
+      5611 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 00 00 04 00 00
+      5669 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 04 00 20 00 01 00 00 00 00 00 00 00 08 00
+      5811 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 04 00 00 00 02 00 00 00 00 00
+      5861 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 05 00 2c 00 01 00 00 00 00 00 00 00 08 00
+      5998 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 05 00 00 80 02 00 00 00 00 00
+# NOTE 15: camera B control traffic (600 commands) and acquisition attempt while camera C streams
+      6100 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 06 00 04 10 04 00 00 00 00 00 00 00 04 00
+      6702 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 06 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+      6738 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 07 00 84 10 08 00 00 00 00 00 00 00 04 00
+      6904 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 07 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+      6952 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 08 00 f8 01 00 00 00 00 00 00 01 00 00 00
+      7152 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 08 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (230 us)
+      7256 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 09 00 f0 01 00 00 00 00 00 00 00 00 08 00
+      7408 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 09 00 20 56 22 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233555220000 (0x77d06225620, register 0x77d06225620)
+      7487 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0a 00 04 10 04 00 00 00 00 00 00 00 04 00
+      8095 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+      8185 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0b 00 84 10 08 00 00 00 00 00 00 00 04 00
+      8277 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+      8330 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+      8484 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+      8545 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+      8694 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 0d 00 d8 e3 36 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233556567000 (0x77d0636e3d8, register 0x77d0636e3d8)
+      8741 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0e 00 04 10 04 00 00 00 00 00 00 00 04 00
+      9386 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+      9423 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0f 00 84 10 08 00 00 00 00 00 00 00 04 00
+      9614 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+      9655 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 10 00 f8 01 00 00 00 00 00 00 01 00 00 00
+      9820 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 10 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (186 us)
+      9869 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 11 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     10000 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 11 00 b0 42 4b 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233557902000 (0x77d064b42b0, register 0x77d064b42b0)
+     10115 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 12 00 04 10 04 00 00 00 00 00 00 00 04 00
+     10718 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 12 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     10771 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 13 00 84 10 08 00 00 00 00 00 00 00 04 00
+     10946 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 13 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     10997 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 14 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     11220 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 14 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (269 us)
+     11324 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 15 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     11521 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 15 00 d0 95 5f 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233559234000 (0x77d065f95d0, register 0x77d065f95d0)
+     11595 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 16 00 04 10 04 00 00 00 00 00 00 00 04 00
+     12173 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 16 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     12211 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 17 00 84 10 08 00 00 00 00 00 00 00 04 00
+     12365 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 17 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     12404 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 18 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     12570 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 18 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+     12609 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 19 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     12772 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 19 00 a0 96 75 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233560676000 (0x77d067596a0, register 0x77d067596a0)
+     12812 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     13442 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     13465 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     13589 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     13629 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     13796 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+     13835 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     13997 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 1d 00 b0 4b 88 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233561902000 (0x77d06884bb0, register 0x77d06884bb0)
+     14037 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     14643 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     14669 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     14816 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     14857 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 20 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     15023 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 20 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (196 us)
+     15062 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 21 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     15224 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 21 00 c0 00 9b 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233563128000 (0x77d069b00c0, register 0x77d069b00c0)
+     15264 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 22 00 04 10 04 00 00 00 00 00 00 00 04 00
+     15891 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 22 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     15911 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 23 00 84 10 08 00 00 00 00 00 00 00 04 00
+     16041 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 23 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     16082 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 24 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     16247 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 24 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     16288 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 25 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     16450 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 25 00 d0 b5 ad 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233564354000 (0x77d06adb5d0, register 0x77d06adb5d0)
+     16490 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 26 00 04 10 04 00 00 00 00 00 00 00 04 00
+     17073 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 26 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     17113 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 27 00 84 10 08 00 00 00 00 00 00 00 04 00
+     17278 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 27 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     17318 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 28 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     17474 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 28 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (191 us)
+     17512 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 29 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     17675 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 29 00 f8 66 c0 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233565579000 (0x77d06c066f8, register 0x77d06c066f8)
+     17715 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     18350 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     18372 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     18491 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     18531 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 2c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     18697 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 2c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     18737 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     18900 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 2d 00 20 18 d3 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233566804000 (0x77d06d31820, register 0x77d06d31820)
+     18940 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     19569 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     19591 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     19716 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     19756 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 30 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     19928 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 30 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (207 us)
+     19967 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 31 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     20128 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 31 00 48 c9 e5 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233568029000 (0x77d06e5c948, register 0x77d06e5c948)
+     20165 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 32 00 04 10 04 00 00 00 00 00 00 00 04 00
+     20791 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 32 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     20811 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 33 00 84 10 08 00 00 00 00 00 00 00 04 00
+     20940 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 33 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     20980 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 34 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     21147 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 34 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     21186 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 35 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     21349 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 35 00 a0 72 f8 06 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233569252000 (0x77d06f872a0, register 0x77d06f872a0)
+     21388 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 36 00 04 10 04 00 00 00 00 00 00 00 04 00
+     22020 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 36 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     22041 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 37 00 84 10 08 00 00 00 00 00 00 00 04 00
+     22163 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 37 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     22203 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 38 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     22369 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 38 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     22409 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 39 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     22574 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 39 00 f8 1b 0b 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233570475000 (0x77d070b1bf8, register 0x77d070b1bf8)
+     22614 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     23195 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     23234 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     23388 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     23429 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 3c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     23595 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 3c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (194 us)
+     23635 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     23797 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 3d 00 f0 d4 1d 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233571702000 (0x77d071dd4f0, register 0x77d071dd4f0)
+     23837 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     24467 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     24489 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     24615 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     24655 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 40 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     24822 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 40 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+     24861 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 41 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     25024 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 41 00 00 8a 30 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233572928000 (0x77d07308a00, register 0x77d07308a00)
+     25064 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 42 00 04 10 04 00 00 00 00 00 00 00 04 00
+     25648 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 42 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     25687 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 43 00 84 10 08 00 00 00 00 00 00 00 04 00
+     25840 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 43 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     25880 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 44 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     26047 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 44 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+     26087 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 45 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     26250 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 45 00 10 3f 43 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233574154000 (0x77d07433f10, register 0x77d07433f10)
+     26289 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 46 00 04 10 04 00 00 00 00 00 00 00 04 00
+     26917 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 46 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     26937 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 47 00 84 10 08 00 00 00 00 00 00 00 04 00
+     27067 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 47 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     27107 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 48 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     27273 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 48 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+     27312 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 49 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     27475 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 49 00 38 f0 55 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233575379000 (0x77d0755f038, register 0x77d0755f038)
+     27515 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     28099 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     28138 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     28293 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     28332 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 4c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     28498 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 4c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (196 us)
+     28538 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     28701 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 4d 00 60 a1 68 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233576604000 (0x77d0768a160, register 0x77d0768a160)
+     28741 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     29367 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     29389 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     29518 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     29557 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 50 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     29723 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 50 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+     29762 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 51 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     29925 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 51 00 88 52 7b 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233577829000 (0x77d077b5288, register 0x77d077b5288)
+     29965 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 52 00 04 10 04 00 00 00 00 00 00 00 04 00
+     30549 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 52 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     30588 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 53 00 84 10 08 00 00 00 00 00 00 00 04 00
+     30741 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 53 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     30781 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 54 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     30947 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 54 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+     30986 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 55 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     31152 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 55 00 c8 ff 8d 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233579053000 (0x77d078dffc8, register 0x77d078dffc8)
+     31190 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 56 00 04 10 04 00 00 00 00 00 00 00 04 00
+     31818 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 56 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     31838 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 57 00 84 10 08 00 00 00 00 00 00 00 04 00
+     31977 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 57 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     32020 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 58 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     32170 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 58 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (187 us)
+     32210 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 59 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     32372 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 59 00 20 a9 a0 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233580276000 (0x77d07a0a920, register 0x77d07a0a920)
+     32412 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     33038 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     33061 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     33189 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     33229 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 5c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     33395 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 5c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     33435 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     33597 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 5d 00 30 5e b3 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233581502000 (0x77d07b35e30, register 0x77d07b35e30)
+     33638 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     34221 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     34261 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     34416 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     34456 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 60 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     34621 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 60 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+     34662 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 61 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     34824 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 61 00 58 0f c6 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233582727000 (0x77d07c60f58, register 0x77d07c60f58)
+     34865 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 62 00 04 10 04 00 00 00 00 00 00 00 04 00
+     35488 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 62 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     35509 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 63 00 84 10 08 00 00 00 00 00 00 00 04 00
+     35640 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 63 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     35681 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 64 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     35846 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 64 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     35886 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 65 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     36048 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 65 00 80 c0 d8 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233583952000 (0x77d07d8c080, register 0x77d07d8c080)
+     36087 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 66 00 04 10 04 00 00 00 00 00 00 00 04 00
+     36669 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 66 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     36710 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 67 00 84 10 08 00 00 00 00 00 00 00 04 00
+     36863 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 67 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     36904 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 68 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     37071 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 68 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (203 us)
+     37110 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 69 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     37272 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 69 00 a8 71 eb 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233585177000 (0x77d07eb71a8, register 0x77d07eb71a8)
+     37312 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     37938 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 6a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     37957 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     38091 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 6b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     38130 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 6c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     38294 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 6c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+     38335 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     38499 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 6d 00 d0 22 fe 07 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233586402000 (0x77d07fe22d0, register 0x77d07fe22d0)
+     38539 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     39122 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 6e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     39160 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     39313 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 6f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     39353 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 70 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     39519 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 70 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     39560 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 71 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     39722 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 71 00 10 d0 10 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233587626000 (0x77d0810d010, register 0x77d0810d010)
+     39762 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 72 00 04 10 04 00 00 00 00 00 00 00 04 00
+     40386 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 72 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     40407 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 73 00 84 10 08 00 00 00 00 00 00 00 04 00
+     40536 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 73 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     40577 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 74 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     40743 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 74 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     40782 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 75 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     40945 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 75 00 50 7d 23 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233588850000 (0x77d08237d50, register 0x77d08237d50)
+     40984 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 76 00 04 10 04 00 00 00 00 00 00 00 04 00
+     41613 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 76 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     41640 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 77 00 84 10 08 00 00 00 00 00 00 00 04 00
+     41760 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 77 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     41800 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 78 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     41965 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 78 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     42005 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 79 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     42169 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 79 00 c0 22 36 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233590072000 (0x77d083622c0, register 0x77d083622c0)
+     42208 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     42833 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 7a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     42851 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     42985 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 7b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     43025 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 7c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     43192 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 7c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (203 us)
+     43232 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     43394 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 7d 00 d0 d7 48 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233591298000 (0x77d0848d7d0, register 0x77d0848d7d0)
+     43434 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     44020 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 7e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     44057 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     44211 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 7f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     44251 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 80 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     44417 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 80 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     44458 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 81 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     44621 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 81 00 e0 8c 5b 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233592524000 (0x77d085b8ce0, register 0x77d085b8ce0)
+     44660 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 82 00 04 10 04 00 00 00 00 00 00 00 04 00
+     45243 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 82 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     45283 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 83 00 84 10 08 00 00 00 00 00 00 00 04 00
+     45437 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 83 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     45477 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 84 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     45643 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 84 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     45683 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 85 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     45846 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 85 00 f0 41 6e 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233593750000 (0x77d086e41f0, register 0x77d086e41f0)
+     45886 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 86 00 04 10 04 00 00 00 00 00 00 00 04 00
+     46471 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 86 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     46510 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 87 00 84 10 08 00 00 00 00 00 00 00 04 00
+     46663 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 87 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     46703 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 88 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     46868 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 88 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+     46909 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 89 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     47072 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 89 00 00 f7 80 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233594976000 (0x77d0880f700, register 0x77d0880f700)
+     47112 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     47737 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 8a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     47755 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     47887 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 8b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     47928 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 8c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     48094 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 8c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     48134 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     48297 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 8d 00 28 a8 93 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233596201000 (0x77d0893a828, register 0x77d0893a828)
+     48337 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     48961 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 8e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     49019 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     49114 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 8f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     49153 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 90 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     49320 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 90 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (196 us)
+     49358 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 91 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     49521 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 91 00 68 55 a6 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233597425000 (0x77d08a65568, register 0x77d08a65568)
+     49560 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 92 00 04 10 04 00 00 00 00 00 00 00 04 00
+     50143 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 92 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     50183 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 93 00 84 10 08 00 00 00 00 00 00 00 04 00
+     50335 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 93 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     50375 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 94 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     50541 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 94 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (205 us)
+     50581 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 95 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     50743 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 95 00 c0 fe b8 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233598648000 (0x77d08b8fec0, register 0x77d08b8fec0)
+     50783 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 96 00 04 10 04 00 00 00 00 00 00 00 04 00
+     51409 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 96 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     51429 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 97 00 84 10 08 00 00 00 00 00 00 00 04 00
+     51559 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 97 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     51599 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 98 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     51765 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 98 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+     51804 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 99 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     51967 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 99 00 18 a8 cb 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233599871000 (0x77d08cba818, register 0x77d08cba818)
+     52007 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9a 00 04 10 04 00 00 00 00 00 00 00 04 00
+     52632 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 9a 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     52654 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9b 00 84 10 08 00 00 00 00 00 00 00 04 00
+     52784 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 9b 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     52825 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 9c 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     52991 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 9c 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+     53033 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9d 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     53194 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 9d 00 28 5d de 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233601097000 (0x77d08de5d28, register 0x77d08de5d28)
+     53233 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9e 00 04 10 04 00 00 00 00 00 00 00 04 00
+     53858 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 9e 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     53876 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9f 00 84 10 08 00 00 00 00 00 00 00 04 00
+     54010 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 9f 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     54050 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 a0 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     54217 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 a0 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+     54257 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a1 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     54420 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 a1 00 38 12 f1 08 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233602323000 (0x77d08f11238, register 0x77d08f11238)
+     54460 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a2 00 04 10 04 00 00 00 00 00 00 00 04 00
+     55069 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 a2 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     55089 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a3 00 84 10 08 00 00 00 00 00 00 00 04 00
+     55236 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 a3 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     55276 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 a4 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     55442 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 a4 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     55482 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a5 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     55645 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 a5 00 48 c7 03 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233603549000 (0x77d0903c748, register 0x77d0903c748)
+     55685 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a6 00 04 10 04 00 00 00 00 00 00 00 04 00
+     56269 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 a6 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     56308 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a7 00 84 10 08 00 00 00 00 00 00 00 04 00
+     56462 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 a7 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     56502 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 a8 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     56668 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 a8 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+     56708 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a9 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     56871 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 a9 00 58 7c 16 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233604775000 (0x77d09167c58, register 0x77d09167c58)
+     56911 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 aa 00 04 10 04 00 00 00 00 00 00 00 04 00
+     57537 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 aa 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     57559 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ab 00 84 10 08 00 00 00 00 00 00 00 04 00
+     57688 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ab 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     57728 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 ac 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     57894 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 ac 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     57934 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ad 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     58096 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 ad 00 80 2d 29 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233606000000 (0x77d09292d80, register 0x77d09292d80)
+     58136 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ae 00 04 10 04 00 00 00 00 00 00 00 04 00
+     58764 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ae 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     58782 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 af 00 84 10 08 00 00 00 00 00 00 00 04 00
+     58912 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 af 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     58951 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 b0 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     59119 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 b0 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+     59158 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b1 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     59320 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 b1 00 c0 da 3b 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233607224000 (0x77d093bdac0, register 0x77d093bdac0)
+     59360 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b2 00 04 10 04 00 00 00 00 00 00 00 04 00
+     59943 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 b2 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     59981 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b3 00 84 10 08 00 00 00 00 00 00 00 04 00
+     60135 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 b3 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     60175 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 b4 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     60340 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 b4 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (195 us)
+     60380 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b5 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     60543 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 b5 00 18 84 4e 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233608447000 (0x77d094e8418, register 0x77d094e8418)
+     60583 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b6 00 04 10 04 00 00 00 00 00 00 00 04 00
+     61165 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 b6 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     61205 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b7 00 84 10 08 00 00 00 00 00 00 00 04 00
+     61358 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 b7 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     61398 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 b8 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     61563 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 b8 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     61603 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b9 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     61767 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 b9 00 70 2d 61 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233609670000 (0x77d09612d70, register 0x77d09612d70)
+     61806 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ba 00 04 10 04 00 00 00 00 00 00 00 04 00
+     62391 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ba 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     62429 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 bb 00 84 10 08 00 00 00 00 00 00 00 04 00
+     62584 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 bb 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     62623 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 bc 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     62790 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 bc 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+     62830 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 bd 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     62993 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 bd 00 80 e2 73 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233610896000 (0x77d0973e280, register 0x77d0973e280)
+     63034 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 be 00 04 10 04 00 00 00 00 00 00 00 04 00
+     63658 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 be 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     63679 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 bf 00 84 10 08 00 00 00 00 00 00 00 04 00
+     63809 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 bf 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     63849 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 c0 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     64018 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 c0 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (209 us)
+     64057 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c1 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     64219 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 c1 00 90 97 86 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233612122000 (0x77d09869790, register 0x77d09869790)
+     64259 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c2 00 04 10 04 00 00 00 00 00 00 00 04 00
+     64885 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 c2 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     64922 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c3 00 84 10 08 00 00 00 00 00 00 00 04 00
+     65037 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 c3 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     65077 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 c4 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     65242 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 c4 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (191 us)
+     65282 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c5 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     65445 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 c5 00 a0 4c 99 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233613348000 (0x77d09994ca0, register 0x77d09994ca0)
+     65484 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c6 00 04 10 04 00 00 00 00 00 00 00 04 00
+     66069 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 c6 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     66108 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c7 00 84 10 08 00 00 00 00 00 00 00 04 00
+     66262 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 c7 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     66302 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 c8 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     66467 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 c8 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     66507 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c9 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     66670 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 c9 00 b0 01 ac 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233614574000 (0x77d09ac01b0, register 0x77d09ac01b0)
+     66710 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ca 00 04 10 04 00 00 00 00 00 00 00 04 00
+     67293 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ca 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     67332 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 cb 00 84 10 08 00 00 00 00 00 00 00 04 00
+     67486 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 cb 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     67528 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 cc 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     67693 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 cc 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (203 us)
+     67732 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 cd 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     67896 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 cd 00 d8 b2 be 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233615799000 (0x77d09beb2d8, register 0x77d09beb2d8)
+     67935 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ce 00 04 10 04 00 00 00 00 00 00 00 04 00
+     68561 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ce 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     68582 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 cf 00 84 10 08 00 00 00 00 00 00 00 04 00
+     68713 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 cf 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     68752 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 d0 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     68918 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 d0 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+     68958 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d1 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     69120 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 d1 00 00 64 d1 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233617024000 (0x77d09d16400, register 0x77d09d16400)
+     69160 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d2 00 04 10 04 00 00 00 00 00 00 00 04 00
+     69786 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 d2 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     69805 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d3 00 84 10 08 00 00 00 00 00 00 00 04 00
+     69936 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 d3 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     69975 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 d4 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     70142 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 d4 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+     70185 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d5 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     70346 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 d5 00 40 11 e4 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233618248000 (0x77d09e41140, register 0x77d09e41140)
+     70385 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d6 00 04 10 04 00 00 00 00 00 00 00 04 00
+     71015 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 d6 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     71036 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d7 00 84 10 08 00 00 00 00 00 00 00 04 00
+     71159 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 d7 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     71199 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 d8 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     71365 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 d8 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+     71404 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d9 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     71567 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 d9 00 98 ba f6 09 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233619471000 (0x77d09f6ba98, register 0x77d09f6ba98)
+     71607 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 da 00 04 10 04 00 00 00 00 00 00 00 04 00
+     72190 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 da 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     72229 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 db 00 84 10 08 00 00 00 00 00 00 00 04 00
+     72384 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 db 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     72424 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 dc 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     72590 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 dc 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     72630 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 dd 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     72794 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 dd 00 a8 6f 09 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233620697000 (0x77d0a096fa8, register 0x77d0a096fa8)
+     72836 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 de 00 04 10 04 00 00 00 00 00 00 00 04 00
+     73464 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 de 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     73486 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 df 00 84 10 08 00 00 00 00 00 00 00 04 00
+     73610 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 df 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     73650 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 e0 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     73816 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 e0 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     73856 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e1 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     74021 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 e1 00 b8 24 1c 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233621923000 (0x77d0a1c24b8, register 0x77d0a1c24b8)
+     74060 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e2 00 04 10 04 00 00 00 00 00 00 00 04 00
+     74642 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 e2 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     74683 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e3 00 84 10 08 00 00 00 00 00 00 00 04 00
+     74836 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 e3 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     74876 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 e4 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     75044 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 e4 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (203 us)
+     75083 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e5 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     75245 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 e5 00 c8 d9 2e 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233623149000 (0x77d0a2ed9c8, register 0x77d0a2ed9c8)
+     75284 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e6 00 04 10 04 00 00 00 00 00 00 00 04 00
+     75868 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 e6 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     75907 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e7 00 84 10 08 00 00 00 00 00 00 00 04 00
+     76062 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 e7 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     76102 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 e8 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     76268 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 e8 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+     76309 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e9 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     76470 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 e9 00 f0 8a 41 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233624374000 (0x77d0a418af0, register 0x77d0a418af0)
+     76510 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ea 00 04 10 04 00 00 00 00 00 00 00 04 00
+     77093 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ea 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     77133 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 eb 00 84 10 08 00 00 00 00 00 00 00 04 00
+     77287 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 eb 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     77328 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 ec 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     77493 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 ec 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     77533 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ed 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     77697 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 ed 00 00 40 54 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233625600000 (0x77d0a544000, register 0x77d0a544000)
+     77737 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ee 00 04 10 04 00 00 00 00 00 00 00 04 00
+     78320 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ee 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     78360 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ef 00 84 10 08 00 00 00 00 00 00 00 04 00
+     78513 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ef 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     78552 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 f0 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     78718 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 f0 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     78758 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f1 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     78920 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 f1 00 40 ed 66 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233626824000 (0x77d0a66ed40, register 0x77d0a66ed40)
+     78960 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f2 00 04 10 04 00 00 00 00 00 00 00 04 00
+     79586 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 f2 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     79607 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f3 00 84 10 08 00 00 00 00 00 00 00 04 00
+     79736 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 f3 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     79776 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 f4 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     79942 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 f4 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     79982 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f5 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     80145 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 f5 00 80 9a 79 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233628048000 (0x77d0a799a80, register 0x77d0a799a80)
+     80185 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f6 00 04 10 04 00 00 00 00 00 00 00 04 00
+     80806 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 f6 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     80825 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f7 00 84 10 08 00 00 00 00 00 00 00 04 00
+     80961 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 f7 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     81000 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 f8 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     81166 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 f8 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+     81206 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f9 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     81368 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 f9 00 d8 43 8c 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233629271000 (0x77d0a8c43d8, register 0x77d0a8c43d8)
+     81407 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 fa 00 04 10 04 00 00 00 00 00 00 00 04 00
+     82036 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 fa 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     82056 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 fb 00 84 10 08 00 00 00 00 00 00 00 04 00
+     82184 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 fb 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     82225 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 fc 00 f8 01 00 00 00 00 00 00 01 00 00 00
+     82390 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 fc 00 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (196 us)
+     82430 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 fd 00 f0 01 00 00 00 00 00 00 00 00 08 00
+     82593 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 fd 00 e8 f8 9e 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233630497000 (0x77d0a9ef8e8, register 0x77d0a9ef8e8)
+     82633 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 fe 00 04 10 04 00 00 00 00 00 00 00 04 00
+     83217 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 fe 00 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     83256 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ff 00 84 10 08 00 00 00 00 00 00 00 04 00
+     83413 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ff 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     83450 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 00 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     83617 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 00 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     83656 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     83819 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 01 01 10 aa b1 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233631722000 (0x77d0ab1aa10, register 0x77d0ab1aa10)
+     83859 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 02 01 04 10 04 00 00 00 00 00 00 00 04 00
+     84485 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 02 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     84505 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 03 01 84 10 08 00 00 00 00 00 00 00 04 00
+     84636 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     84676 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 04 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     84842 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 04 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     84882 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 05 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     85046 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 05 01 20 5f c4 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233632948000 (0x77d0ac45f20, register 0x77d0ac45f20)
+     85086 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 06 01 04 10 04 00 00 00 00 00 00 00 04 00
+     85667 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 06 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     85707 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 07 01 84 10 08 00 00 00 00 00 00 00 04 00
+     85861 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 07 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     85901 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 08 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     86100 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 08 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (235 us)
+     86139 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 09 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     86271 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 09 01 48 10 d7 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233634173000 (0x77d0ad71048, register 0x77d0ad71048)
+     86311 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0a 01 04 10 04 00 00 00 00 00 00 00 04 00
+     86935 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     86955 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0b 01 84 10 08 00 00 00 00 00 00 00 04 00
+     87087 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     87127 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     87292 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+     87332 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     87496 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 0d 01 58 c5 e9 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233635399000 (0x77d0ae9c558, register 0x77d0ae9c558)
+     87535 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0e 01 04 10 04 00 00 00 00 00 00 00 04 00
+     88120 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     88160 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0f 01 84 10 08 00 00 00 00 00 00 00 04 00
+     88313 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     88353 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 10 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     88519 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 10 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+     88559 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 11 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     88748 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 11 01 68 7a fc 0a 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233636625000 (0x77d0afc7a68, register 0x77d0afc7a68)
+     88788 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 12 01 04 10 04 00 00 00 00 00 00 00 04 00
+     89395 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 12 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     89418 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 13 01 84 10 08 00 00 00 00 00 00 00 04 00
+     89536 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 13 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     89576 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 14 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     89742 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 14 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     89782 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 15 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     89944 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 15 01 d8 1f 0f 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233637847000 (0x77d0b0f1fd8, register 0x77d0b0f1fd8)
+     89984 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 16 01 04 10 04 00 00 00 00 00 00 00 04 00
+     90615 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 16 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     90637 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 17 01 84 10 08 00 00 00 00 00 00 00 04 00
+     90760 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 17 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     90799 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 18 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     90965 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 18 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+     91005 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 19 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     91168 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 19 01 30 c9 21 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233639070000 (0x77d0b21c930, register 0x77d0b21c930)
+     91208 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1a 01 04 10 04 00 00 00 00 00 00 00 04 00
+     91792 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     91830 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1b 01 84 10 08 00 00 00 00 00 00 00 04 00
+     91984 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     92024 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     92191 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     92231 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     92393 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 1d 01 40 7e 34 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233640296000 (0x77d0b347e40, register 0x77d0b347e40)
+     92433 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1e 01 04 10 04 00 00 00 00 00 00 00 04 00
+     93065 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     93085 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1f 01 84 10 08 00 00 00 00 00 00 00 04 00
+     93210 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     93250 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 20 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     93416 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 20 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+     93456 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 21 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     93619 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 21 01 50 33 47 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233641522000 (0x77d0b473350, register 0x77d0b473350)
+     93659 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 22 01 04 10 04 00 00 00 00 00 00 00 04 00
+     94243 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 22 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     94281 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 23 01 84 10 08 00 00 00 00 00 00 00 04 00
+     94437 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 23 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     94476 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 24 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     94642 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 24 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+     94682 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 25 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     94845 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 25 01 78 e4 59 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233642747000 (0x77d0b59e478, register 0x77d0b59e478)
+     94885 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 26 01 04 10 04 00 00 00 00 00 00 00 04 00
+     95515 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 26 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     95535 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 27 01 84 10 08 00 00 00 00 00 00 00 04 00
+     95661 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 27 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     95702 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 28 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     95867 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 28 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (195 us)
+     95907 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 29 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     96071 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 29 01 a0 95 6c 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233643972000 (0x77d0b6c95a0, register 0x77d0b6c95a0)
+     96110 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2a 01 04 10 04 00 00 00 00 00 00 00 04 00
+     96697 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     96735 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2b 01 84 10 08 00 00 00 00 00 00 00 04 00
+     96888 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     96927 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 2c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     97094 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 2c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+     97133 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     97295 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 2d 01 b0 4a 7f 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233645198000 (0x77d0b7f4ab0, register 0x77d0b7f4ab0)
+     97335 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2e 01 04 10 04 00 00 00 00 00 00 00 04 00
+     97921 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     97962 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2f 01 84 10 08 00 00 00 00 00 00 00 04 00
+     98113 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     98154 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 30 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     98318 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 30 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (196 us)
+     98359 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 31 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     98521 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 31 01 f0 f7 91 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233646422000 (0x77d0b91f7f0, register 0x77d0b91f7f0)
+     98562 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 32 01 04 10 04 00 00 00 00 00 00 00 04 00
+     99143 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 32 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+     99184 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 33 01 84 10 08 00 00 00 00 00 00 00 04 00
+     99342 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 33 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+     99382 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 34 01 f8 01 00 00 00 00 00 00 01 00 00 00
+     99541 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 34 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (193 us)
+     99581 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 35 01 f0 01 00 00 00 00 00 00 00 00 08 00
+     99745 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 35 01 30 a5 a4 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233647646000 (0x77d0ba4a530, register 0x77d0ba4a530)
+     99783 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 36 01 04 10 04 00 00 00 00 00 00 00 04 00
+    100411 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 36 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    100445 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 37 01 84 10 08 00 00 00 00 00 00 00 04 00
+    100559 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 37 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    100599 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 38 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    100764 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 38 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    100804 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 39 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    100967 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 39 01 88 4e b7 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233648869000 (0x77d0bb74e88, register 0x77d0bb74e88)
+    101007 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3a 01 04 10 04 00 00 00 00 00 00 00 04 00
+    101635 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    101656 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3b 01 84 10 08 00 00 00 00 00 00 00 04 00
+    101783 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    101823 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 3c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    101990 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 3c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    102031 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    102193 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 3d 01 98 03 ca 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233650095000 (0x77d0bca0398, register 0x77d0bca0398)
+    102232 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3e 01 04 10 04 00 00 00 00 00 00 00 04 00
+    102861 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    102881 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3f 01 84 10 08 00 00 00 00 00 00 00 04 00
+    103010 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    103050 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 40 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    103215 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 40 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (195 us)
+    103255 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 41 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    103418 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 41 01 a8 b8 dc 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233651321000 (0x77d0bdcb8a8, register 0x77d0bdcb8a8)
+    103458 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 42 01 04 10 04 00 00 00 00 00 00 00 04 00
+    104070 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 42 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    104091 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 43 01 84 10 08 00 00 00 00 00 00 00 04 00
+    104235 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 43 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    104275 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 44 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    104441 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 44 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    104481 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 45 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    104645 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 45 01 d0 69 ef 0b 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233652546000 (0x77d0bef69d0, register 0x77d0bef69d0)
+    104685 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 46 01 04 10 04 00 00 00 00 00 00 00 04 00
+    105269 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 46 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    105307 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 47 01 84 10 08 00 00 00 00 00 00 00 04 00
+    105460 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 47 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    105500 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 48 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    105666 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 48 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    105706 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 49 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    105869 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 49 01 f8 1a 02 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233653771000 (0x77d0c021af8, register 0x77d0c021af8)
+    105909 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4a 01 04 10 04 00 00 00 00 00 00 00 04 00
+    106538 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    106559 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4b 01 84 10 08 00 00 00 00 00 00 00 04 00
+    106686 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    106725 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 4c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    106891 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 4c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    106931 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    107095 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 4d 01 08 d0 14 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233654997000 (0x77d0c14d008, register 0x77d0c14d008)
+    107134 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4e 01 04 10 04 00 00 00 00 00 00 00 04 00
+    107718 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    107757 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4f 01 84 10 08 00 00 00 00 00 00 00 04 00
+    107911 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    107951 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 50 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    108116 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 50 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+    108156 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 51 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    108319 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 51 01 48 7d 27 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233656221000 (0x77d0c277d48, register 0x77d0c277d48)
+    108359 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 52 01 04 10 04 00 00 00 00 00 00 00 04 00
+    108987 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 52 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    109006 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 53 01 84 10 08 00 00 00 00 00 00 00 04 00
+    109136 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 53 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    109175 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 54 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    109340 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 54 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+    109380 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 55 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    109543 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 55 01 70 2e 3a 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233657446000 (0x77d0c3a2e70, register 0x77d0c3a2e70)
+    109582 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 56 01 04 10 04 00 00 00 00 00 00 00 04 00
+    110167 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 56 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    110205 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 57 01 84 10 08 00 00 00 00 00 00 00 04 00
+    110358 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 57 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    110398 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 58 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    110563 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 58 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+    110603 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 59 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    110766 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 59 01 c8 d7 4c 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233658669000 (0x77d0c4cd7c8, register 0x77d0c4cd7c8)
+    110806 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5a 01 04 10 04 00 00 00 00 00 00 00 04 00
+    111437 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    111458 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5b 01 84 10 08 00 00 00 00 00 00 00 04 00
+    111582 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    111622 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 5c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    111789 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 5c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    111829 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    111991 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 5d 01 f0 88 5f 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233659894000 (0x77d0c5f88f0, register 0x77d0c5f88f0)
+    112032 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5e 01 04 10 04 00 00 00 00 00 00 00 04 00
+    112615 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    112655 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5f 01 84 10 08 00 00 00 00 00 00 00 04 00
+    112809 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    112849 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 60 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    113017 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 60 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    113055 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 61 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    113217 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 61 01 00 3e 72 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233661120000 (0x77d0c723e00, register 0x77d0c723e00)
+    113258 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 62 01 04 10 04 00 00 00 00 00 00 00 04 00
+    113889 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 62 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    113914 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 63 01 84 10 08 00 00 00 00 00 00 00 04 00
+    114035 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 63 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    114074 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 64 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    114240 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 64 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    114281 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 65 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    114443 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 65 01 28 ef 84 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233662345000 (0x77d0c84ef28, register 0x77d0c84ef28)
+    114482 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 66 01 04 10 04 00 00 00 00 00 00 00 04 00
+    115068 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 66 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    115106 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 67 01 84 10 08 00 00 00 00 00 00 00 04 00
+    115260 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 67 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    115300 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 68 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    115466 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 68 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+    115505 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 69 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    115668 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 69 01 50 a0 97 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233663570000 (0x77d0c97a050, register 0x77d0c97a050)
+    115707 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6a 01 04 10 04 00 00 00 00 00 00 00 04 00
+    116291 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 6a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    116330 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6b 01 84 10 08 00 00 00 00 00 00 00 04 00
+    116484 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 6b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    116524 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 6c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    116691 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 6c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    116730 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    116893 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 6d 01 60 55 aa 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233664796000 (0x77d0caa5560, register 0x77d0caa5560)
+    116935 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6e 01 04 10 04 00 00 00 00 00 00 00 04 00
+    117560 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 6e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    117581 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 6f 01 84 10 08 00 00 00 00 00 00 00 04 00
+    117710 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 6f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    117749 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 70 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    117916 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 70 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    117956 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 71 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    118119 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 71 01 88 06 bd 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233666021000 (0x77d0cbd0688, register 0x77d0cbd0688)
+    118158 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 72 01 04 10 04 00 00 00 00 00 00 00 04 00
+    118782 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 72 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    118800 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 73 01 84 10 08 00 00 00 00 00 00 00 04 00
+    118934 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 73 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    118973 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 74 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    119140 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 74 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    119180 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 75 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    119341 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 75 01 c8 b3 cf 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233667245000 (0x77d0ccfb3c8, register 0x77d0ccfb3c8)
+    119381 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 76 01 04 10 04 00 00 00 00 00 00 00 04 00
+    120007 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 76 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    120031 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 77 01 84 10 08 00 00 00 00 00 00 00 04 00
+    120157 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 77 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    120197 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 78 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    120362 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 78 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    120402 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 79 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    120566 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 79 01 20 5d e2 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233668468000 (0x77d0ce25d20, register 0x77d0ce25d20)
+    120605 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7a 01 04 10 04 00 00 00 00 00 00 00 04 00
+    121187 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 7a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    121226 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7b 01 84 10 08 00 00 00 00 00 00 00 04 00
+    121381 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 7b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    121421 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 7c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    121588 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 7c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    121628 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    121791 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 7d 01 48 0e f5 0c 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233669693000 (0x77d0cf50e48, register 0x77d0cf50e48)
+    121831 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7e 01 04 10 04 00 00 00 00 00 00 00 04 00
+    122456 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 7e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    122477 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 7f 01 84 10 08 00 00 00 00 00 00 00 04 00
+    122607 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 7f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    122647 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 80 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    122814 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 80 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    122854 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 81 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    123018 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 81 01 58 c3 07 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233670919000 (0x77d0d07c358, register 0x77d0d07c358)
+    123056 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 82 01 04 10 04 00 00 00 00 00 00 00 04 00
+    123683 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 82 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    123702 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 83 01 84 10 08 00 00 00 00 00 00 00 04 00
+    123833 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 83 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    123873 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 84 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    124039 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 84 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    124080 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 85 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    124242 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 85 01 68 78 1a 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233672145000 (0x77d0d1a7868, register 0x77d0d1a7868)
+    124282 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 86 01 04 10 04 00 00 00 00 00 00 00 04 00
+    124864 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 86 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    124904 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 87 01 84 10 08 00 00 00 00 00 00 00 04 00
+    125058 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 87 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    125098 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 88 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    125264 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 88 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    125304 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 89 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    125466 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 89 01 a8 25 2d 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233673369000 (0x77d0d2d25a8, register 0x77d0d2d25a8)
+    125507 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8a 01 04 10 04 00 00 00 00 00 00 00 04 00
+    126090 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 8a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    126129 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8b 01 84 10 08 00 00 00 00 00 00 00 04 00
+    126283 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 8b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    126323 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 8c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    126490 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 8c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    126530 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    126693 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 8d 01 b8 da 3f 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233674595000 (0x77d0d3fdab8, register 0x77d0d3fdab8)
+    126733 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8e 01 04 10 04 00 00 00 00 00 00 00 04 00
+    127316 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 8e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    127356 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 8f 01 84 10 08 00 00 00 00 00 00 00 04 00
+    127510 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 8f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    127550 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 90 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    127714 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 90 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    127754 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 91 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    127917 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 91 01 e0 8b 52 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233675820000 (0x77d0d528be0, register 0x77d0d528be0)
+    127957 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 92 01 04 10 04 00 00 00 00 00 00 00 04 00
+    128541 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 92 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    128580 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 93 01 84 10 08 00 00 00 00 00 00 00 04 00
+    128733 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 93 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    128773 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 94 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    128938 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 94 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    128979 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 95 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    129142 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 95 01 38 35 65 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233677043000 (0x77d0d653538, register 0x77d0d653538)
+    129181 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 96 01 04 10 04 00 00 00 00 00 00 00 04 00
+    129805 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 96 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    129823 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 97 01 84 10 08 00 00 00 00 00 00 00 04 00
+    129957 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 97 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    129997 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 98 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    130163 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 98 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    130202 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 99 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    130364 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 99 01 78 e2 77 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233678267000 (0x77d0d77e278, register 0x77d0d77e278)
+    130404 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9a 01 04 10 04 00 00 00 00 00 00 00 04 00
+    131031 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 9a 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    131087 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9b 01 84 10 08 00 00 00 00 00 00 00 04 00
+    131181 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 9b 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    131221 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 9c 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    131387 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 9c 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+    131427 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9d 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    131589 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 9d 01 a0 93 8a 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233679492000 (0x77d0d8a93a0, register 0x77d0d8a93a0)
+    131630 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9e 01 04 10 04 00 00 00 00 00 00 00 04 00
+    132212 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 9e 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    132251 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 9f 01 84 10 08 00 00 00 00 00 00 00 04 00
+    132406 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 9f 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    132446 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 a0 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    132612 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 a0 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    132652 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a1 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    132815 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 a1 01 c8 44 9d 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233680717000 (0x77d0d9d44c8, register 0x77d0d9d44c8)
+    132855 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a2 01 04 10 04 00 00 00 00 00 00 00 04 00
+    133482 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 a2 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    133503 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a3 01 84 10 08 00 00 00 00 00 00 00 04 00
+    133631 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 a3 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    133671 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 a4 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    133840 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 a4 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (204 us)
+    133879 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a5 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    134041 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 a5 01 d8 f9 af 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233681943000 (0x77d0daff9d8, register 0x77d0daff9d8)
+    134080 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a6 01 04 10 04 00 00 00 00 00 00 00 04 00
+    134662 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 a6 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    134702 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a7 01 84 10 08 00 00 00 00 00 00 00 04 00
+    134857 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 a7 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    134897 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 a8 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    135062 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 a8 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    135102 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 a9 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    135265 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 a9 01 18 a7 c2 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233683167000 (0x77d0dc2a718, register 0x77d0dc2a718)
+    135305 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 aa 01 04 10 04 00 00 00 00 00 00 00 04 00
+    135929 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 aa 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    135948 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ab 01 84 10 08 00 00 00 00 00 00 00 04 00
+    136082 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ab 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    136123 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 ac 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    136287 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 ac 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (203 us)
+    136328 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ad 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    136491 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 ad 01 40 58 d5 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233684392000 (0x77d0dd55840, register 0x77d0dd55840)
+    136531 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ae 01 04 10 04 00 00 00 00 00 00 00 04 00
+    137114 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ae 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    137153 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 af 01 84 10 08 00 00 00 00 00 00 00 04 00
+    137306 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 af 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    137346 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 b0 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    137513 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 b0 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    137552 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b1 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    137714 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 b1 01 68 09 e8 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233685617000 (0x77d0de80968, register 0x77d0de80968)
+    137755 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b2 01 04 10 04 00 00 00 00 00 00 00 04 00
+    138382 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 b2 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    138402 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b3 01 84 10 08 00 00 00 00 00 00 00 04 00
+    138530 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 b3 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    138571 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 b4 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    138736 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 b4 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    138776 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b5 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    138938 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 b5 01 a8 b6 fa 0d 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233686841000 (0x77d0dfab6a8, register 0x77d0dfab6a8)
+    138978 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b6 01 04 10 04 00 00 00 00 00 00 00 04 00
+    139605 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 b6 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    139627 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b7 01 84 10 08 00 00 00 00 00 00 00 04 00
+    139754 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 b7 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    139794 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 b8 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    139959 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 b8 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    139999 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 b9 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    140162 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 b9 01 00 60 0d 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233688064000 (0x77d0e0d6000, register 0x77d0e0d6000)
+    140202 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ba 01 04 10 04 00 00 00 00 00 00 00 04 00
+    140826 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ba 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    140846 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 bb 01 84 10 08 00 00 00 00 00 00 00 04 00
+    140979 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 bb 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    141020 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 bc 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    141184 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 bc 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    141225 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 bd 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    141387 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 bd 01 28 11 20 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233689289000 (0x77d0e201128, register 0x77d0e201128)
+    141427 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 be 01 04 10 04 00 00 00 00 00 00 00 04 00
+    142015 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 be 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    142050 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 bf 01 84 10 08 00 00 00 00 00 00 00 04 00
+    142203 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 bf 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    142244 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 c0 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    142409 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 c0 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    142450 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c1 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    142613 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 c1 01 38 c6 32 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233690515000 (0x77d0e32c638, register 0x77d0e32c638)
+    142653 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c2 01 04 10 04 00 00 00 00 00 00 00 04 00
+    143237 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 c2 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    143276 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c3 01 84 10 08 00 00 00 00 00 00 00 04 00
+    143430 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 c3 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    143470 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 c4 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    143637 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 c4 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    143677 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c5 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    143838 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 c5 01 48 7b 45 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233691741000 (0x77d0e457b48, register 0x77d0e457b48)
+    143878 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c6 01 04 10 04 00 00 00 00 00 00 00 04 00
+    144463 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 c6 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    144502 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c7 01 84 10 08 00 00 00 00 00 00 00 04 00
+    144656 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 c7 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    144695 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 c8 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    144861 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 c8 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    144902 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 c9 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    145065 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 c9 01 70 2c 58 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233692966000 (0x77d0e582c70, register 0x77d0e582c70)
+    145104 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ca 01 04 10 04 00 00 00 00 00 00 00 04 00
+    145730 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ca 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    145749 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 cb 01 84 10 08 00 00 00 00 00 00 00 04 00
+    145881 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 cb 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    145921 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 cc 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    146087 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 cc 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    146127 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 cd 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    146289 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 cd 01 98 dd 6a 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233694191000 (0x77d0e6add98, register 0x77d0e6add98)
+    146329 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ce 01 04 10 04 00 00 00 00 00 00 00 04 00
+    146958 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ce 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    146993 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 cf 01 84 10 08 00 00 00 00 00 00 00 04 00
+    147106 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 cf 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    147148 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 d0 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    147311 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 d0 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (196 us)
+    147351 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d1 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    147515 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 d1 01 c0 8e 7d 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233695416000 (0x77d0e7d8ec0, register 0x77d0e7d8ec0)
+    147554 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d2 01 04 10 04 00 00 00 00 00 00 00 04 00
+    148137 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 d2 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    148176 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d3 01 84 10 08 00 00 00 00 00 00 00 04 00
+    148329 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 d3 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    148370 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 d4 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    148536 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 d4 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    148576 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d5 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    148738 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 d5 01 00 3c 90 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233696640000 (0x77d0e903c00, register 0x77d0e903c00)
+    148778 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d6 01 04 10 04 00 00 00 00 00 00 00 04 00
+    149403 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 d6 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    149424 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d7 01 84 10 08 00 00 00 00 00 00 00 04 00
+    149553 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 d7 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    149594 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 d8 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    149760 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 d8 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    149799 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 d9 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    149962 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 d9 01 58 e5 a2 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233697863000 (0x77d0ea2e558, register 0x77d0ea2e558)
+    150001 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 da 01 04 10 04 00 00 00 00 00 00 00 04 00
+    150630 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 da 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    150652 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 db 01 84 10 08 00 00 00 00 00 00 00 04 00
+    150779 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 db 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    150819 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 dc 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    150986 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 dc 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    151026 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 dd 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    151188 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 dd 01 68 9a b5 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233699089000 (0x77d0eb59a68, register 0x77d0eb59a68)
+    151227 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 de 01 04 10 04 00 00 00 00 00 00 00 04 00
+    151856 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 de 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    151876 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 df 01 84 10 08 00 00 00 00 00 00 00 04 00
+    152005 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 df 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    152045 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 e0 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    152211 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 e0 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    152255 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e1 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    152416 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 e1 01 78 4f c8 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233700315000 (0x77d0ec84f78, register 0x77d0ec84f78)
+    152454 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e2 01 04 10 04 00 00 00 00 00 00 00 04 00
+    153070 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 e2 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    153092 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e3 01 84 10 08 00 00 00 00 00 00 00 04 00
+    153230 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 e3 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    153271 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 e4 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    153437 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 e4 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    153477 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e5 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    153639 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 e5 01 88 04 db 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233701541000 (0x77d0edb0488, register 0x77d0edb0488)
+    153679 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e6 01 04 10 04 00 00 00 00 00 00 00 04 00
+    154263 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 e6 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    154302 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e7 01 84 10 08 00 00 00 00 00 00 00 04 00
+    154456 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 e7 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    154497 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 e8 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    154662 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 e8 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (193 us)
+    154702 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 e9 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    154865 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 e9 01 b0 b5 ed 0e 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233702766000 (0x77d0eedb5b0, register 0x77d0eedb5b0)
+    154908 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ea 01 04 10 04 00 00 00 00 00 00 00 04 00
+    155547 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ea 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    155569 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 eb 01 84 10 08 00 00 00 00 00 00 00 04 00
+    155682 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 eb 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    155722 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 ec 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    155888 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 ec 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    155928 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ed 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    156091 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 ed 01 c0 6a 00 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233703992000 (0x77d0f006ac0, register 0x77d0f006ac0)
+    156131 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ee 01 04 10 04 00 00 00 00 00 00 00 04 00
+    156714 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ee 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    156754 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ef 01 84 10 08 00 00 00 00 00 00 00 04 00
+    156908 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ef 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    156948 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 f0 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    157113 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 f0 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    157153 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f1 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    157316 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 f1 01 e8 1b 13 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233705217000 (0x77d0f131be8, register 0x77d0f131be8)
+    157356 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f2 01 04 10 04 00 00 00 00 00 00 00 04 00
+    157939 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 f2 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    157978 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f3 01 84 10 08 00 00 00 00 00 00 00 04 00
+    158132 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 f3 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    158171 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 f4 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    158337 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 f4 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+    158377 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f5 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    158540 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 f5 01 28 c9 25 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233706441000 (0x77d0f25c928, register 0x77d0f25c928)
+    158605 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f6 01 04 10 04 00 00 00 00 00 00 00 04 00
+    159162 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 f6 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    159201 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f7 01 84 10 08 00 00 00 00 00 00 00 04 00
+    159354 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 f7 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    159394 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 f8 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    159559 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 f8 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    159599 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 f9 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    159762 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 f9 01 80 72 38 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233707664000 (0x77d0f387280, register 0x77d0f387280)
+    159802 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 fa 01 04 10 04 00 00 00 00 00 00 00 04 00
+    160386 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 fa 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    160424 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 fb 01 84 10 08 00 00 00 00 00 00 00 04 00
+    160578 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 fb 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    160619 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 fc 01 f8 01 00 00 00 00 00 00 01 00 00 00
+    160785 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 fc 01 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    160825 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 fd 01 f0 01 00 00 00 00 00 00 00 00 08 00
+    160987 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 fd 01 a8 23 4b 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233708889000 (0x77d0f4b23a8, register 0x77d0f4b23a8)
+    161028 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 fe 01 04 10 04 00 00 00 00 00 00 00 04 00
+    161613 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 fe 01 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    161652 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 ff 01 84 10 08 00 00 00 00 00 00 00 04 00
+    161805 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 ff 01 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    161846 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 00 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    162014 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 00 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    162054 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    162214 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 01 02 d0 d4 5d 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233710114000 (0x77d0f5dd4d0, register 0x77d0f5dd4d0)
+    162255 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 02 02 04 10 04 00 00 00 00 00 00 00 04 00
+    162874 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 02 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    162904 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 03 02 84 10 08 00 00 00 00 00 00 00 04 00
+    163030 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    163069 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 04 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    163235 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 04 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    163275 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 05 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    163438 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 05 02 e0 89 70 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233711340000 (0x77d0f7089e0, register 0x77d0f7089e0)
+    163477 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 06 02 04 10 04 00 00 00 00 00 00 00 04 00
+    164070 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 06 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    164109 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 07 02 84 10 08 00 00 00 00 00 00 00 04 00
+    164254 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 07 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    164295 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 08 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    164460 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 08 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    164500 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 09 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    164663 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 09 02 20 37 83 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233712564000 (0x77d0f833720, register 0x77d0f833720)
+    164703 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0a 02 04 10 04 00 00 00 00 00 00 00 04 00
+    165285 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0a 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    165325 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0b 02 84 10 08 00 00 00 00 00 00 00 04 00
+    165508 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0b 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    165548 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0c 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    165686 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0c 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (171 us)
+    165726 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0d 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    165888 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 0d 02 48 e8 95 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233713789000 (0x77d0f95e848, register 0x77d0f95e848)
+    165928 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0e 02 04 10 04 00 00 00 00 00 00 00 04 00
+    166555 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0e 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    166575 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0f 02 84 10 08 00 00 00 00 00 00 00 04 00
+    166704 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0f 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    166744 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 10 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    166910 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 10 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    166949 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 11 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    167113 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 11 02 70 99 a8 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233715014000 (0x77d0fa89970, register 0x77d0fa89970)
+    167152 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 12 02 04 10 04 00 00 00 00 00 00 00 04 00
+    167779 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 12 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    167798 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 13 02 84 10 08 00 00 00 00 00 00 00 04 00
+    167928 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 13 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    167968 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 14 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    168134 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 14 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    168174 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 15 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    168336 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 15 02 c8 42 bb 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233716237000 (0x77d0fbb42c8, register 0x77d0fbb42c8)
+    168376 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 16 02 04 10 04 00 00 00 00 00 00 00 04 00
+    169000 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 16 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    169023 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 17 02 84 10 08 00 00 00 00 00 00 00 04 00
+    169150 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 17 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    169191 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 18 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    169355 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 18 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+    169396 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 19 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    169559 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 19 02 20 ec cd 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233717460000 (0x77d0fcdec20, register 0x77d0fcdec20)
+    169599 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1a 02 04 10 04 00 00 00 00 00 00 00 04 00
+    170181 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1a 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    170221 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1b 02 84 10 08 00 00 00 00 00 00 00 04 00
+    170375 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1b 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    170416 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1c 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    170582 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1c 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    170622 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1d 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    170785 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 1d 02 30 a1 e0 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233718686000 (0x77d0fe0a130, register 0x77d0fe0a130)
+    170824 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1e 02 04 10 04 00 00 00 00 00 00 00 04 00
+    171450 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1e 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    171471 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1f 02 84 10 08 00 00 00 00 00 00 00 04 00
+    171601 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1f 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    171641 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 20 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    171808 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 20 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    171848 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 21 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    172013 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 21 02 40 56 f3 0f 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233719912000 (0x77d0ff35640, register 0x77d0ff35640)
+    172051 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 22 02 04 10 04 00 00 00 00 00 00 00 04 00
+    172674 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 22 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    172700 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 23 02 84 10 08 00 00 00 00 00 00 00 04 00
+    172827 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 23 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    172867 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 24 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    173035 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 24 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (203 us)
+    173074 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 25 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    173236 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 25 02 50 0b 06 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233721138000 (0x77d10060b50, register 0x77d10060b50)
+    173276 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 26 02 04 10 04 00 00 00 00 00 00 00 04 00
+    173861 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 26 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    173900 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 27 02 84 10 08 00 00 00 00 00 00 00 04 00
+    174053 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 27 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    174093 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 28 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    174259 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 28 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    174300 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 29 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    174462 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 29 02 78 bc 18 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233722363000 (0x77d1018bc78, register 0x77d1018bc78)
+    174502 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2a 02 04 10 04 00 00 00 00 00 00 00 04 00
+    175084 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2a 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    175125 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2b 02 84 10 08 00 00 00 00 00 00 00 04 00
+    175278 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2b 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    175319 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 2c 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    175485 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 2c 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    175525 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2d 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    175687 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 2d 02 a0 6d 2b 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233723588000 (0x77d102b6da0, register 0x77d102b6da0)
+    175727 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2e 02 04 10 04 00 00 00 00 00 00 00 04 00
+    176312 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2e 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    176350 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 2f 02 84 10 08 00 00 00 00 00 00 00 04 00
+    176503 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 2f 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    176543 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 30 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    176709 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 30 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    176749 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 31 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    176912 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 31 02 c8 1e 3e 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233724813000 (0x77d103e1ec8, register 0x77d103e1ec8)
+    176951 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 32 02 04 10 04 00 00 00 00 00 00 00 04 00
+    177579 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 32 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    177600 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 33 02 84 10 08 00 00 00 00 00 00 00 04 00
+    177726 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 33 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    177766 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 34 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    177932 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 34 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    177971 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 35 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    178135 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 35 02 38 c4 50 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233726035000 (0x77d1050c438, register 0x77d1050c438)
+    178175 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 36 02 04 10 04 00 00 00 00 00 00 00 04 00
+    178758 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 36 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    178797 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 37 02 84 10 08 00 00 00 00 00 00 00 04 00
+    178949 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 37 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    178989 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 38 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    179156 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 38 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (199 us)
+    179195 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 39 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    179358 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 39 02 78 71 63 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233727259000 (0x77d10637178, register 0x77d10637178)
+    179397 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3a 02 04 10 04 00 00 00 00 00 00 00 04 00
+    180027 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3a 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    180048 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3b 02 84 10 08 00 00 00 00 00 00 00 04 00
+    180174 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3b 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    180214 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 3c 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    180381 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 3c 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    180421 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3d 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    180584 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 3d 02 88 26 76 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233728485000 (0x77d10762688, register 0x77d10762688)
+    180623 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3e 02 04 10 04 00 00 00 00 00 00 00 04 00
+    181207 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3e 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    181246 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 3f 02 84 10 08 00 00 00 00 00 00 00 04 00
+    181401 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 3f 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    181441 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 40 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    181609 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 40 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    181647 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 41 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    181810 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 41 02 98 db 88 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233729711000 (0x77d1088db98, register 0x77d1088db98)
+    181850 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 42 02 04 10 04 00 00 00 00 00 00 00 04 00
+    182477 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 42 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    182498 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 43 02 84 10 08 00 00 00 00 00 00 00 04 00
+    182626 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 43 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    182667 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 44 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    182832 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 44 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (201 us)
+    182872 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 45 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    183036 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 45 02 a8 90 9b 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233730937000 (0x77d109b90a8, register 0x77d109b90a8)
+    183076 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 46 02 04 10 04 00 00 00 00 00 00 00 04 00
+    183659 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 46 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    183699 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 47 02 84 10 08 00 00 00 00 00 00 00 04 00
+    183853 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 47 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    183892 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 48 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    184060 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 48 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    184100 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 49 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    184262 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 49 02 d0 41 ae 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233732162000 (0x77d10ae41d0, register 0x77d10ae41d0)
+    184301 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4a 02 04 10 04 00 00 00 00 00 00 00 04 00
+    184927 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4a 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    184945 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4b 02 84 10 08 00 00 00 00 00 00 00 04 00
+    185078 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4b 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    185118 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 4c 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    185283 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 4c 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (197 us)
+    185323 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4d 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    185486 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 4d 02 f8 f2 c0 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233733387000 (0x77d10c0f2f8, register 0x77d10c0f2f8)
+    185526 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4e 02 04 10 04 00 00 00 00 00 00 00 04 00
+    186109 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4e 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    186149 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 4f 02 84 10 08 00 00 00 00 00 00 00 04 00
+    186302 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 4f 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    186343 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 50 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    186508 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 50 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (202 us)
+    186548 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 51 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    186712 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 51 02 20 a4 d3 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233734612000 (0x77d10d3a420, register 0x77d10d3a420)
+    186751 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 52 02 04 10 04 00 00 00 00 00 00 00 04 00
+    187376 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 52 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    187396 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 53 02 84 10 08 00 00 00 00 00 00 00 04 00
+    187525 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 53 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    187565 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 54 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    187731 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 54 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    187771 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 55 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    187934 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 55 02 90 49 e6 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233735834000 (0x77d10e64990, register 0x77d10e64990)
+    187974 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 56 02 04 10 04 00 00 00 00 00 00 00 04 00
+    188603 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 56 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    188624 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 57 02 84 10 08 00 00 00 00 00 00 00 04 00
+    188751 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 57 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    188792 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 58 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    188955 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 58 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (200 us)
+    188995 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 59 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    189158 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 59 02 b8 fa f8 10 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233737059000 (0x77d10f8fab8, register 0x77d10f8fab8)
+    189199 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5a 02 04 10 04 00 00 00 00 00 00 00 04 00
+    189824 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5a 02 6f 01 00 00
+# get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+    189843 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5b 02 84 10 08 00 00 00 00 00 00 00 04 00
+    189975 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 5b 02 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+    190018 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 5c 02 f8 01 00 00 00 00 00 00 01 00 00 00
+    190181 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 5c 02 00 00 04 00
+# set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (198 us)
+    190222 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5d 02 f0 01 00 00 00 00 00 00 00 00 08 00
+    190384 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 5d 02 c8 af 0b 11 7d 07 00 00
+# get TimestampLatchValue @0x1f0 = 8233738285000 (0x77d110bafc8, register 0x77d110bafc8)
+    190424 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 5e 02 00 00 02 00 00 00 00 00 00 00 30 00
+    190655 CTRL IN  ep=0x82 rc=OK len=60 : 55 33 56 43 00 00 01 08 30 00 5e 02 00 00 00 03 00 00 00 00 c0 69 75 01 00 00 00 00 34 00 00 00 24 00 00 00 00 04 00 00 00 00 10 00 17 00 00 00 c0 69 05 00 00 00 00 00 00 04 00 00
+# si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+    190695 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 5f 02 18 00 02 00 00 00 00 00 00 04 00 00
+    190850 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 5f 02 00 00 04 00
+    190890 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 60 02 1c 00 02 00 00 00 00 00 00 00 10 00
+    191043 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 60 02 00 00 04 00
+    191083 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 61 02 20 00 02 00 00 00 00 00 17 00 00 00
+    191238 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 61 02 00 00 04 00
+    191278 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 62 02 24 00 02 00 00 00 00 00 c0 69 05 00
+    191431 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 62 02 00 00 04 00
+    191471 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 63 02 28 00 02 00 00 00 00 00 00 00 00 00
+    191626 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 63 02 00 00 04 00
+    191666 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 64 02 2c 00 02 00 00 00 00 00 00 04 00 00
+    191818 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 64 02 00 00 04 00
+    191857 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 65 02 04 00 02 00 00 00 00 00 01 00 00 00
+    206534 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 65 02 00 00 04 00
+# si-enable: OK status 0x0000 SUCCESS (14721 us)
+    206656 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 66 02 04 00 0c 00 00 00 00 00 01 00 00 00
+    207091 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 06 80 03 08 04 00 66 02 00 00 00 00
+#   ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=614
+# set AcquisitionStart @0xc0004 <- 1 : FAILED status 0x8006 ACCESS_DENIED (542 us)
+# grab: 1 frames, timeout 1000 ms, start t=207123 us
+   1207483 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 1000358 us (0 bytes)
+# grab: 0 complete frames (none)
+   1207830 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 67 02 24 00 0c 00 00 00 00 00 01 00 00 00
+   1208006 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 67 02 00 00 04 00
+# set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (417 us)
+   1208288 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 68 02 04 00 02 00 00 00 00 00 00 00 00 00
+   1208507 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 68 02 00 00 04 00
+# si-disable: OK status 0x0000 SUCCESS (431 us)

@@ -1,3 +1,7 @@
 seed-history
 coverage/
 build-fprime-automatic-*/
+
+# Vendor device description: processed locally, never committed (human ruling 2026-11-24)
+Blackfly/**/*camxml*.xml
+Blackfly/**/genicam-file-*.zip

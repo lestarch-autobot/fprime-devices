@@ -1,0 +1,76 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 09: endpoint halt / clear on stream, control and event endpoints
+ep-status 0x81: 00 00 (bit0 = halted)
+ep-status 0x81: OK
+ep-status 0x82: 00 00 (bit0 = halted)
+ep-status 0x82: OK
+ep-status 0x02: 00 00 (bit0 = halted)
+ep-status 0x02: OK
+ep-status 0x83: 00 00 (bit0 = halted)
+ep-status 0x83: OK
+NOTE halt the stream endpoint while idle
+set-halt 0x81: OK
+ep-status 0x81: 01 00 (bit0 = halted)
+ep-status 0x81: OK
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+clear-halt 0x81: OK
+ep-status 0x81: 00 00 (bit0 = halted)
+ep-status 0x81: OK
+NOTE halt the stream endpoint during acquisition between frames, read, clear, read
+set ExposureTime @0xc1004 <- 200000 : OK status 0x0000 SUCCESS (966 us)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (15984 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (162360 us)
+grab: 1 frames, timeout 2000 ms, start t=395669 us
+frame 0: block 0 type 0x0001 ts 7010838281800 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 596729 us trailer 734458 us | bytes min 0 max 255 mean 1.181 var 6.126
+grab: 1 complete frames
+grab: first leader 201060 us after grab start
+set-halt 0x81: OK
+ep-status 0x81: 01 00 (bit0 = halted)
+ep-status 0x81: OK
+grab: 1 frames, timeout 1000 ms, start t=738490 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 1000550 us (0 bytes)
+grab: 0 complete frames (none)
+get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+clear-halt 0x81: OK
+ep-status 0x81: 00 00 (bit0 = halted)
+ep-status 0x81: OK
+grab: 3 frames, timeout 2000 ms, start t=1742647 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 2000573 us (0 bytes)
+grab: 0 complete frames (none)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (326 us)
+si-disable: OK status 0x0000 SUCCESS (630 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (426 us)
+NOTE halt control IN endpoint, send a command
+set-halt 0x82: OK
+ep-status 0x82: 01 00 (bit0 = halted)
+ep-status 0x82: OK
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+clear-halt 0x82: OK
+ep-status 0x82: 00 00 (bit0 = halted)
+ep-status 0x82: OK
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+NOTE halt control OUT endpoint, send a command
+set-halt 0x02: OK
+ep-status 0x02: 01 00 (bit0 = halted)
+ep-status 0x02: OK
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+clear-halt 0x02: OK
+ep-status 0x02: 00 00 (bit0 = halted)
+ep-status 0x02: OK
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+NOTE clear-halt on a healthy stream endpoint while a frame is queued mid-acquisition (host resync habit)
+si-enable: OK status 0x0000 SUCCESS (15957 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163329 us)
+clear-halt 0x81: OK
+grab: 3 frames, timeout 2000 ms, start t=4537833 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 2000595 us (0 bytes)
+grab: 0 complete frames (none)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (466 us)
+si-disable: OK status 0x0000 SUCCESS (661 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes

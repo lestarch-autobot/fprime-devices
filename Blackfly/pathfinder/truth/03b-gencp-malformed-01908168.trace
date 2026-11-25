@@ -1,0 +1,68 @@
+# u3vprobe serial=01908168 libusb 1.0.27.11882
+      7935 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 00 00 d0 01 00 00 00 00 00 00 00 00 08 00
+      7970 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 00 00 00 00 04 00 00 00 00 00
+      8006 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 00 d8 01 00 00 00 00 00 00 00 00 08 00
+      8267 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 01 00 00 00 01 00 00 00 00 00
+      9092 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 02 00 14 00 01 00 00 00 00 00 00 00 04 00
+      9200 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 02 00 00 04 00 00
+     10029 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 03 00 18 00 01 00 00 00 00 00 00 00 04 00
+     10129 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 00 00 04 00 00
+     10965 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 04 00 20 00 01 00 00 00 00 00 00 00 08 00
+     10995 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 04 00 00 00 02 00 00 00 00 00
+     11062 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 05 00 2c 00 01 00 00 00 00 00 00 00 08 00
+     11216 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 05 00 00 80 02 00 00 00 00 00
+# NOTE reference: well-formed READMEM of Width
+     12078 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 00 84 10 08 00 00 00 00 00 00 00 04 00
+     12205 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 01 00 c8 14 00 00
+# raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 1 (980 us)
+# NOTE unknown command id 0x0900
+     13063 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 09 0c 00 02 00 84 10 08 00 00 00 00 00 00 00 04 00
+   1013679 CTRL IN  ep=0x82 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+#   ack: libusb LIBUSB_ERROR_TIMEOUT after 1000627 us
+# raw: no usable ack (-7) after 1001523 us
+# NOTE READMEM with scd length 8 and 8 scd bytes (count field missing)
+   1014018 CTRL OUT ep=0x02 rc=OK len=20 : 55 33 56 43 00 40 00 08 08 00 03 00 84 10 08 00 00 00 00 00
+   1014310 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 00 c8 14 00 00
+# raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 3 (568 us)
+# NOTE READMEM scd length 12 but 16 scd bytes sent
+   1016498 CTRL OUT ep=0x02 rc=OK len=28 : 55 33 56 43 00 40 00 08 0c 00 04 00 84 10 08 00 00 00 00 00 00 00 04 00 00 00 00 00
+   1016768 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 04 00 c8 14 00 00
+# raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 4 (2414 us)
+# NOTE READMEM scd length 16 but 12 scd bytes sent
+   1018979 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 10 00 05 00 84 10 08 00 00 00 00 00 00 00 04 00
+   1019193 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 05 00 c8 14 00 00
+# raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 5 (2360 us)
+# NOTE READMEM without request-ack flag (flags 0)
+   1021390 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 00 00 08 0c 00 06 00 84 10 08 00 00 00 00 00 00 00 04 00
+   2022109 CTRL IN  ep=0x82 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+#   ack: libusb LIBUSB_ERROR_TIMEOUT after 1000710 us
+# raw: no usable ack (-7) after 1002913 us
+# NOTE READMEM reserved field 0xffff
+   2022495 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 07 00 84 10 08 00 00 00 00 00 ff ff 04 00
+   2022761 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 07 00 c8 14 00 00
+# raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 7 (583 us)
+# NOTE WRITEMEM with address only, no data
+   2024957 CTRL OUT ep=0x02 rc=OK len=20 : 55 33 56 43 00 40 02 08 08 00 08 00 84 10 08 00 00 00 00 00
+   2025266 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 08 00 00 00 00 00
+# raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0803 len 4 id 8 (2471 us)
+# NOTE command id 0x0804 (PENDING_ACK id used as command)
+   2027499 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 04 08 0c 00 09 00 84 10 08 00 00 00 00 00 00 00 04 00
+   3028192 CTRL IN  ep=0x82 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+#   ack: libusb LIBUSB_ERROR_TIMEOUT after 1000777 us
+# raw: no usable ack (-7) after 1002973 us
+# NOTE prefix only, 8 bytes
+   3028594 CTRL OUT ep=0x02 rc=OK len=8 : 55 33 56 43 00 40 00 08
+   3028868 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 08 00 c8 14 00 00
+# raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 8 (545 us)
+# NOTE bad magic (last: leaves the channel waiting)
+   3031112 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 44 00 40 00 08 0c 00 0a 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4031780 CTRL IN  ep=0x82 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+#   ack: libusb LIBUSB_ERROR_TIMEOUT after 1000656 us
+# raw: no usable ack (-7) after 1002930 us
+# NOTE recovery check
+   4032143 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 06 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4032408 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 06 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+   4033561 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 07 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4033844 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 07 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)

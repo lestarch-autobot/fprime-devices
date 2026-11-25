@@ -1,0 +1,8 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE host ack timeout 50 ms, TestPendingAck 300: does the pending ack extend the wait
+  ack: libusb LIBUSB_ERROR_TIMEOUT after 50448 us
+set TestPendingAck @0xf0000404 <- 300 : FAILED status 0xffff ? (52577 us)
+  ack: status=0x8007 BUSY cmd=0x0801 len=0 id=7
+get Width @0x81084: FAILED status 0x8007 BUSY
+  ack: status=0x8007 BUSY cmd=0x0803 len=4 id=8
+set TestPendingAck @0xf0000404 <- 0 : FAILED status 0x8007 BUSY (2195 us)

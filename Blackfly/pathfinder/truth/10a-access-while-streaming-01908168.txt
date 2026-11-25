@@ -1,0 +1,191 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 10: start/stop ordering and access while streaming. exposure 100 ms
+set ExposureTime @0xc1004 <- 100000 : OK status 0x0000 SUCCESS (906 us)
+NOTE A: sanity after test 09: normal order si-setup, si-enable, AcquisitionStart
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (15327 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163079 us)
+grab: 2 frames, timeout 2000 ms, start t=193069 us
+frame 0: block 0 type 0x0001 ts 7039303285312 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 294354 us trailer 386572 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7039404485040 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 395560 us trailer 486462 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 101285 us after grab start, 9.881 fps, 241.8 MB/s over 0.101 s
+NOTE B: registers while streaming
+no register named Width.locked in the map
+get Width.locked.LCK @0x81080 = 1 (0x1, register 0xd8000001)
+no register named PixelFormat.locked in the map
+no register named AcquisitionStart.locked in the map
+get ExposureTime.locked @0xc1000 = 0 (0x0, register 0xc8000001)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=18
+set Width @0x81084 <- 5000 : FAILED status 0x8006 ACCESS_DENIED (1907 us)
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=20
+set Height @0x81064 <- 4000 : FAILED status 0x8006 ACCESS_DENIED (1903 us)
+  ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=21
+set OffsetX @0x81044 <- 4 : FAILED status 0x8002 INVALID_PARAMETER (1313 us)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=22
+set PixelFormat @0x86008 <- 17301505 : FAILED status 0x8006 ACCESS_DENIED (627 us)
+set ChunkModeActive @0x150004 <- 1 : OK status 0x0000 SUCCESS (20285 us)
+set AcquisitionMode @0xc00c8 <- 1 : OK status 0x0000 SUCCESS (500 us)
+set DeviceLinkThroughputLimit @0x20000344 <- 400000000 : OK status 0x0000 SUCCESS (20165 us)
+set AcquisitionFrameRateEnable @0xc1124 <- 1 : OK status 0x0000 SUCCESS (18729 us)
+set AcquisitionFrameRateEnable @0xc1124 <- 0 : OK status 0x0000 SUCCESS (17592 us)
+set TriggerMode @0xc8424 <- 1 : OK status 0x0000 SUCCESS (1704 us)
+set TriggerMode @0xc8424 <- 0 : OK status 0x0000 SUCCESS (1613 us)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=30
+set TestPattern @0xf0004208 <- 0 : FAILED status 0x8006 ACCESS_DENIED (833 us)
+set BlackLevelClampingEnable @0x107f84 <- 1 : OK status 0x0000 SUCCESS (405 us)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=32
+set IspEnable @0x86404 <- 0 : FAILED status 0x8006 ACCESS_DENIED (787 us)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=33
+set AdcBitDepth @0x860a8 <- 0 : FAILED status 0x8006 ACCESS_DENIED (738 us)
+set ExposureTime @0xc1004 <- 50000 : OK status 0x0000 SUCCESS (922 us)
+get ExposureTime @0xc1004 = 50003 (0xc353, register 0xc353)
+set Gain @0x104804 <- 1000 : OK status 0x0000 SUCCESS (649 us)
+get Gain @0x104804 = 1088 (0x440, register 0x440)
+set Gain @0x104804 <- 0 : OK status 0x0000 SUCCESS (1501 us)
+set BlackLevel @0x106804 <- 100 : OK status 0x0000 SUCCESS (2112 us)
+set BlackLevel @0x106804 <- 0 : OK status 0x0000 SUCCESS (890 us)
+set Gamma @0x101004 <- 6554 : OK status 0x0000 SUCCESS (463 us)
+set ExposureAuto @0xc2008 <- 2 : OK status 0x0000 SUCCESS (19477 us)
+set ExposureAuto @0xc2008 <- 0 : OK status 0x0000 SUCCESS (20383 us)
+set ExposureTime @0xc1004 <- 100000 : OK status 0x0000 SUCCESS (814 us)
+get PayloadSize @0x20002008 = 24472020 (0x17569d4, register 0x17569d4)
+get DeviceTemperature @0x41004 = 544 (0x220, register 0x220)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (460 us)
+get TimestampLatchValue @0x1f0 = 7039643176000 (0x6670b6e4c40, register 0x6670b6e4c40)
+NOTE SIRM writes while enabled
+w32 0x2001c <- 0x100000: OK status 0x0000 SUCCESS (907 us)
+  ack: status=0x8004 WRITE_PROTECT cmd=0x0803 len=4 id=50
+w32 0x20014 <- 0x400: FAILED status 0x8004 WRITE_PROTECT (1024 us)
+r32 0x20004 = 0x1 (1)
+grab: 2 frames, timeout 2000 ms, start t=635333 us
+frame 0: block 2 type 0x0001 ts 7039505683336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 635417 us trailer 726158 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 3 type 0x0001 ts 7039606882552 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 size_y 4600 | host leader 726281 us trailer 819212 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 84 us after grab start, 11.005 fps, 269.3 MB/s over 0.091 s
+NOTE C: AcquisitionStart while already acquiring
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (990 us)
+grab: 2 frames, timeout 2000 ms, start t=820384 us
+frame 0: block 4 type 0x4001 ts 7039708081848 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 4 status 0xa101 valid 24472000 size_y 4600 | host leader 820446 us trailer 967320 us | bytes min 0 max 255 mean 1.117 var 3.987
+frame 1: block 5 type 0x4001 ts 7039771604528 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 5 status 0xa101 valid 24472000 size_y 4600 | host leader 967380 us trailer 1093053 us | bytes min 0 max 255 mean 0.727 var 2.525
+grab: 2 complete frames, first leader 62 us after grab start, 6.806 fps, 166.6 MB/s over 0.147 s
+NOTE D: AcquisitionStop twice, then stop again
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1173 us)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (415 us)
+grab: 2 frames, timeout 500 ms, start t=1094715 us
+frame 0: block 6 type 0x4001 ts 7039872803312 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 6 status 0xa101 valid 24472000 size_y 4600 | host leader 1094741 us trailer 1174887 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: leader read failed: LIBUSB_ERROR_TIMEOUT after 580773 us (0 bytes)
+grab: 1 complete frames
+grab: first leader 26 us after grab start
+NOTE E: restart without touching SIRM (stream enable still set)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163352 us)
+grab: 2 frames, timeout 2000 ms, start t=1839074 us
+frame 0: block 10 type 0x4001 ts 7040949162392 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 10 status 0xa101 valid 24472000 size_y 4600 | host leader 1940401 us trailer 2086770 us | bytes min 0 max 255 mean 1.108 var 3.953
+frame 1: leader read failed: LIBUSB_ERROR_TIMEOUT after 2248217 us (0 bytes)
+grab: 1 complete frames
+grab: first leader 101327 us after grab start
+NOTE F: si-disable while acquiring, then read
+si-disable: OK status 0x0000 SUCCESS (451 us)
+r32 0x20004 = 0x0 (0)
+grab: 1 frames, timeout 500 ms, start t=4088354 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 500522 us (0 bytes)
+grab: 0 complete frames (none)
+get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+get TransferQueueOverflowCount @0x120148 = 601 (0x259, register 0x259)
+NOTE G: si-enable again while still acquiring
+si-enable: OK status 0x0000 SUCCESS (16036 us)
+grab: 2 frames, timeout 2000 ms, start t=4605950 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 2000549 us (0 bytes)
+grab: 0 complete frames (none)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (513 us)
+si-disable: OK status 0x0000 SUCCESS (854 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE H: AcquisitionStart with stream disabled, wait, then enable
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163321 us)
+get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+grab: 1 frames, timeout 300 ms, start t=7573085 us
+frame 0: block 0 type 0x4001 ts 7046182354336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0xa101 valid 24472000 size_y 4600 | host leader 7573161 us trailer 7659494 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 1 complete frames
+grab: first leader 76 us after grab start
+si-enable: OK status 0x0000 SUCCESS (16732 us)
+grab: 2 frames, timeout 2000 ms, start t=7676490 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 2000524 us (0 bytes)
+grab: 0 complete frames (none)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (423 us)
+si-disable: OK status 0x0000 SUCCESS (843 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE I: si-enable twice, AcquisitionStop when idle, si-disable when idle
+si-enable: OK status 0x0000 SUCCESS (15980 us)
+si-enable: OK status 0x0000 SUCCESS (16004 us)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (498 us)
+si-disable: OK status 0x0000 SUCCESS (845 us)
+si-disable: OK status 0x0000 SUCCESS (460 us)
+NOTE J: clear-halt recovery: start, clear-halt, then stop/start only
+si-enable: OK status 0x0000 SUCCESS (16045 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163331 us)
+grab: 1 frames, timeout 2000 ms, start t=10192727 us
+frame 0: block 0 type 0x4001 ts 7049302678656 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0xa101 valid 24472000 size_y 4600 | host leader 10293079 us trailer 10384013 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 1 complete frames
+grab: first leader 100352 us after grab start
+clear-halt 0x81: OK
+grab: 1 frames, timeout 500 ms, start t=10386041 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 500523 us (0 bytes)
+grab: 0 complete frames (none)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (360 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163280 us)
+grab: 1 frames, timeout 1000 ms, start t=11050481 us
+frame 0: block 1 type 0x4001 ts 7050160484496 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0xa101 valid 24472000 size_y 4600 | host leader 11150807 us trailer 11241457 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 1 complete frames
+grab: first leader 100326 us after grab start
+NOTE J2: now toggle stream enable too
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1458 us)
+si-disable: OK status 0x0000 SUCCESS (1166 us)
+si-enable: OK status 0x0000 SUCCESS (16639 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164044 us)
+grab: 2 frames, timeout 2000 ms, start t=11425131 us
+frame 0: block 0 type 0x4001 ts 7050535104336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0xa101 valid 24472000 size_y 4600 | host leader 11526438 us trailer 11680228 us | bytes min 0 max 255 mean 1.088 var 3.892
+frame 1: leader read failed: LIBUSB_ERROR_TIMEOUT after 2255667 us (0 bytes)
+grab: 1 complete frames
+grab: first leader 101307 us after grab start
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (412 us)
+si-disable: OK status 0x0000 SUCCESS (446 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE K: SingleFrame and MultiFrame(3)
+set AcquisitionMode @0xc00c8 <- 1 : OK status 0x0000 SUCCESS (273 us)
+si-enable: OK status 0x0000 SUCCESS (15955 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163230 us)
+grab: 2 frames, timeout 1000 ms, start t=14162231 us
+frame 0: block 0 type 0x4001 ts 7053272193280 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0xa101 valid 24472000 size_y 4600 | host leader 14262638 us trailer 14396333 us | bytes min 0 max 255 mean 1.072 var 3.853
+frame 1: leader read failed: LIBUSB_ERROR_TIMEOUT after 1234609 us (0 bytes)
+grab: 1 complete frames
+grab: first leader 100407 us after grab start
+no register named AcquisitionStart.locked in the map
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (162064 us)
+grab: 1 frames, timeout 1000 ms, start t=15559099 us
+frame 0: block 1 type 0x4001 ts 7054670214496 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0xa101 valid 24472000 size_y 4600 | host leader 15661651 us trailer 15828606 us | bytes min 0 max 255 mean 1.075 var 3.858
+grab: 1 complete frames
+grab: first leader 102552 us after grab start
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (2104 us)
+set AcquisitionMode @0xc00c8 <- 2 : OK status 0x0000 SUCCESS (937 us)
+set AcquisitionFrameCount @0xc00a4 <- 3 : OK status 0x0000 SUCCESS (945 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164590 us)
+grab: 4 frames, timeout 1000 ms, start t=15997375 us
+frame 0: block 2 type 0x4001 ts 7055107349824 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0xa101 valid 24472000 size_y 4600 | host leader 16098668 us trailer 16256466 us | bytes min 0 max 255 mean 1.045 var 3.809
+frame 1: block 3 type 0x4001 ts 7055208548312 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0xa101 valid 24472000 size_y 4600 | host leader 16256518 us trailer 16381130 us | bytes min 0 max 255 mean 1.064 var 3.860
+frame 2: block 4 type 0x4001 ts 7055309747208 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 4 status 0xa101 valid 24472000 size_y 4600 | host leader 16381301 us trailer 16501899 us | bytes min 0 max 255 mean 1.113 var 3.954
+frame 3: leader read failed: LIBUSB_ERROR_TIMEOUT after 1505028 us (0 bytes)
+grab: 3 complete frames, first leader 101293 us after grab start, 7.076 fps, 173.2 MB/s over 0.283 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (461 us)
+si-disable: OK status 0x0000 SUCCESS (816 us)
+set AcquisitionMode @0xc00c8 <- 0 : OK status 0x0000 SUCCESS (364 us)
+set AcquisitionFrameCount @0xc00a4 <- 2 : OK status 0x0000 SUCCESS (316 us)
+set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (1082 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes

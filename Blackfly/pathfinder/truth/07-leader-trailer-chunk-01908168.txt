@@ -1,0 +1,103 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 07: leader/trailer fields, timestamp latch, chunk mode. BayerRG8 5320x4600, exposure 1000 us, limit 500e6
+get TimestampIncrement @0x1fc = 1000 (0x3e8, register 0x3e8)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (737 us)
+get TimestampLatchValue @0x1f0 = 6961607852000 (0x654e029bfe0, register 0x654e029bfe0)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (343 us)
+get TimestampLatchValue @0x1f0 = 6962609492000 (0x6551bdd9020, register 0x6551bdd9020)
+get TimestampLatchValue @0x1f0 = 6962609492000 (0x6551bdd9020, register 0x6551bdd9020)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (15901 us)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (362 us)
+get TimestampLatchValue @0x1f0 = 6962628726000 (0x6551d030cf0, register 0x6551d030cf0)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163320 us)
+grab: 3 frames, timeout 3000 ms, start t=1195251 us
+frame 0: block 0 type 0x0001 ts 6962792263936 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 1196771 us trailer 1342927 us | bytes min 0 max 255 mean 0.422 var 1.451
+frame 1: block 1 type 0x0001 ts 6962855787880 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 1342975 us trailer 1486867 us | bytes min 0 max 255 mean 0.424 var 1.459
+frame 2: block 2 type 0x0001 ts 6962919310984 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 1487701 us trailer 1631778 us | bytes min 0 max 255 mean 0.427 var 1.471
+grab: 3 complete frames, first leader 1520 us after grab start, 6.875 fps, 168.2 MB/s over 0.291 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1038 us)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (264 us)
+get TimestampLatchValue @0x1f0 = 6963230776000 (0x65540e59ac0, register 0x65540e59ac0)
+si-disable: OK status 0x0000 SUCCESS (1197 us)
+NOTE restart: block id restarts at 0
+si-enable: OK status 0x0000 SUCCESS (17102 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163931 us)
+grab: 2 frames, timeout 3000 ms, start t=1815894 us
+frame 0: block 0 type 0x0001 ts 6963412993152 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 1818058 us trailer 1987520 us | bytes min 0 max 255 mean 0.426 var 1.471
+frame 1: block 1 type 0x0001 ts 6963476516280 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 1989609 us trailer 2129272 us | bytes min 0 max 255 mean 0.430 var 1.480
+grab: 2 complete frames, first leader 2164 us after grab start, 5.829 fps, 142.7 MB/s over 0.172 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1216 us)
+si-disable: OK status 0x0000 SUCCESS (1236 us)
+NOTE chunk mode on (default chunk enables)
+get ChunkModeActive @0x150004 = 0 (0x0, register 0x0)
+set ChunkModeActive @0x150004 <- 1 : OK status 0x0000 SUCCESS (17255 us)
+get PayloadSize @0x20002008 = 24472020 (0x17569d4, register 0x17569d4)
+ABRM GenCPVersion                  @0x00000 len  4: 0x00010000 (65536)
+ABRM ManufacturerName              @0x00004 len 64: "FLIR"
+ABRM ModelName                     @0x00044 len 64: "Blackfly S BFS-U3-244S8C"
+ABRM FamilyName                    @0x00084 len 64: "GEN3-USB"
+ABRM DeviceVersion                 @0x000c4 len 64: "2103.0.628.0"
+ABRM ManufacturerInfo              @0x00104 len 64: "Mar 29 2021 11:45:45"
+ABRM SerialNumber                  @0x00144 len 64: "26247528"
+ABRM UserDefinedName               @0x00184 len 64: ""
+ABRM DeviceCapability              @0x001c4 len  8: 0x0000000000000f0d (3853)
+ABRM MaxDeviceResponseTime(ms)     @0x001cc len  4: 0x000000c8 (200)
+ABRM ManifestTableAddress          @0x001d0 len  8: 0x0000000000040000 (262144)
+ABRM SBRMAddress                   @0x001d8 len  8: 0x0000000000010000 (65536)
+ABRM DeviceConfiguration           @0x001e0 len  8: 0x0000000000000000 (0)
+  ack: status=0x8003 INVALID_ADDRESS cmd=0x0801 len=0 id=53
+ABRM HeartbeatTimeout              @0x001e8 len  4: status 0x8003 INVALID_ADDRESS
+ABRM MessageChannelID              @0x001ec len  4: 0x00000000 (0)
+ABRM Timestamp                     @0x001f0 len  8: 0x0000065540e59ac0 (6963230776000)
+  ack: status=0x8002 INVALID_PARAMETER cmd=0x0801 len=0 id=56
+ABRM TimestampLatch                @0x001f8 len  4: status 0x8002 INVALID_PARAMETER
+ABRM TimestampIncrement            @0x001fc len  8: 0x00000000000003e8 (1000)
+ABRM AccessPrivilege               @0x00204 len  4: 0x00000000 (0)
+ABRM ProtocolEndianness            @0x00208 len  4: 0xffffffff (4294967295)
+ABRM ImplementationEndianness      @0x0020c len  4: 0xffffffff (4294967295)
+  ack: status=0x8003 INVALID_ADDRESS cmd=0x0801 len=0 id=61
+ABRM DeviceSoftwareInterfaceVersion @0x00210 len 64: status 0x8003 INVALID_ADDRESS
+SBRM U3VVersion                    @0x10000 len  4: 0x00010000 (65536)
+SBRM U3VCPCapability               @0x10004 len  8: 0x0000000000000003 (3)
+SBRM U3VCPConfiguration            @0x1000c len  8: 0x0000000000000000 (0)
+SBRM MaxCmdTransferLength          @0x10014 len  4: 0x00000400 (1024)
+SBRM MaxAckTransferLength          @0x10018 len  4: 0x00000400 (1024)
+SBRM NumStreamChannels             @0x1001c len  4: 0x00000001 (1)
+SBRM SIRMAddress                   @0x10020 len  8: 0x0000000000020000 (131072)
+SBRM SIRMLength                    @0x10028 len  4: 0x00000030 (48)
+SBRM EIRMAddress                   @0x1002c len  8: 0x0000000000028000 (163840)
+SBRM EIRMLength                    @0x10034 len  4: 0x0000000c (12)
+  ack: status=0x8003 INVALID_ADDRESS cmd=0x0801 len=0 id=72
+SBRM IIDC2Address                  @0x10038 len  8: status 0x8003 INVALID_ADDRESS
+SBRM CurrentSpeed                  @0x10040 len  4: 0x00000008 (8)
+SIRM Info                       0x03000000 (payload alignment 8 bytes)
+SIRM Control                    0x00000000
+SIRM RequiredPayloadSize        24472020
+SIRM RequiredLeaderSize         52
+SIRM RequiredTrailerSize        36
+SIRM MaximumLeaderSize          1024
+SIRM PayloadTransferSize        1048576
+SIRM PayloadTransferCount       23
+SIRM PayloadFinalTransfer1Size  354752
+SIRM PayloadFinalTransfer2Size  0
+SIRM MaximumTrailerSize         1024
+EIRM Control                    0x00000001
+EIRM MaxEventTransferLength     280
+EIRM EventTestControl           0x00000000
+MANIFEST entries                1
+MANIFEST[0] file version 1.0.0 format 0x01010400 (file type 1: zip, schema 1.1) address 0x60000000 size 67623 sha1 ad4370397be7c60b6c00af21b3baa24054daebf1
+si-setup: payload 24472020 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354768 final2 8
+si-enable: OK status 0x0000 SUCCESS (16621 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164012 us)
+grab: 2 frames, timeout 3000 ms, start t=2396655 us
+frame 0: block 0 type 0x4001 ts 6963993694312 fmt 0x01080009 5320x4600+0+0 payload 24472020 | trailer block 0 status 0x0000 valid 24472020 size_y 4600 | host leader 2398839 us trailer 2563348 us | bytes min 0 max 255 mean 0.424 var 1.466
+frame 1: block 1 type 0x4001 ts 6964057217312 fmt 0x01080009 5320x4600+0+0 payload 24472020 | trailer block 1 status 0x0000 valid 24472020 size_y 4600 | host leader 2564778 us trailer 2695400 us | bytes min 0 max 255 mean 0.435 var 1.499
+grab: 2 complete frames, first leader 2184 us after grab start, 6.026 fps, 147.5 MB/s over 0.166 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1982 us)
+si-disable: OK status 0x0000 SUCCESS (284 us)
+set ChunkModeActive @0x150004 <- 0 : OK status 0x0000 SUCCESS (19420 us)
+get PayloadSize @0x20002008 = 24472000 (0x17569c0, register 0x17569c0)

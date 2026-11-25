@@ -1,0 +1,60 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 11: software trigger. BayerRG8 full, exposure 1000 us
+get TriggerMode @0xc8424 = 0 (0x0, register 0x0)
+get TriggerSource @0xc8c28 = 31 (0x1f, register 0x1f)
+get TriggerOverlap @0xc9428 = 0 (0x0, register 0x0)
+get TriggerDelay @0xc9824 = 172 (0xac, register 0xac)
+set TriggerSource @0xc8c28 <- 31 : OK status 0x0000 SUCCESS (821 us)
+set TriggerMode @0xc8424 <- 1 : OK status 0x0000 SUCCESS (824 us)
+get AcquisitionResultingFrameRate @0xc1168 = 2395200 (0x248c40, register 0x248c40)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (14775 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (162260 us)
+NOTE no trigger sent: no frame
+grab: 1 frames, timeout 700 ms, start t=190068 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 700676 us (0 bytes)
+grab: 0 complete frames (none)
+NOTE one TriggerSoftware: one frame
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (448 us)
+get TimestampLatchValue @0x1f0 = 7179373117000 (0x68793fbfe48, register 0x68793fbfe48)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (286 us)
+grab: 2 frames, timeout 700 ms, start t=892279 us
+frame 0: block 0 type 0x0001 ts 7179375184960 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 894696 us trailer 986848 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: leader read failed: LIBUSB_ERROR_TIMEOUT after 795270 us (0 bytes)
+grab: 1 complete frames
+grab: first leader 2417 us after grab start
+NOTE three triggers 300 ms apart
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (499 us)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (713 us)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (528 us)
+grab: 4 frames, timeout 700 ms, start t=2290384 us
+frame 0: block 1 type 0x0001 ts 7180170959096 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 2290530 us trailer 2381694 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 2 type 0x0001 ts 7180471866416 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 2382004 us trailer 2467243 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 2: block 3 type 0x0001 ts 7180773125696 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 size_y 4600 | host leader 2467538 us trailer 2551746 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 3: leader read failed: LIBUSB_ERROR_TIMEOUT after 962114 us (0 bytes)
+grab: 3 complete frames, first leader 146 us after grab start, 11.299 fps, 276.5 MB/s over 0.177 s
+NOTE five triggers back to back (faster than readout 63.5 ms): extra triggers dropped?
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (558 us)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (551 us)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (639 us)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (401 us)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (624 us)
+grab: 6 frames, timeout 700 ms, start t=3255589 us
+frame 0: block 4 type 0x0001 ts 7181735919904 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 4 status 0x0000 valid 24472000 size_y 4600 | host leader 3255807 us trailer 3345887 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: leader read failed: LIBUSB_ERROR_TIMEOUT after 791027 us (0 bytes)
+grab: 1 complete frames
+grab: first leader 218 us after grab start
+NOTE TriggerSoftware with trigger mode off / after stop
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (596 us)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (549 us)
+grab: 1 frames, timeout 300 ms, start t=4047955 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 300631 us (0 bytes)
+grab: 0 complete frames (none)
+set TriggerMode @0xc8424 <- 0 : OK status 0x0000 SUCCESS (2169 us)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=36
+set TriggerSoftware @0xc8824 <- 1 : FAILED status 0x8006 ACCESS_DENIED (661 us)
+si-disable: OK status 0x0000 SUCCESS (532 us)
+set TriggerSource @0xc8c28 <- 0 : OK status 0x0000 SUCCESS (838 us)
+get TriggerSource @0xc8c28 = 0 (0x0, register 0x0)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes

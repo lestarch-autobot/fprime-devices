@@ -1,0 +1,129 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 13: test patterns on the working camera. BayerRG8 full, exposure 1000 us, gain 0. TestPatternGeneratorSelector is host-side: Sensor = 0xF0004208, PipelineStart = 0xF0004228
+get TestPattern @0xf0004208 = 0 (0x0, register 0x0)
+get TestPattern[PipelineStart] @0xf0004228 = 0 (0x0, register 0x0)
+NOTE a: Sensor / SensorTestPattern (3)
+set TestPattern @0xf0004208 <- 3 : OK status 0x0000 SUCCESS (1947 us)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (16302 us)
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (1109778 us)
+grab: 2 frames, timeout 3000 ms, start t=1158385 us
+frame 0: block 0 type 0x0001 ts 7252954184016 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 1160388 us trailer 1329516 us | bytes min 0 max 255 mean 156.209 var 5798.527
+frame 1: block 1 type 0x0001 ts 7253017707368 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 1331399 us trailer 1497386 us | bytes min 0 max 255 mean 156.209 var 5798.527
+grab: 2 complete frames, first leader 2003 us after grab start, 5.848 fps, 143.1 MB/s over 0.171 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (986 us)
+si-disable: OK status 0x0000 SUCCESS (673 us)
+NOTE a2: Sensor / Increment (1) is not available
+  ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=20
+set TestPattern @0xf0004208 <- 1 : FAILED status 0x8002 INVALID_PARAMETER (2200 us)
+  ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=21
+set TestPattern @0xf0004208 <- 4 : FAILED status 0x8002 INVALID_PARAMETER (1774 us)
+  ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=22
+set TestPattern @0xf0004208 <- 2 : FAILED status 0x8002 INVALID_PARAMETER (2158 us)
+set TestPattern @0xf0004208 <- 0 : OK status 0x0000 SUCCESS (36148 us)
+NOTE b: PipelineStart / Increment (1)
+set TestPattern[PipelineStart] @0xf0004228 <- 1 : OK status 0x0000 SUCCESS (2023 us)
+si-enable: OK status 0x0000 SUCCESS (16485 us)
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (1119855 us)
+grab: 3 frames, timeout 3000 ms, start t=2680161 us
+frame 0: block 0 type 0x0001 ts 7254474720800 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 2682419 us trailer 2851399 us | bytes min 0 max 255 mean 157.430 var 5800.054
+frame 1: block 1 type 0x0001 ts 7254538243936 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 2853374 us trailer 3018536 us | bytes min 0 max 255 mean 157.430 var 5800.054
+frame 2: block 2 type 0x0001 ts 7254601767552 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 3020377 us trailer 3186274 us | bytes min 0 max 255 mean 157.430 var 5800.054
+grab: 3 complete frames, first leader 2258 us after grab start, 5.918 fps, 144.8 MB/s over 0.338 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (2109 us)
+si-disable: OK status 0x0000 SUCCESS (342 us)
+NOTE c: PipelineStart / VariableFrameSequence (4)
+set TestPattern[PipelineStart] @0xf0004228 <- 4 : OK status 0x0000 SUCCESS (2150 us)
+si-enable: OK status 0x0000 SUCCESS (18787 us)
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (205162 us)
+grab: 3 frames, timeout 3000 ms, start t=3415017 us
+frame 0: block 0 type 0x0001 ts 7255208907256 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 3417139 us trailer 3599637 us | bytes min 0 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7255272429936 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 3601538 us trailer 3756996 us | bytes min 0 max 0 mean 0.000 var 0.000
+frame 2: block 2 type 0x0001 ts 7255335952832 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 3759563 us trailer 3915394 us | bytes min 0 max 0 mean 0.000 var 0.000
+grab: 3 complete frames, first leader 2122 us after grab start, 5.841 fps, 142.9 MB/s over 0.342 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1999 us)
+si-disable: OK status 0x0000 SUCCESS (502 us)
+NOTE d: PipelineStart / SensorTestPattern (3) and 2
+  ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=34
+set TestPattern[PipelineStart] @0xf0004228 <- 3 : FAILED status 0x8002 INVALID_PARAMETER (1522 us)
+set TestPattern[PipelineStart] @0xf0004228 <- 2 : OK status 0x0000 SUCCESS (1453 us)
+set TestPattern[PipelineStart] @0xf0004228 <- 0 : OK status 0x0000 SUCCESS (2136 us)
+get TestPattern @0xf0004208 = 0 (0x0, register 0x0)
+get TestPattern[PipelineStart] @0xf0004228 = 0 (0x0, register 0x0)
+NOTE e: Increment at 640x480 offset 0 and offset 1000,1000, and in BayerRG16
+set TestPattern[PipelineStart] @0xf0004228 <- 1 : OK status 0x0000 SUCCESS (2119 us)
+set Width @0x81084 <- 640 : OK status 0x0000 SUCCESS (19559 us)
+set Height @0x81064 <- 480 : OK status 0x0000 SUCCESS (19359 us)
+si-setup: payload 307200 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 0 final1 307200 final2 0
+si-enable: OK status 0x0000 SUCCESS (16608 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164015 us)
+grab: 2 frames, timeout 3000 ms, start t=4164139 us
+frame 0: block 0 type 0x0001 ts 7255958725280 fmt 0x01080009 640x480+0+0 payload 307200 | trailer block 0 status 0x0000 valid 307200 size_y 480 | host leader 4166269 us trailer 4175838 us | bytes min 0 max 255 mean 157.250 var 5966.541
+frame 1: block 1 type 0x0001 ts 7255966870120 fmt 0x01080009 640x480+0+0 payload 307200 | trailer block 1 status 0x0000 valid 307200 size_y 480 | host leader 4176158 us trailer 4183731 us | bytes min 0 max 255 mean 157.250 var 5966.541
+grab: 2 complete frames, first leader 2130 us after grab start, 101.122 fps, 31.1 MB/s over 0.010 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (574 us)
+si-disable: OK status 0x0000 SUCCESS (457 us)
+set OffsetX @0x81044 <- 1000 : OK status 0x0000 SUCCESS (20100 us)
+set OffsetY @0x81024 <- 1000 : OK status 0x0000 SUCCESS (19331 us)
+si-enable: OK status 0x0000 SUCCESS (16699 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164084 us)
+grab: 1 frames, timeout 3000 ms, start t=4405359 us
+frame 0: block 0 type 0x0001 ts 7256199981120 fmt 0x01080009 640x480+1000+1000 payload 307200 | trailer block 0 status 0x0000 valid 307200 size_y 480 | host leader 4407593 us trailer 4415983 us | bytes min 0 max 255 mean 157.250 var 5966.541
+grab: 1 complete frames
+grab: first leader 2234 us after grab start
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1616 us)
+si-disable: OK status 0x0000 SUCCESS (758 us)
+set OffsetX @0x81044 <- 0 : OK status 0x0000 SUCCESS (19966 us)
+set OffsetY @0x81024 <- 0 : OK status 0x0000 SUCCESS (19361 us)
+set PixelFormat @0x86008 <- 17825839 : OK status 0x0000 SUCCESS (23492 us)
+si-setup: payload 614400 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 0 final1 614400 final2 0
+si-enable: OK status 0x0000 SUCCESS (16682 us)
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (1110789 us)
+grab: 1 frames, timeout 3000 ms, start t=5618502 us
+frame 0: block 0 type 0x0001 ts 7257413017360 fmt 0x0110002f 640x480+0+0 payload 614400 | trailer block 0 status 0x0000 valid 614400 size_y 480 | host leader 5621656 us trailer 5639598 us | bytes min 0 max 255 mean 151.639 var 6303.690
+grab: 1 complete frames
+grab: first leader 3154 us after grab start
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (551 us)
+si-disable: OK status 0x0000 SUCCESS (499 us)
+set PixelFormat @0x86008 <- 17301513 : OK status 0x0000 SUCCESS (24624 us)
+set Width @0x81084 <- 5320 : OK status 0x0000 SUCCESS (19539 us)
+set Height @0x81064 <- 4600 : OK status 0x0000 SUCCESS (19036 us)
+set TestPattern[PipelineStart] @0xf0004228 <- 0 : OK status 0x0000 SUCCESS (2412 us)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0

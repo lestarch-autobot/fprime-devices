@@ -1,0 +1,149 @@
+# u3vprobe serial=01908168 libusb 1.0.27.11882
+     10569 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 00 00 d0 01 00 00 00 00 00 00 00 00 08 00
+     10733 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 00 00 00 00 04 00 00 00 00 00
+     11684 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 00 d8 01 00 00 00 00 00 00 00 00 08 00
+     11793 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 01 00 00 00 01 00 00 00 00 00
+     13239 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 02 00 14 00 01 00 00 00 00 00 00 00 04 00
+     13362 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 02 00 00 04 00 00
+     14815 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 03 00 18 00 01 00 00 00 00 00 00 00 04 00
+     14937 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 00 00 04 00 00
+     15725 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 04 00 20 00 01 00 00 00 00 00 00 00 08 00
+     16009 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 04 00 00 00 02 00 00 00 00 00
+     17595 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 05 00 2c 00 01 00 00 00 00 00 00 00 08 00
+     17724 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 05 00 00 80 02 00 00 00 00 00
+# NOTE read unmapped address
+     19199 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 06 00 00 00 00 30 00 00 00 00 00 00 04 00
+     19326 CTRL IN  ep=0x82 rc=OK len=12 : 55 33 56 43 03 80 01 08 00 00 06 00
+#   ack: status=0x8003 INVALID_ADDRESS cmd=0x0801 len=0 id=6
+# r32 0x30000000: FAILED status 0x8003 INVALID_ADDRESS
+# NOTE write unmapped address
+     20821 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 07 00 00 00 00 30 00 00 00 00 01 00 00 00
+     20962 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 03 80 03 08 04 00 07 00 00 00 00 00
+#   ack: status=0x8003 INVALID_ADDRESS cmd=0x0803 len=4 id=7
+# w32 0x30000000 <- 0x1: FAILED status 0x8003 INVALID_ADDRESS (1645 us)
+# NOTE READMEM count 0
+     22478 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 08 00 84 10 08 00 00 00 00 00 00 00 00 00
+     22646 CTRL IN  ep=0x82 rc=OK len=12 : 55 33 56 43 00 00 01 08 00 00 08 00
+# rlen 0x81084 0: OK status 0x0000 SUCCESS
+# NOTE READMEM count 2 of a 4 byte register
+     24140 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 09 00 84 10 08 00 00 00 00 00 00 00 02 00
+     24295 CTRL IN  ep=0x82 rc=OK len=14 : 55 33 56 43 00 00 01 08 02 00 09 00 c8 14
+# rlen 0x81084 2: OK status 0x0000 SUCCESS
+# NOTE READMEM count 3
+     25805 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0a 00 84 10 08 00 00 00 00 00 00 00 03 00
+     25984 CTRL IN  ep=0x82 rc=OK len=15 : 55 33 56 43 00 00 01 08 03 00 0a 00 c8 14 00
+# rlen 0x81084 3: OK status 0x0000 SUCCESS
+# NOTE READMEM at register+1
+     26925 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0b 00 85 10 08 00 00 00 00 00 00 00 04 00
+     27172 CTRL IN  ep=0x82 rc=OK len=12 : 55 33 56 43 03 80 01 08 00 00 0b 00
+#   ack: status=0x8003 INVALID_ADDRESS cmd=0x0801 len=0 id=11
+# rlen 0x81085 4: FAILED status 0x8003 INVALID_ADDRESS
+# NOTE READMEM count 1012 (max that fits ack)
+     28694 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0c 00 00 00 00 60 00 00 00 00 00 00 f4 03
+     28872 CTRL IN  ep=0x82 rc=OK len=1024 : 55 33 56 43 00 00 01 08 f4 03 0c 00 50 4b 03 04 14 00 00 00 08 00 37 5d 7d 52 5a 08 47 7e 6f 07 01 00 47 5e 0d 00 11 00 1c 00 70 75 62 6c 69 63 5f 63 61 6d 78 6d 6c 2e 78 6d 6c 55 54 09 00 03 6a 1f 62 60 a5 1f 62 60 75 78 0b 00 01 04 28 29 00 00 04 28 29 00 00 ec fd 6b 77 dc 38 ae 30 0a 7f 3f bf 42 2b 6b ed 79 92 de dd 89 ab ec a4 9d de 99 cc b2 1d 27 f1 19 27 f6 b1 dd 4e e7 7c e9 57 ae 92 6d ed 54 49 35 92 2a 8e 67 cd 3a bf fd e5 45 17 92 02 29 50 f7 72 7b 76 ef ee a4 04 82 04 08 82 20 08 02 6f fe f1 63 b9 70 be 7b 51 ec 87 c1 df 9f 4c 9e 6f 3d 71 bc 60 16 ce fd e0 e6 ef 4f 7e bf 78 ff cb ee 93 7f bc fd bf de 9c 79 37 7e 9c 78 d1 3b 2f 9e 45 fe 2a 21 d0 0e 69 19 c4 bf fd f0 ff fe e4 36 49 56 bf bd 78 71 77 77 f7 fc 6e fb 79 18 dd bc 98 6e 6d 6d bf f8 e3 28 98 2d d6 73 ef 89 f3 29 9c 7b 8b cf ee d2 fb fb 93 fd f7 e7 7f fe be fd e7 74 67 e7 7c 97 7c 70 ff 37 8c 2e f3 ee c9 0f 7e 20 fc 40 46 73 be be 2a ff 36 bb f5 96 6e a9 6d fa b3 04 4d 7e 4e c7 19 eb 06 3a 79 f1 c7 a7 63 de f6 17 3f 88 13 37 98 79 69 2b a9 c5 8d 17 f8 33 77 c9 9a 7d f0 82 bd 95 ff 22 ed e6 cf c9 9f a4 9f 4b 2f 98 87 11 a7 f2 fd f1 d1 19 19 10 c1 35 77 a3 39 fd ed 7c e5 ce c8 87 cf 61 e0 65 23 2d 91 46 90 5c 84 e1 e2 c2 5f 71 0c ce 01 69 18 b9 4f 9c d3 28 9c af 67 c9 87 b5 3f ff fb 93 c3 c3 9d fd 5f 0f b7 5e ff f2 6e 6f fa fa 97 9d d7 2f 5f fd b2 37 39 3c f8 e5 e5 ab e9 f4 d5 e1 f6 e4 e0 fd eb 03 3a 1a 86 94 37 d9 7d b9 b3 b5 35 dd d9 fa 65 e7 e5 f4 fd 2f 3b db ee f5 2f bb 07 ef de fd 42 10 4d 27 07 93 77 d3 57 93 3d 42 72 ec ff 16 b3 91 1d 87 33 37 61 43 42 d3 ef 98 21 f9 7f 38 dd 7f 0a cd 9e ff 88 e7 4f de be 39 0a 12 ef c6 8b 1c ce bd 73 2f 88 c3 e8 8b 3f 4f 6e 9f 38 02 f3 32 7e 92 06 29 9f de 1e 5e 5f 7b b3 c4 ff ee 39 77 14 dc 09 af 9d e4 d6 73 62 86 c1 f1 03 67 e5 ff f0 16 f1 f3 37 2f b2 16 6f 04 19 b6 68 2e b6 7a f3 ce 8f 57 0b f7 9e 0e ed 2d 1f ac c3 46 4b c0 84 2f 6f 2e fd d8 bf f2 17 7e 72 ff f6 f0 c7 ca 8b 92 37 2f 84 9f de 1c 2d 57 61 ec cd f7 66 33 2f 8e e9 12 79 7b 76 f2 e6 45 f9 d7 37 97 ee 62 ed bd 7d b9 3d dd 25 08 d8 9f c9 82 5c 45 1e 19 66 c2 e6 e9 ed e9 3a f2 3e af 97 57 5e f4 e6 85 f2 89 60 e4 cc 85 b9 fc d1 f3 6f 6e 13 3c 9b 6f 19 7c 7d 3e 57 b6 af 62 34 1f 70 a7 9c de 79 f5 eb b4 19 a7 0f 83 35 5d b9 4c 4f 66 dc fe d7 9a 68 56 2f 7a ef b9 09 c1 71 ee 2d 08 47 c2 a8 8a f3 1c 2e 76 ee 6e fd d9 2d e1 57 8a c5 b9 e6 68 62 27 09 9d 59 18 24 51 b8 d0 31 df 0e 85 81 ff 59 c3 94 04 27 a3 c1 6e 32 56 47 31 e1 fc c2 5b 12 c6 79 f3 b7 3a c6 fc 49 80 de bc 50 80 69 e3 bd ef ae bf 70 af 16 9e be e9 de f7 05 6b 5a 80 d2 86 44 ab 7d 33 75 78 3c fb c6 5a a5 70 90 d4 7c 01 a5 86 ce f6 21 e1 df 7d 3a d7 84 ea 30 26 98 2f fc a5 a7 9b 5f 91 63 19 bc 43 1b 28 cc c4 11 2c f6 08 51 cf 65 79 2b 17 ea 17 f9 90 cb a3 ff e0 fa 01 66 d4 14 ae d6 60 69 43 fd 20 27 a8 41 9e 5c 5f c7 5e f2 07 66 9c 1c d4 f9 a3 d6 58 d3 7e f4 c3 9d 5a 0c f7 ab c5 70 bf 36 18 ee 57 fd 70 b7 51 c3 35 6e bd e2 b0 a0 5d 0f 37 52 d6 52 3f ce 1d d4 38 cd 9b 97 38 2a 70 d7 c0 8d 94 37 d5 0f f5 25 38 d4 15 ff 4d 8b 95 7c 26 e8 d2 86 2b fe 33 a0 9c 0e 03 da 15 81 cc 21 78 2f e9 e6 f2
+# rlen 0x60000000 1012: OK status 0x0000 SUCCESS
+# NOTE READMEM count 1013 (ack would exceed max ack length)
+     30607 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0d 00 00 00 00 60 00 00 00 00 00 00 f5 03
+     30794 CTRL IN  ep=0x82 rc=OK len=1024 : 55 33 56 43 00 00 01 08 f5 03 0d 00 50 4b 03 04 14 00 00 00 08 00 37 5d 7d 52 5a 08 47 7e 6f 07 01 00 47 5e 0d 00 11 00 1c 00 70 75 62 6c 69 63 5f 63 61 6d 78 6d 6c 2e 78 6d 6c 55 54 09 00 03 6a 1f 62 60 a5 1f 62 60 75 78 0b 00 01 04 28 29 00 00 04 28 29 00 00 ec fd 6b 77 dc 38 ae 30 0a 7f 3f bf 42 2b 6b ed 79 92 de dd 89 ab ec a4 9d de 99 cc b2 1d 27 f1 19 27 f6 b1 dd 4e e7 7c e9 57 ae 92 6d ed 54 49 35 92 2a 8e 67 cd 3a bf fd e5 45 17 92 02 29 50 f7 72 7b 76 ef ee a4 04 82 04 08 82 20 08 02 6f fe f1 63 b9 70 be 7b 51 ec 87 c1 df 9f 4c 9e 6f 3d 71 bc 60 16 ce fd e0 e6 ef 4f 7e bf 78 ff cb ee 93 7f bc fd bf de 9c 79 37 7e 9c 78 d1 3b 2f 9e 45 fe 2a 21 d0 0e 69 19 c4 bf fd f0 ff fe e4 36 49 56 bf bd 78 71 77 77 f7 fc 6e fb 79 18 dd bc 98 6e 6d 6d bf f8 e3 28 98 2d d6 73 ef 89 f3 29 9c 7b 8b cf ee d2 fb fb 93 fd f7 e7 7f fe be fd e7 74 67 e7 7c 97 7c 70 ff 37 8c 2e f3 ee c9 0f 7e 20 fc 40 46 73 be be 2a ff 36 bb f5 96 6e a9 6d fa b3 04 4d 7e 4e c7 19 eb 06 3a 79 f1 c7 a7 63 de f6 17 3f 88 13 37 98 79 69 2b a9 c5 8d 17 f8 33 77 c9 9a 7d f0 82 bd 95 ff 22 ed e6 cf c9 9f a4 9f 4b 2f 98 87 11 a7 f2 fd f1 d1 19 19 10 c1 35 77 a3 39 fd ed 7c e5 ce c8 87 cf 61 e0 65 23 2d 91 46 90 5c 84 e1 e2 c2 5f 71 0c ce 01 69 18 b9 4f 9c d3 28 9c af 67 c9 87 b5 3f ff fb 93 c3 c3 9d fd 5f 0f b7 5e ff f2 6e 6f fa fa 97 9d d7 2f 5f fd b2 37 39 3c f8 e5 e5 ab e9 f4 d5 e1 f6 e4 e0 fd eb 03 3a 1a 86 94 37 d9 7d b9 b3 b5 35 dd d9 fa 65 e7 e5 f4 fd 2f 3b db ee f5 2f bb 07 ef de fd 42 10 4d 27 07 93 77 d3 57 93 3d 42 72 ec ff 16 b3 91 1d 87 33 37 61 43 42 d3 ef 98 21 f9 7f 38 dd 7f 0a cd 9e ff 88 e7 4f de be 39 0a 12 ef c6 8b 1c ce bd 73 2f 88 c3 e8 8b 3f 4f 6e 9f 38 02 f3 32 7e 92 06 29 9f de 1e 5e 5f 7b b3 c4 ff ee 39 77 14 dc 09 af 9d e4 d6 73 62 86 c1 f1 03 67 e5 ff f0 16 f1 f3 37 2f b2 16 6f 04 19 b6 68 2e b6 7a f3 ce 8f 57 0b f7 9e 0e ed 2d 1f ac c3 46 4b c0 84 2f 6f 2e fd d8 bf f2 17 7e 72 ff f6 f0 c7 ca 8b 92 37 2f 84 9f de 1c 2d 57 61 ec cd f7 66 33 2f 8e e9 12 79 7b 76 f2 e6 45 f9 d7 37 97 ee 62 ed bd 7d b9 3d dd 25 08 d8 9f c9 82 5c 45 1e 19 66 c2 e6 e9 ed e9 3a f2 3e af 97 57 5e f4 e6 85 f2 89 60 e4 cc 85 b9 fc d1 f3 6f 6e 13 3c 9b 6f 19 7c 7d 3e 57 b6 af 62 34 1f 70 a7 9c de 79 f5 eb b4 19 a7 0f 83 35 5d b9 4c 4f 66 dc fe d7 9a 68 56 2f 7a ef b9 09 c1 71 ee 2d 08 47 c2 a8 8a f3 1c 2e 76 ee 6e fd d9 2d e1 57 8a c5 b9 e6 68 62 27 09 9d 59 18 24 51 b8 d0 31 df 0e 85 81 ff 59 c3 94 04 27 a3 c1 6e 32 56 47 31 e1 fc c2 5b 12 c6 79 f3 b7 3a c6 fc 49 80 de bc 50 80 69 e3 bd ef ae bf 70 af 16 9e be e9 de f7 05 6b 5a 80 d2 86 44 ab 7d 33 75 78 3c fb c6 5a a5 70 90 d4 7c 01 a5 86 ce f6 21 e1 df 7d 3a d7 84 ea 30 26 98 2f fc a5 a7 9b 5f 91 63 19 bc 43 1b 28 cc c4 11 2c f6 08 51 cf 65 79 2b 17 ea 17 f9 90 cb a3 ff e0 fa 01 66 d4 14 ae d6 60 69 43 fd 20 27 a8 41 9e 5c 5f c7 5e f2 07 66 9c 1c d4 f9 a3 d6 58 d3 7e f4 c3 9d 5a 0c f7 ab c5 70 bf 36 18 ee 57 fd 70 b7 51 c3 35 6e bd e2 b0 a0 5d 0f 37 52 d6 52 3f ce 1d d4 38 cd 9b 97 38 2a 70 d7 c0 8d 94 37 d5 0f f5 25 38 d4 15 ff 4d 8b 95 7c 26 e8 d2 86 2b fe 33 a0 9c 0e 03 da 15 81 cc 21 78 2f e9 e6 f2
+#   ack: unexpected cmd=0x0801 id=13 (want 0x0801 id=13) len=1013 total=1024
+# rlen 0x60000000 1013: FAILED status 0x0000 SUCCESS
+# NOTE READMEM count 4000
+     33152 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0e 00 00 00 00 60 00 00 00 00 00 00 a0 0f
+     33337 CTRL IN  ep=0x82 rc=OK len=12 : 55 33 56 43 02 80 01 08 00 00 0e 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0801 len=0 id=14
+# rlen 0x60000000 4000: FAILED status 0x8002 INVALID_PARAMETER
+# NOTE WRITEMEM 2 bytes to 4 byte register
+     34899 CTRL OUT ep=0x02 rc=OK len=22 : 55 33 56 43 00 40 02 08 0a 00 0f 00 84 10 08 00 00 00 00 00 00 10
+     52068 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0f 00 00 00 02 00
+# w 0x81084 (2 bytes): OK status 0x0000 SUCCESS (18699 us)
+# NOTE WRITEMEM 8 bytes across Width value and min
+     53489 CTRL OUT ep=0x02 rc=OK len=28 : 55 33 56 43 00 40 02 08 10 00 10 00 84 10 08 00 00 00 00 00 00 10 00 00 08 00 00 00
+     71321 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 04 80 03 08 04 00 10 00 00 00 00 00
+#   ack: status=0x8004 WRITE_PROTECT cmd=0x0803 len=4 id=16
+# w 0x81084 (8 bytes): FAILED status 0x8004 WRITE_PROTECT (19255 us)
+# NOTE write read-only WidthMax
+     72691 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 11 00 84 00 08 00 00 00 00 00 64 00 00 00
+     72942 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 04 80 03 08 04 00 11 00 00 00 00 00
+#   ack: status=0x8004 WRITE_PROTECT cmd=0x0803 len=4 id=17
+# w32 0x80084 <- 0x64: FAILED status 0x8004 WRITE_PROTECT (1597 us)
+# NOTE write read-only ABRM manufacturer
+     74217 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 12 00 04 00 00 00 00 00 00 00 41 42 43 44
+     74471 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 04 80 03 08 04 00 12 00 00 00 00 00
+#   ack: status=0x8004 WRITE_PROTECT cmd=0x0803 len=4 id=18
+# w 0x4 (4 bytes): FAILED status 0x8004 WRITE_PROTECT (1510 us)
+# NOTE write read-only PayloadSize
+     75692 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 13 00 08 20 00 20 00 00 00 00 01 00 00 00
+     75945 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 04 80 03 08 04 00 13 00 00 00 00 00
+#   ack: status=0x8004 WRITE_PROTECT cmd=0x0803 len=4 id=19
+# w32 0x20002008 <- 0x1: FAILED status 0x8004 WRITE_PROTECT (1458 us)
+# NOTE Width out of range high
+     77104 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 14 00 84 10 08 00 00 00 00 00 9f 86 01 00
+     81899 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 02 80 03 08 04 00 14 00 00 00 00 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=20
+# set Width @0x81084 <- 99999 : FAILED status 0x8002 INVALID_PARAMETER (5986 us)
+     83718 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 15 00 84 10 08 00 00 00 00 00 00 00 04 00
+     83970 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 15 00 00 10 00 00
+# get Width @0x81084 = 4096 (0x1000, register 0x1000)
+# NOTE Width below min
+     85139 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 16 00 84 10 08 00 00 00 00 00 04 00 00 00
+     90954 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 02 80 03 08 04 00 16 00 00 00 00 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=22
+# set Width @0x81084 <- 4 : FAILED status 0x8002 INVALID_PARAMETER (6981 us)
+     92150 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 17 00 84 10 08 00 00 00 00 00 00 00 04 00
+     92410 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 17 00 00 10 00 00
+# get Width @0x81084 = 4096 (0x1000, register 0x1000)
+# NOTE Width off increment
+     94064 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 18 00 84 10 08 00 00 00 00 00 89 13 00 00
+    100677 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 02 80 03 08 04 00 18 00 00 00 00 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=24
+# set Width @0x81084 <- 5001 : FAILED status 0x8002 INVALID_PARAMETER (8260 us)
+    102347 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 19 00 84 10 08 00 00 00 00 00 00 00 04 00
+    102628 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 19 00 00 10 00 00
+# get Width @0x81084 = 4096 (0x1000, register 0x1000)
+# NOTE Width valid
+    104277 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1a 00 84 10 08 00 00 00 00 00 88 13 00 00
+    121967 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1a 00 00 00 04 00
+# set Width @0x81084 <- 5000 : OK status 0x0000 SUCCESS (19279 us)
+    123655 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1b 00 84 10 08 00 00 00 00 00 00 00 04 00
+    123909 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1b 00 88 13 00 00
+# get Width @0x81084 = 5000 (0x1388, register 0x1388)
+    124914 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1c 00 84 10 08 00 00 00 00 00 c8 14 00 00
+    143592 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1c 00 00 00 04 00
+# set Width @0x81084 <- 5320 : OK status 0x0000 SUCCESS (19631 us)
+    145255 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1d 00 84 10 08 00 00 00 00 00 00 00 04 00
+    145511 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1d 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+# NOTE PixelFormat unknown value
+    147203 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1e 00 08 60 08 00 00 00 00 00 78 56 34 12
+    147456 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 02 80 03 08 04 00 1e 00 00 00 00 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=30
+# set PixelFormat @0x86008 <- 0x12345678 : FAILED status 0x8002 INVALID_PARAMETER (1896 us)
+    149144 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1f 00 08 60 08 00 00 00 00 00 00 00 04 00
+    149404 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1f 00 09 00 08 01
+# get PixelFormat @0x86008 = 17301513 (0x1080009, register 0x1080009)
+# NOTE PixelFormat not available (Polarized8)
+    151060 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 20 00 08 60 08 00 00 00 00 00 60 00 08 01
+    151319 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 02 80 03 08 04 00 20 00 00 00 00 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=32
+# set PixelFormat @0x86008 <- 17301600 : FAILED status 0x8002 INVALID_PARAMETER (1898 us)
+    152973 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 21 00 08 60 08 00 00 00 00 00 00 00 04 00
+    153227 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 21 00 09 00 08 01
+# get PixelFormat @0x86008 = 17301513 (0x1080009, register 0x1080009)
+# NOTE AcquisitionMode invalid enum
+    155049 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 22 00 c8 00 0c 00 00 00 00 00 07 00 00 00
+    155258 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 02 80 03 08 04 00 22 00 00 00 00 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0803 len=4 id=34
+# set AcquisitionMode @0xc00c8 <- 7 : FAILED status 0x8002 INVALID_PARAMETER (1956 us)
+    156913 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 23 00 c8 00 0c 00 00 00 00 00 00 00 04 00
+    157169 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 23 00 00 00 00 00
+# get AcquisitionMode @0xc00c8 = 0 (0x0, register 0x0)
+# NOTE read write-only AcquisitionStart
+    158822 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 24 00 04 00 0c 00 00 00 00 00 00 00 04 00
+    160015 CTRL IN  ep=0x82 rc=OK len=12 : 55 33 56 43 02 80 01 08 00 00 24 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0801 len=0 id=36
+# r32 0xc0004: FAILED status 0x8002 INVALID_PARAMETER
+# NOTE read write-only TimestampLatch
+    162362 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 25 00 f8 01 00 00 00 00 00 00 00 00 04 00
+    164884 CTRL IN  ep=0x82 rc=OK len=12 : 55 33 56 43 02 80 01 08 00 00 25 00
+#   ack: status=0x8002 INVALID_PARAMETER cmd=0x0801 len=0 id=37
+# r32 0x1f8: FAILED status 0x8002 INVALID_PARAMETER

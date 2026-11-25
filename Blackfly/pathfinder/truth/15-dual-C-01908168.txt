@@ -1,0 +1,112 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 15: camera C streaming full rate (BayerRG8, 15.7 fps) while camera B control channel is hammered and asked to acquire
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (15460 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (162909 us)
+grabq: 100 frames, 8 transfers queued (payload transfers 1048576 bytes), timeout 3000 ms, start t=197222 us
+frame 0: block 0 ts 7303637548176 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 | host leader 200688 us trailer 261971 us
+frame 1: block 1 ts 7303701071064 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 | host leader 263068 us trailer 325358 us
+frame 2: block 2 ts 7303764593848 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 | host leader 326310 us trailer 388747 us
+frame 3: block 3 ts 7303828117200 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 | host leader 390093 us trailer 452213 us
+frame 4: block 4 ts 7303891639360 payload 24472000 | trailer block 4 status 0x0000 valid 24472000 | host leader 453602 us trailer 516072 us
+frame 5: block 5 ts 7303955163312 payload 24472000 | trailer block 5 status 0x0000 valid 24472000 | host leader 516906 us trailer 579559 us
+frame 6: block 6 ts 7304018686416 payload 24472000 | trailer block 6 status 0x0000 valid 24472000 | host leader 580384 us trailer 642937 us
+frame 7: block 7 ts 7304082210232 payload 24472000 | trailer block 7 status 0x0000 valid 24472000 | host leader 644048 us trailer 706568 us
+frame 8: block 8 ts 7304145733312 payload 24472000 | trailer block 8 status 0x0000 valid 24472000 | host leader 707884 us trailer 770030 us
+frame 9: block 9 ts 7304209256096 payload 24472000 | trailer block 9 status 0x0000 valid 24472000 | host leader 771065 us trailer 833341 us
+frame 10: block 10 ts 7304272778496 payload 24472000 | trailer block 10 status 0x0000 valid 24472000 | host leader 834732 us trailer 897208 us
+frame 11: block 11 ts 7304336302848 payload 24472000 | trailer block 11 status 0x0000 valid 24472000 | host leader 898020 us trailer 960704 us
+frame 12: block 12 ts 7304399825312 payload 24472000 | trailer block 12 status 0x0000 valid 24472000 | host leader 962062 us trailer 1024107 us
+frame 13: block 13 ts 7304463348392 payload 24472000 | trailer block 13 status 0x0000 valid 24472000 | host leader 1025056 us trailer 1087668 us
+frame 14: block 14 ts 7304526872200 payload 24472000 | trailer block 14 status 0x0000 valid 24472000 | host leader 1089090 us trailer 1151170 us
+frame 15: block 15 ts 7304590394848 payload 24472000 | trailer block 15 status 0x0000 valid 24472000 | host leader 1152059 us trailer 1214517 us
+frame 16: block 16 ts 7304653918200 payload 24472000 | trailer block 16 status 0x0000 valid 24472000 | host leader 1215938 us trailer 1278342 us
+frame 17: block 17 ts 7304717441360 payload 24472000 | trailer block 17 status 0x0000 valid 24472000 | host leader 1279161 us trailer 1341865 us
+frame 18: block 18 ts 7304780964800 payload 24472000 | trailer block 18 status 0x0000 valid 24472000 | host leader 1343063 us trailer 1405270 us
+frame 19: block 19 ts 7304844487336 payload 24472000 | trailer block 19 status 0x0000 valid 24472000 | host leader 1406203 us trailer 1468724 us
+frame 20: block 20 ts 7304908010848 payload 24472000 | trailer block 20 status 0x0000 valid 24472000 | host leader 1470091 us trailer 1532125 us
+frame 21: block 21 ts 7304971534256 payload 24472000 | trailer block 21 status 0x0000 valid 24472000 | host leader 1533229 us trailer 1595103 us
+frame 22: block 22 ts 7305035057336 payload 24472000 | trailer block 22 status 0x0000 valid 24472000 | host leader 1596606 us trailer 1658686 us
+frame 23: block 23 ts 7305098580392 payload 24472000 | trailer block 23 status 0x0000 valid 24472000 | host leader 1660132 us trailer 1722142 us
+frame 24: block 24 ts 7305162103656 payload 24472000 | trailer block 24 status 0x0000 valid 24472000 | host leader 1723702 us trailer 1785861 us
+frame 25: block 25 ts 7305225626336 payload 24472000 | trailer block 25 status 0x0000 valid 24472000 | host leader 1788032 us trailer 1850059 us
+frame 26: block 26 ts 7305289150360 payload 24472000 | trailer block 26 status 0x0000 valid 24472000 | host leader 1851062 us trailer 1913607 us
+frame 27: block 27 ts 7305352672984 payload 24472000 | trailer block 27 status 0x0000 valid 24472000 | host leader 1914411 us trailer 1976884 us
+frame 28: block 28 ts 7305416196152 payload 24472000 | trailer block 28 status 0x0000 valid 24472000 | host leader 1978093 us trailer 2040326 us
+frame 29: block 29 ts 7305479719120 payload 24472000 | trailer block 29 status 0x0000 valid 24472000 | host leader 2041714 us trailer 2104171 us
+frame 30: block 30 ts 7305543242824 payload 24472000 | trailer block 30 status 0x0000 valid 24472000 | host leader 2104967 us trailer 2167654 us
+frame 31: block 31 ts 7305606765360 payload 24472000 | trailer block 31 status 0x0000 valid 24472000 | host leader 2168502 us trailer 2231214 us
+frame 32: block 32 ts 7305670289336 payload 24472000 | trailer block 32 status 0x0000 valid 24472000 | host leader 2232052 us trailer 2294611 us
+frame 33: block 33 ts 7305733811448 payload 24472000 | trailer block 33 status 0x0000 valid 24472000 | host leader 2296070 us trailer 2358143 us
+frame 34: block 34 ts 7305797335152 payload 24472000 | trailer block 34 status 0x0000 valid 24472000 | host leader 2359023 us trailer 2421487 us
+frame 35: block 35 ts 7305860858256 payload 24472000 | trailer block 35 status 0x0000 valid 24472000 | host leader 2422918 us trailer 2485294 us
+frame 36: block 36 ts 7305924381984 payload 24472000 | trailer block 36 status 0x0000 valid 24472000 | host leader 2486123 us trailer 2548951 us
+frame 37: block 37 ts 7305987904312 payload 24472000 | trailer block 37 status 0x0000 valid 24472000 | host leader 2549628 us trailer 2612234 us
+frame 38: block 38 ts 7306051427344 payload 24472000 | trailer block 38 status 0x0000 valid 24472000 | host leader 2613159 us trailer 2675733 us
+frame 39: block 39 ts 7306114951280 payload 24472000 | trailer block 39 status 0x0000 valid 24472000 | host leader 2677086 us trailer 2739093 us
+frame 40: block 40 ts 7306178474280 payload 24472000 | trailer block 40 status 0x0000 valid 24472000 | host leader 2740492 us trailer 2802935 us
+frame 41: block 41 ts 7306241997312 payload 24472000 | trailer block 41 status 0x0000 valid 24472000 | host leader 2804064 us trailer 2866432 us
+frame 42: block 42 ts 7306305520360 payload 24472000 | trailer block 42 status 0x0000 valid 24472000 | host leader 2867264 us trailer 2929748 us
+frame 43: block 43 ts 7306369043792 payload 24472000 | trailer block 43 status 0x0000 valid 24472000 | host leader 2931092 us trailer 2993167 us
+frame 44: block 44 ts 7306432567232 payload 24472000 | trailer block 44 status 0x0000 valid 24472000 | host leader 2994556 us trailer 3056656 us
+frame 45: block 45 ts 7306496089712 payload 24472000 | trailer block 45 status 0x0000 valid 24472000 | host leader 3058057 us trailer 3120543 us
+frame 46: block 46 ts 7306559613128 payload 24472000 | trailer block 46 status 0x0000 valid 24472000 | host leader 3121351 us trailer 3184178 us
+frame 47: block 47 ts 7306623136096 payload 24472000 | trailer block 47 status 0x0000 valid 24472000 | host leader 3184891 us trailer 3247491 us
+frame 48: block 48 ts 7306686659120 payload 24472000 | trailer block 48 status 0x0000 valid 24472000 | host leader 3248426 us trailer 3311028 us
+frame 49: block 49 ts 7306750183040 payload 24472000 | trailer block 49 status 0x0000 valid 24472000 | host leader 3312092 us trailer 3374320 us
+frame 50: block 50 ts 7306813705688 payload 24472000 | trailer block 50 status 0x0000 valid 24472000 | host leader 3375453 us trailer 3438176 us
+frame 51: block 51 ts 7306877229120 payload 24472000 | trailer block 51 status 0x0000 valid 24472000 | host leader 3438981 us trailer 3501779 us
+frame 52: block 52 ts 7306940752336 payload 24472000 | trailer block 52 status 0x0000 valid 24472000 | host leader 3502517 us trailer 3565085 us
+frame 53: block 53 ts 7307004274984 payload 24472000 | trailer block 53 status 0x0000 valid 24472000 | host leader 3566048 us trailer 3628620 us
+frame 54: block 54 ts 7307067798096 payload 24472000 | trailer block 54 status 0x0000 valid 24472000 | host leader 3629563 us trailer 3692158 us
+frame 55: block 55 ts 7307131321336 payload 24472000 | trailer block 55 status 0x0000 valid 24472000 | host leader 3693058 us trailer 3755490 us
+frame 56: block 56 ts 7307194845336 payload 24472000 | trailer block 56 status 0x0000 valid 24472000 | host leader 3756924 us trailer 3819394 us
+frame 57: block 57 ts 7307258368360 payload 24472000 | trailer block 57 status 0x0000 valid 24472000 | host leader 3820110 us trailer 3882807 us
+frame 58: block 58 ts 7307321891336 payload 24472000 | trailer block 58 status 0x0000 valid 24472000 | host leader 3884064 us trailer 3946241 us
+frame 59: block 59 ts 7307385414232 payload 24472000 | trailer block 59 status 0x0000 valid 24472000 | host leader 3947160 us trailer 4009754 us
+frame 60: block 60 ts 7307448937360 payload 24472000 | trailer block 60 status 0x0000 valid 24472000 | host leader 4011087 us trailer 4073097 us
+frame 61: block 61 ts 7307512460824 payload 24472000 | trailer block 61 status 0x0000 valid 24472000 | host leader 4074496 us trailer 4137025 us
+frame 62: block 62 ts 7307575983800 payload 24472000 | trailer block 62 status 0x0000 valid 24472000 | host leader 4137757 us trailer 4200342 us
+frame 63: block 63 ts 7307639507200 payload 24472000 | trailer block 63 status 0x0000 valid 24472000 | host leader 4201277 us trailer 4263721 us
+frame 64: block 64 ts 7307703030336 payload 24472000 | trailer block 64 status 0x0000 valid 24472000 | host leader 4265097 us trailer 4327192 us
+frame 65: block 65 ts 7307766553064 payload 24472000 | trailer block 65 status 0x0000 valid 24472000 | host leader 4328580 us trailer 4390703 us
+frame 66: block 66 ts 7307830076848 payload 24472000 | trailer block 66 status 0x0000 valid 24472000 | host leader 4392055 us trailer 4454635 us
+frame 67: block 67 ts 7307893600176 payload 24472000 | trailer block 67 status 0x0000 valid 24472000 | host leader 4455384 us trailer 4518045 us
+frame 68: block 68 ts 7307957123312 payload 24472000 | trailer block 68 status 0x0000 valid 24472000 | host leader 4519060 us trailer 4581478 us
+frame 69: block 69 ts 7308020646064 payload 24472000 | trailer block 69 status 0x0000 valid 24472000 | host leader 4582438 us trailer 4645038 us
+frame 70: block 70 ts 7308084169200 payload 24472000 | trailer block 70 status 0x0000 valid 24472000 | host leader 4645991 us trailer 4708343 us
+frame 71: block 71 ts 7308147692312 payload 24472000 | trailer block 71 status 0x0000 valid 24472000 | host leader 4709752 us trailer 4772167 us
+frame 72: block 72 ts 7308211215360 payload 24472000 | trailer block 72 status 0x0000 valid 24472000 | host leader 4772983 us trailer 4835687 us
+frame 73: block 73 ts 7308274738848 payload 24472000 | trailer block 73 status 0x0000 valid 24472000 | host leader 4836495 us trailer 4899091 us
+frame 74: block 74 ts 7308338262360 payload 24472000 | trailer block 74 status 0x0000 valid 24472000 | host leader 4900048 us trailer 4962617 us
+frame 75: block 75 ts 7308401785232 payload 24472000 | trailer block 75 status 0x0000 valid 24472000 | host leader 4964065 us trailer 5026171 us
+frame 76: block 76 ts 7308465308528 payload 24472000 | trailer block 76 status 0x0000 valid 24472000 | host leader 5027056 us trailer 5089494 us
+frame 77: block 77 ts 7308528831232 payload 24472000 | trailer block 77 status 0x0000 valid 24472000 | host leader 5090977 us trailer 5153320 us
+frame 78: block 78 ts 7308592354496 payload 24472000 | trailer block 78 status 0x0000 valid 24472000 | host leader 5154122 us trailer 5216714 us
+frame 79: block 79 ts 7308655878336 payload 24472000 | trailer block 79 status 0x0000 valid 24472000 | host leader 5217732 us trailer 5280361 us
+frame 80: block 80 ts 7308719401336 payload 24472000 | trailer block 80 status 0x0000 valid 24472000 | host leader 5281219 us trailer 5343869 us
+frame 81: block 81 ts 7308782924176 payload 24472000 | trailer block 81 status 0x0000 valid 24472000 | host leader 5345159 us trailer 5407389 us
+frame 82: block 82 ts 7308846447336 payload 24472000 | trailer block 82 status 0x0000 valid 24472000 | host leader 5408266 us trailer 5470938 us
+frame 83: block 83 ts 7308909970528 payload 24472000 | trailer block 83 status 0x0000 valid 24472000 | host leader 5471805 us trailer 5534419 us
+frame 84: block 84 ts 7308973493232 payload 24472000 | trailer block 84 status 0x0000 valid 24472000 | host leader 5535327 us trailer 5597975 us
+frame 85: block 85 ts 7309037016632 payload 24472000 | trailer block 85 status 0x0000 valid 24472000 | host leader 5598881 us trailer 5661509 us
+frame 86: block 86 ts 7309100540312 payload 24472000 | trailer block 86 status 0x0000 valid 24472000 | host leader 5662376 us trailer 5725004 us
+frame 87: block 87 ts 7309164063200 payload 24472000 | trailer block 87 status 0x0000 valid 24472000 | host leader 5725924 us trailer 5788544 us
+frame 88: block 88 ts 7309227586336 payload 24472000 | trailer block 88 status 0x0000 valid 24472000 | host leader 5789423 us trailer 5852054 us
+frame 89: block 89 ts 7309291109232 payload 24472000 | trailer block 89 status 0x0000 valid 24472000 | host leader 5852953 us trailer 5915604 us
+frame 90: block 90 ts 7309354632312 payload 24472000 | trailer block 90 status 0x0000 valid 24472000 | host leader 5916478 us trailer 5978829 us
+frame 91: block 91 ts 7309418156312 payload 24472000 | trailer block 91 status 0x0000 valid 24472000 | host leader 5980343 us trailer 6042632 us
+frame 92: block 92 ts 7309481679256 payload 24472000 | trailer block 92 status 0x0000 valid 24472000 | host leader 6044139 us trailer 6106142 us
+frame 93: block 93 ts 7309545201848 payload 24472000 | trailer block 93 status 0x0000 valid 24472000 | host leader 6107053 us trailer 6169658 us
+frame 94: block 94 ts 7309608725312 payload 24472000 | trailer block 94 status 0x0000 valid 24472000 | host leader 6170563 us trailer 6233215 us
+frame 95: block 95 ts 7309672248232 payload 24472000 | trailer block 95 status 0x0000 valid 24472000 | host leader 6234146 us trailer 6296788 us
+frame 96: block 96 ts 7309735771256 payload 24472000 | trailer block 96 status 0x0000 valid 24472000 | host leader 6297611 us trailer 6360243 us
+frame 97: block 97 ts 7309799295120 payload 24472000 | trailer block 97 status 0x0000 valid 24472000 | host leader 6361236 us trailer 6423773 us
+frame 98: block 98 ts 7309862818336 payload 24472000 | trailer block 98 status 0x0000 valid 24472000 | host leader 6424660 us trailer 6487373 us
+frame 99: block 99 ts 7309926341256 payload 24472000 | trailer block 99 status 0x0000 valid 24472000 | host leader 6488185 us trailer 6550814 us
+grabq: 100 complete frames (100 leaders), first leader 3466 us after start, 15.746 fps, 385.3 MB/s over 6.287 s
+get TransferQueueOverflowCount @0x120148 = 602 (0x25a, register 0x25a)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (483 us)
+si-disable: OK status 0x0000 SUCCESS (367 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes

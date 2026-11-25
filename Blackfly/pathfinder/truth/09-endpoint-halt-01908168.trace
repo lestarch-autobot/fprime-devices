@@ -1,0 +1,146 @@
+# u3vprobe serial=01908168 libusb 1.0.27.11882
+      6946 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 00 00 d0 01 00 00 00 00 00 00 00 00 08 00
+      7121 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 00 00 00 00 04 00 00 00 00 00
+      7147 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 00 d8 01 00 00 00 00 00 00 00 00 08 00
+      7257 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 01 00 00 00 01 00 00 00 00 00
+      7298 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 02 00 14 00 01 00 00 00 00 00 00 00 04 00
+      7522 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 02 00 00 04 00 00
+      7556 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 03 00 18 00 01 00 00 00 00 00 00 00 04 00
+      7713 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 00 00 04 00 00
+      7748 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 04 00 20 00 01 00 00 00 00 00 00 00 08 00
+      7894 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 04 00 00 00 02 00 00 00 00 00
+      7922 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 05 00 2c 00 01 00 00 00 00 00 00 00 08 00
+      8033 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 05 00 00 80 02 00 00 00 00 00
+# NOTE 09: endpoint halt / clear on stream, control and event endpoints
+# ep-status 0x81: 00 00 (bit0 = halted)
+# ep-status 0x81: OK
+# ep-status 0x82: 00 00 (bit0 = halted)
+# ep-status 0x82: OK
+# ep-status 0x02: 00 00 (bit0 = halted)
+# ep-status 0x02: OK
+# ep-status 0x83: 00 00 (bit0 = halted)
+# ep-status 0x83: OK
+# NOTE halt the stream endpoint while idle
+# set-halt 0x81: OK
+# ep-status 0x81: 01 00 (bit0 = halted)
+# ep-status 0x81: OK
+    210997 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+# clear-halt 0x81: OK
+# ep-status 0x81: 00 00 (bit0 = halted)
+# ep-status 0x81: OK
+# NOTE halt the stream endpoint during acquisition between frames, read, clear, read
+    214202 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 06 00 04 10 0c 00 00 00 00 00 40 0d 03 00
+    214964 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 06 00 00 00 04 00
+# set ExposureTime @0xc1004 <- 200000 : OK status 0x0000 SUCCESS (966 us)
+    215175 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 07 00 00 00 02 00 00 00 00 00 00 00 30 00
+    215485 CTRL IN  ep=0x82 rc=OK len=60 : 55 33 56 43 00 00 01 08 30 00 07 00 00 00 00 03 00 00 00 00 c0 69 75 01 00 00 00 00 34 00 00 00 24 00 00 00 00 04 00 00 00 00 10 00 17 00 00 00 c0 69 05 00 00 00 00 00 00 04 00 00
+# si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+    215666 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 08 00 18 00 02 00 00 00 00 00 00 04 00 00
+    215780 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 08 00 00 00 04 00
+    215869 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 09 00 1c 00 02 00 00 00 00 00 00 00 10 00
+    215954 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 09 00 00 00 04 00
+    216040 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0a 00 20 00 02 00 00 00 00 00 17 00 00 00
+    216186 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0a 00 00 00 04 00
+    216275 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0b 00 24 00 02 00 00 00 00 00 c0 69 05 00
+    216629 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0b 00 00 00 04 00
+    216769 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0c 00 28 00 02 00 00 00 00 00 00 00 00 00
+    216866 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0c 00 00 00 04 00
+    216971 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0d 00 2c 00 02 00 00 00 00 00 00 04 00 00
+    217079 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0d 00 00 00 04 00
+    217187 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0e 00 04 00 02 00 00 00 00 00 01 00 00 00
+    233052 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0e 00 00 00 04 00
+# si-enable: OK status 0x0000 SUCCESS (15984 us)
+    233269 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0f 00 04 00 0c 00 00 00 00 00 01 00 00 00
+    335032 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 0f 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    395484 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0f 00 00 00 04 00
+# set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (162360 us)
+# grab: 1 frames, timeout 2000 ms, start t=395669 us
+    596730 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 00 00 00 00 00 00 00 00 00 00 01 00 48 7e 86 56 60 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    734451 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 00 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 0: block 0 type 0x0001 ts 7010838281800 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 596729 us trailer 734458 us | bytes min 0 max 255 mean 1.181 var 6.126
+# grab: 1 complete frames
+# grab: first leader 201060 us after grab start
+# set-halt 0x81: OK
+# ep-status 0x81: 01 00 (bit0 = halted)
+# ep-status 0x81: OK
+# grab: 1 frames, timeout 1000 ms, start t=738490 us
+   1739041 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 1000550 us (0 bytes)
+# grab: 0 complete frames (none)
+   1739282 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 10 00 28 01 12 00 00 00 00 00 00 00 04 00
+   1739447 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 10 00 00 00 00 00
+# get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+# clear-halt 0x81: OK
+# ep-status 0x81: 00 00 (bit0 = halted)
+# ep-status 0x81: OK
+# grab: 3 frames, timeout 2000 ms, start t=1742647 us
+   3743221 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 2000573 us (0 bytes)
+# grab: 0 complete frames (none)
+   3743502 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 11 00 24 00 0c 00 00 00 00 00 01 00 00 00
+   3743633 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 11 00 00 00 04 00
+# set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (326 us)
+   3743773 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 12 00 04 00 02 00 00 00 00 00 00 00 00 00
+   3744272 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 12 00 00 00 04 00
+# si-disable: OK status 0x0000 SUCCESS (630 us)
+   4045044 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+   4045325 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 13 00 04 10 0c 00 00 00 00 00 e8 03 00 00
+   4045551 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 13 00 00 00 04 00
+# set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (426 us)
+# NOTE halt control IN endpoint, send a command
+# set-halt 0x82: OK
+# ep-status 0x82: 01 00 (bit0 = halted)
+# ep-status 0x82: OK
+   4046954 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 14 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4047221 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 14 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+# clear-halt 0x82: OK
+# ep-status 0x82: 00 00 (bit0 = halted)
+# ep-status 0x82: OK
+   4050211 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 15 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4050491 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 15 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+   4050651 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 16 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4050896 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 16 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+# NOTE halt control OUT endpoint, send a command
+# set-halt 0x02: OK
+# ep-status 0x02: 01 00 (bit0 = halted)
+# ep-status 0x02: OK
+   4053510 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 17 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4053685 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 17 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+# clear-halt 0x02: OK
+# ep-status 0x02: 00 00 (bit0 = halted)
+# ep-status 0x02: OK
+   4055926 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 18 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4056197 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 18 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+   4056386 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 19 00 84 10 08 00 00 00 00 00 00 00 04 00
+   4056523 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 19 00 c8 14 00 00
+# get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+# NOTE clear-halt on a healthy stream endpoint while a frame is queued mid-acquisition (host resync habit)
+   4056695 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1a 00 04 00 02 00 00 00 00 00 01 00 00 00
+   4072512 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1a 00 00 00 04 00
+# si-enable: OK status 0x0000 SUCCESS (15957 us)
+   4072744 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1b 00 04 00 0c 00 00 00 00 00 01 00 00 00
+   4174506 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1b 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+   4235919 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1b 00 00 00 04 00
+# set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163329 us)
+# clear-halt 0x81: OK
+# grab: 3 frames, timeout 2000 ms, start t=4537833 us
+   6538429 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 2000595 us (0 bytes)
+# grab: 0 complete frames (none)
+   6538707 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1c 00 24 00 0c 00 00 00 00 00 01 00 00 00
+   6538994 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1c 00 00 00 04 00
+# set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (466 us)
+   6539152 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1d 00 04 00 02 00 00 00 00 00 00 00 00 00
+   6539675 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1d 00 00 00 04 00
+# si-disable: OK status 0x0000 SUCCESS (661 us)
+   6840439 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes

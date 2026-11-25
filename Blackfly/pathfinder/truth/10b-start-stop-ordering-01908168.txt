@@ -1,0 +1,1793 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 10b: start/stop ordering. BayerRG8 full, exposure 100 ms (9.9 fps), Continuous
+set ChunkModeActive @0x150004 <- 0 : OK status 0x0000 SUCCESS (16719 us)
+set ChunkSelector @0x150048 <- 2 : OK status 0x0000 SUCCESS (359 us)
+set AcquisitionMode @0xc00c8 <- 0 : OK status 0x0000 SUCCESS (250 us)
+set DeviceLinkThroughputLimit @0x20000344 <- 500000000 : OK status 0x0000 SUCCESS (16266 us)
+set ExposureTime @0xc1004 <- 100000 : OK status 0x0000 SUCCESS (369 us)
+get PayloadSize @0x20002008 = 24472000 (0x17569c0, register 0x17569c0)
+NOTE A: normal order
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (15433 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163322 us)
+grab: 2 frames, timeout 2000 ms, start t=222879 us
+frame 0: block 0 type 0x0001 ts 7086224765096 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 324040 us trailer 415763 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7086325964848 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 425279 us trailer 516275 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 101161 us after grab start, 9.878 fps, 241.7 MB/s over 0.101 s
+NOTE C: AcquisitionStart while already acquiring
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (1257 us)
+grab: 2 frames, timeout 2000 ms, start t=518081 us
+frame 0: block 2 type 0x0001 ts 7086427163280 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 526346 us trailer 618591 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 3 type 0x0001 ts 7086528361936 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 size_y 4600 | host leader 627679 us trailer 719648 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 8265 us after grab start, 9.868 fps, 241.5 MB/s over 0.101 s
+NOTE D: AcquisitionStop twice, then read
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (2466 us)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (2455 us)
+grab: 3 frames, timeout 500 ms, start t=724823 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 500669 us (0 bytes)
+grab: 0 complete frames (none)
+NOTE E: restart without touching SIRM (stream enable still set)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163334 us)
+grab: 3 frames, timeout 2000 ms, start t=1389001 us
+frame 0: block 5 type 0x0001 ts 7087390871768 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 5 status 0x0000 valid 24472000 size_y 4600 | host leader 1489245 us trailer 1580280 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 6 type 0x0001 ts 7087492070360 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 6 status 0x0000 valid 24472000 size_y 4600 | host leader 1590383 us trailer 1681282 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 2: block 7 type 0x0001 ts 7087593269312 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 7 status 0x0000 valid 24472000 size_y 4600 | host leader 1691580 us trailer 1782895 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 3 complete frames, first leader 100244 us after grab start, 9.885 fps, 241.9 MB/s over 0.202 s
+NOTE F: si-disable while acquiring, then read
+si-disable: OK status 0x0000 SUCCESS (1805 us)
+r32 0x20004 = 0x0 (0)
+grab: 1 frames, timeout 500 ms, start t=1786300 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 500661 us (0 bytes)
+grab: 0 complete frames (none)
+get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+NOTE G: si-enable again while still acquiring
+si-enable: OK status 0x0000 SUCCESS (16057 us)
+grab: 2 frames, timeout 1000 ms, start t=2303846 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 1000691 us (0 bytes)
+grab: 0 complete frames (none)
+NOTE G2: AcquisitionStart again (no stop)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163343 us)
+grab: 2 frames, timeout 1000 ms, start t=3468043 us
+frame 0: block 0 type 0x0001 ts 7089469918528 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 3568766 us trailer 3659243 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7089571117336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 3670442 us trailer 3760040 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 100723 us after grab start, 9.835 fps, 240.7 MB/s over 0.102 s
+NOTE G3: stop then start
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1606 us)
+  PENDING_ACK: device asks for 200 ms more   [repeated 2 times]
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (224920 us)
+grab: 2 frames, timeout 1000 ms, start t=3986902 us
+frame 0: block 3 type 0x0001 ts 7089989784232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 size_y 4600 | host leader 4089194 us trailer 4179663 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 4 type 0x0001 ts 7090090983200 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 4 status 0x0000 valid 24472000 size_y 4600 | host leader 4189351 us trailer 4280248 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 102292 us after grab start, 9.984 fps, 244.3 MB/s over 0.100 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1826 us)
+si-disable: OK status 0x0000 SUCCESS (1467 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE H: AcquisitionStart with stream disabled, wait 500 ms, read, then enable
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163299 us)
+get TransferQueueCurrentBlockCount @0x120128 = 3 (0x3, register 0x3)
+grab: 1 frames, timeout 300 ms, start t=5248973 us
+frame 0: block 6 type 0x0001 ts 7090749751312 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 6 status 0x0000 valid 24472000 size_y 4600 | host leader 5249223 us trailer 5338892 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 1 complete frames
+grab: first leader 250 us after grab start
+si-enable: OK status 0x0000 SUCCESS (15665 us)
+get TransferQueueCurrentBlockCount @0x120128 = 4 (0x4, register 0x4)
+grab: 2 frames, timeout 1000 ms, start t=5355241 us
+frame 0: block 7 type 0x0001 ts 7090850950336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 7 status 0x0000 valid 24472000 size_y 4600 | host leader 5355462 us trailer 5445248 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 8 type 0x0001 ts 7090952148312 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 8 status 0x0000 valid 24472000 size_y 4600 | host leader 5445541 us trailer 5535279 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 221 us after grab start, 11.101 fps, 271.7 MB/s over 0.090 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1116 us)
+si-disable: OK status 0x0000 SUCCESS (667 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE J: clear-halt mid-stream, then stop/start only
+si-enable: OK status 0x0000 SUCCESS (14995 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163360 us)
+grab: 2 frames, timeout 2000 ms, start t=6016544 us
+frame 0: block 0 type 0x0001 ts 7092018386312 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 6117762 us trailer 6207743 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7092119585712 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 6218098 us trailer 6307741 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 101218 us after grab start, 9.967 fps, 243.9 MB/s over 0.100 s
+clear-halt 0x81: OK
+grab: 1 frames, timeout 500 ms, start t=6310614 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 500606 us (0 bytes)
+grab: 0 complete frames (none)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (444 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163263 us)
+grab: 2 frames, timeout 1000 ms, start t=6975101 us
+frame 0: block 3 type 0x0001 ts 7092976933792 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 size_y 4600 | host leader 7076290 us trailer 7165952 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 4 type 0x0001 ts 7093078132792 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 4 status 0x0000 valid 24472000 size_y 4600 | host leader 7177526 us trailer 7268253 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 101189 us after grab start, 9.878 fps, 241.7 MB/s over 0.101 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1598 us)
+si-disable: OK status 0x0000 SUCCESS (2429 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE L: host abandons a frame mid-payload (reads leader + part), stops, restarts: is the next thing read a leader
+si-enable: OK status 0x0000 SUCCESS (15974 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163313 us)
+grab: 1 frames, timeout 2000 ms, start t=7752719 us
+frame 0: block 0 type 0x0001 ts 7093754535232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 7852939 us trailer 7944328 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 1 complete frames
+grab: first leader 100220 us after grab start
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 23 times]
+drain ep 0x81: OK 354752 bytes
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 13 times]
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (898 us)
+si-disable: OK status 0x0000 SUCCESS (934 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+si-enable: OK status 0x0000 SUCCESS (15977 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (162288 us)
+grab: 2 frames, timeout 2000 ms, start t=24377465 us
+frame 0: block 0 type 0x0001 ts 7110380114232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 24479694 us trailer 24570690 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7110481312360 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 24579862 us trailer 24671223 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 102229 us after grab start, 9.983 fps, 244.3 MB/s over 0.100 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1961 us)
+si-disable: OK status 0x0000 SUCCESS (1165 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE M: host too-small SIRM (payload transfer count 10 instead of 23): what does the trailer say
+w32 0x20020 <- 0xa: OK status 0x0000 SUCCESS (359 us)
+w32 0x20024 <- 0x0: OK status 0x0000 SUCCESS (374 us)
+si-enable: OK status 0x0000 SUCCESS (14958 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163242 us)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 10 times]
+drain ep 0x81: OK 32 bytes (trailer)
+drain ep 0x81: OK 52 bytes (leader)
+drain ep 0x81: OK 1048576 bytes   [repeated 3 times]
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1006 us)
+si-disable: OK status 0x0000 SUCCESS (621 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (530 us)

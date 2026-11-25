@@ -1,0 +1,146 @@
+// USB3 Vision / GenCP wire definitions used by the pathfinder probe.
+// Layouts follow the USB3 Vision 1.0 and GenCP 1.x register maps; every
+// multi-byte protocol field is little-endian.
+#ifndef BLACKFLY_PATHFINDER_U3V_H
+#define BLACKFLY_PATHFINDER_U3V_H
+
+#include <stdint.h>
+
+// Packet prefixes ("U3VC", "U3VE", "U3VL", "U3VT" as little-endian u32)
+#define U3V_MAGIC_CONTROL 0x43563355u
+#define U3V_MAGIC_EVENT 0x45563355u
+#define U3V_MAGIC_LEADER 0x4C563355u
+#define U3V_MAGIC_TRAILER 0x54563355u
+
+// GenCP command ids
+#define GENCP_READMEM_CMD 0x0800u
+#define GENCP_READMEM_ACK 0x0801u
+#define GENCP_WRITEMEM_CMD 0x0802u
+#define GENCP_WRITEMEM_ACK 0x0803u
+#define GENCP_PENDING_ACK 0x0805u
+#define GENCP_EVENT_CMD 0x0C00u
+
+#define GENCP_FLAG_REQUEST_ACK 0x4000u
+
+// GenCP status codes (ack header "status" field)
+#define GENCP_SUCCESS 0x0000u
+#define GENCP_NOT_IMPLEMENTED 0x8001u
+#define GENCP_INVALID_PARAMETER 0x8002u
+#define GENCP_INVALID_ADDRESS 0x8003u
+#define GENCP_WRITE_PROTECT 0x8004u
+#define GENCP_BAD_ALIGNMENT 0x8005u
+#define GENCP_ACCESS_DENIED 0x8006u
+#define GENCP_BUSY 0x8007u
+#define GENCP_MSG_TIMEOUT 0x800Bu
+#define GENCP_INVALID_HEADER 0x800Eu
+#define GENCP_WRONG_CONFIG 0x800Fu
+#define GENCP_GENERIC_ERROR 0x8FFFu
+// USB3 Vision specific status codes
+#define U3V_STATUS_RESEND_NOT_SUPPORTED 0xA001u
+#define U3V_STATUS_DSI_ENDPOINT_HALTED 0xA002u
+#define U3V_STATUS_SI_PAYLOAD_SIZE_NOT_ALIGNED 0xA003u
+#define U3V_STATUS_SI_REGISTERS_INCONSISTENT 0xA004u
+#define U3V_STATUS_DATA_DISCARDED 0xA100u
+#define U3V_STATUS_DATA_OVERRUN 0xA101u
+
+#define U3V_CMD_HEADER_SIZE 12u  // prefix(4) flags(2) command(2) length(2) request_id(2)
+#define U3V_ACK_HEADER_SIZE 12u  // prefix(4) status(2) command(2) length(2) ack_id(2)
+#define U3V_READMEM_SCD_SIZE 12u // address(8) reserved(2) count(2)
+
+// Technology agnostic bootstrap register map (ABRM), absolute addresses
+#define ABRM_GENCP_VERSION 0x0000u
+#define ABRM_MANUFACTURER_NAME 0x0004u
+#define ABRM_MODEL_NAME 0x0044u
+#define ABRM_FAMILY_NAME 0x0084u
+#define ABRM_DEVICE_VERSION 0x00C4u
+#define ABRM_MANUFACTURER_INFO 0x0104u
+#define ABRM_SERIAL_NUMBER 0x0144u
+#define ABRM_USER_DEFINED_NAME 0x0184u
+#define ABRM_DEVICE_CAPABILITY 0x01C4u
+#define ABRM_MAX_DEVICE_RESPONSE_TIME 0x01CCu
+#define ABRM_MANIFEST_TABLE_ADDRESS 0x01D0u
+#define ABRM_SBRM_ADDRESS 0x01D8u
+#define ABRM_DEVICE_CONFIGURATION 0x01E0u
+#define ABRM_HEARTBEAT_TIMEOUT 0x01E8u
+#define ABRM_MESSAGE_CHANNEL_ID 0x01ECu
+#define ABRM_TIMESTAMP 0x01F0u
+#define ABRM_TIMESTAMP_LATCH 0x01F8u
+#define ABRM_TIMESTAMP_INCREMENT 0x01FCu
+#define ABRM_ACCESS_PRIVILEGE 0x0204u
+#define ABRM_PROTOCOL_ENDIANNESS 0x0208u
+#define ABRM_IMPLEMENTATION_ENDIANNESS 0x020Cu
+#define ABRM_DEVICE_SOFTWARE_INTERFACE_VERSION 0x0210u
+#define ABRM_STRING_SIZE 64u
+
+// Technology specific bootstrap register map (SBRM), offsets from SBRM address
+#define SBRM_U3V_VERSION 0x00u
+#define SBRM_U3VCP_CAPABILITY 0x04u
+#define SBRM_U3VCP_CONFIGURATION 0x0Cu
+#define SBRM_MAX_CMD_TRANSFER_LENGTH 0x14u
+#define SBRM_MAX_ACK_TRANSFER_LENGTH 0x18u
+#define SBRM_NUM_STREAM_CHANNELS 0x1Cu
+#define SBRM_SIRM_ADDRESS 0x20u
+#define SBRM_SIRM_LENGTH 0x28u
+#define SBRM_EIRM_ADDRESS 0x2Cu
+#define SBRM_EIRM_LENGTH 0x34u
+#define SBRM_IIDC2_ADDRESS 0x38u
+#define SBRM_CURRENT_SPEED 0x40u
+#define SBRM_SIZE 0x44u
+
+// Streaming interface register map (SIRM), offsets from SIRM address
+#define SIRM_INFO 0x00u
+#define SIRM_CONTROL 0x04u
+#define SIRM_REQ_PAYLOAD_SIZE 0x08u
+#define SIRM_REQ_LEADER_SIZE 0x10u
+#define SIRM_REQ_TRAILER_SIZE 0x14u
+#define SIRM_MAX_LEADER_SIZE 0x18u
+#define SIRM_PAYLOAD_TRANSFER_SIZE 0x1Cu
+#define SIRM_PAYLOAD_TRANSFER_COUNT 0x20u
+#define SIRM_PAYLOAD_FINAL_TRANSFER1_SIZE 0x24u
+#define SIRM_PAYLOAD_FINAL_TRANSFER2_SIZE 0x28u
+#define SIRM_MAX_TRAILER_SIZE 0x2Cu
+#define SIRM_SIZE 0x30u
+#define SIRM_CONTROL_STREAM_ENABLE 0x1u
+
+// Event interface register map (EIRM), offsets from EIRM address
+#define EIRM_CONTROL 0x00u
+#define EIRM_MAX_EVENT_TRANSFER_LENGTH 0x04u
+#define EIRM_EVENT_TEST_CONTROL 0x08u
+#define EIRM_SIZE 0x0Cu
+
+// Manifest table: u64 entry count followed by 64-byte entries
+#define MANIFEST_ENTRY_SIZE 64u
+#define MANIFEST_ENTRY_FILE_VERSION 0x00u
+#define MANIFEST_ENTRY_FILE_FORMAT 0x04u // bits 10..15 file type (0 xml, 1 zip), 16..23 schema minor, 24..31 schema major
+#define MANIFEST_ENTRY_ADDRESS 0x08u
+#define MANIFEST_ENTRY_SIZE_FIELD 0x10u
+#define MANIFEST_ENTRY_SHA1 0x18u
+
+// Stream leader (image payload types), offsets
+#define LEADER_MAGIC 0u
+#define LEADER_SIZE_FIELD 6u
+#define LEADER_BLOCK_ID 8u
+#define LEADER_PAYLOAD_TYPE 18u
+#define LEADER_TIMESTAMP 20u
+#define LEADER_PIXEL_FORMAT 28u
+#define LEADER_SIZE_X 32u
+#define LEADER_SIZE_Y 36u
+#define LEADER_OFFSET_X 40u
+#define LEADER_OFFSET_Y 44u
+#define LEADER_PADDING_X 48u
+#define LEADER_IMAGE_SIZE 52u
+
+// Stream trailer, offsets
+#define TRAILER_MAGIC 0u
+#define TRAILER_SIZE_FIELD 6u
+#define TRAILER_BLOCK_ID 8u
+#define TRAILER_STATUS 16u
+#define TRAILER_VALID_PAYLOAD_SIZE 20u
+#define TRAILER_SIZE_Y 28u
+#define TRAILER_IMAGE_SIZE 32u
+
+#define U3V_PAYLOAD_TYPE_IMAGE 0x0001u
+#define U3V_PAYLOAD_TYPE_IMAGE_EXTENDED_CHUNK 0x4001u
+#define U3V_PAYLOAD_TYPE_CHUNK 0x4000u
+
+#endif

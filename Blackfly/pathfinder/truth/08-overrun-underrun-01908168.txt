@@ -1,0 +1,58 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 08: overrun - acquisition running at 15.7 fps, host does not read for 2 s, then reads slowly (synchronous reader with statistics)
+get TransferQueueMaxBlockCount @0x120108 = 9 (0x9, register 0x9)
+get TransferQueueOverflowCount @0x120148 = 556 (0x22c, register 0x22c)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (16106 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164030 us)
+get TransferQueueCurrentBlockCount @0x120128 = 8 (0x8, register 0x8)
+get TransferQueueOverflowCount @0x120148 = 579 (0x243, register 0x243)
+grab: 14 frames, timeout 3000 ms, start t=2210905 us
+frame 0: block 0 type 0x0001 ts 6988840858360 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 2211143 us trailer 2362199 us | bytes min 0 max 255 mean 0.408 var 1.410
+frame 1: block 1 type 0x0001 ts 6988904381848 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 2364194 us trailer 2512990 us | bytes min 0 max 255 mean 0.412 var 1.424
+frame 2: block 2 type 0x0001 ts 6988967904792 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 2514997 us trailer 2665269 us | bytes min 0 max 255 mean 0.413 var 1.424
+frame 3: block 3 type 0x0001 ts 6989031428336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 size_y 4600 | host leader 2666246 us trailer 2815056 us | bytes min 0 max 255 mean 0.416 var 1.440
+frame 4: block 4 type 0x0001 ts 6989094951232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 4 status 0x0000 valid 24472000 size_y 4600 | host leader 2817063 us trailer 2965767 us | bytes min 0 max 255 mean 0.414 var 1.433
+frame 5: block 5 type 0x0001 ts 6989158474824 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 5 status 0x0000 valid 24472000 size_y 4600 | host leader 2967769 us trailer 3116663 us | bytes min 0 max 255 mean 0.417 var 1.442
+frame 6: block 6 type 0x0001 ts 6989221997744 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 6 status 0x0000 valid 24472000 size_y 4600 | host leader 3117810 us trailer 3266675 us | bytes min 0 max 255 mean 0.417 var 1.440
+frame 7: block 7 type 0x0001 ts 6989285521280 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 7 status 0x0000 valid 24472000 size_y 4600 | host leader 3268682 us trailer 3418581 us | bytes min 0 max 255 mean 0.419 var 1.448
+frame 8: block 8 type 0x0001 ts 6989349044360 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 8 status 0x0000 valid 24472000 size_y 4600 | host leader 3420580 us trailer 3569149 us | bytes min 0 max 255 mean 0.419 var 1.448
+frame 9: block 34 type 0x0001 ts 6991000646336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 34 status 0x0000 valid 24472000 size_y 4600 | host leader 3571150 us trailer 3795337 us | bytes min 0 max 255 mean 0.435 var 1.500
+frame 10: block 37 type 0x0001 ts 6991191216120 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 37 status 0x0000 valid 24472000 size_y 4600 | host leader 3797233 us trailer 3951472 us | bytes min 0 max 255 mean 0.436 var 1.498
+frame 11: block 39 type 0x0001 ts 6991318262552 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 39 status 0x0000 valid 24472000 size_y 4600 | host leader 3953366 us trailer 4107250 us | bytes min 0 max 255 mean 0.434 var 1.496
+frame 12: block 42 type 0x0001 ts 6991508832256 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 42 status 0x0000 valid 24472000 size_y 4600 | host leader 4109144 us trailer 4263014 us | bytes min 0 max 255 mean 0.434 var 1.494
+frame 13: block 44 type 0x0001 ts 6991635879064 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 44 status 0x0000 valid 24472000 size_y 4600 | host leader 4263736 us trailer 4416308 us | bytes min 0 max 255 mean 0.436 var 1.503
+grab: 14 complete frames, first leader 238 us after grab start, 6.333 fps, 155.0 MB/s over 2.053 s
+get TransferQueueCurrentBlockCount @0x120128 = 7 (0x7, register 0x7)
+get TransferQueueOverflowCount @0x120148 = 601 (0x259, register 0x259)
+NOTE stop with frames still queued, then keep reading: queued frames are still delivered?
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (515 us)
+get TransferQueueCurrentBlockCount @0x120128 = 7 (0x7, register 0x7)
+grab: 12 frames, timeout 1000 ms, start t=4419313 us
+frame 0: block 46 type 0x0001 ts 6991762924792 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 46 status 0x0000 valid 24472000 size_y 4600 | host leader 4419402 us trailer 4568967 us | bytes min 0 max 255 mean 0.439 var 1.513
+frame 1: leader read failed: LIBUSB_ERROR_TIMEOUT after 1150201 us (0 bytes)
+grab: 1 complete frames
+grab: first leader 89 us after grab start
+get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+si-disable: OK status 0x0000 SUCCESS (509 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE underrun: exposure 500 ms (2 fps) and host timeout 100 ms: the host read times out, nothing is lost
+set ExposureTime @0xc1004 <- 500000 : OK status 0x0000 SUCCESS (406 us)
+si-enable: OK status 0x0000 SUCCESS (15965 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163315 us)
+grab: 1 frames, timeout 100 ms, start t=6051399 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 100631 us (0 bytes)
+grab: 0 complete frames (none)
+grab: 1 frames, timeout 100 ms, start t=6152121 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 100625 us (0 bytes)
+grab: 0 complete frames (none)
+grab: 2 frames, timeout 2000 ms, start t=6252836 us
+frame 0: block 0 type 0x0001 ts 6995182021336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 6552677 us trailer 6644252 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 6995683217232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 7052792 us trailer 7143474 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 299841 us after grab start, 2.000 fps, 48.9 MB/s over 0.500 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1659 us)
+si-disable: OK status 0x0000 SUCCESS (1940 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (560 us)

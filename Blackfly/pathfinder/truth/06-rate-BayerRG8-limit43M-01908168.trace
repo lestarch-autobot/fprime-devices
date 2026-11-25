@@ -1,0 +1,321 @@
+# u3vprobe serial=01908168 libusb 1.0.27.11882
+      5330 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 00 00 d0 01 00 00 00 00 00 00 00 00 08 00
+      5523 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 00 00 00 00 04 00 00 00 00 00
+      5548 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 00 d8 01 00 00 00 00 00 00 00 00 08 00
+      5718 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 01 00 00 00 01 00 00 00 00 00
+      5742 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 02 00 14 00 01 00 00 00 00 00 00 00 04 00
+      5835 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 02 00 00 04 00 00
+      5875 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 03 00 18 00 01 00 00 00 00 00 00 00 04 00
+      6086 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 00 00 04 00 00
+      6110 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 04 00 20 00 01 00 00 00 00 00 00 00 08 00
+      6306 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 04 00 00 00 02 00 00 00 00 00
+      6331 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 05 00 2c 00 01 00 00 00 00 00 00 00 08 00
+      6494 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 05 00 00 80 02 00 00 00 00 00
+# NOTE rate test BayerRG8-limit43M
+      6531 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 06 00 08 60 08 00 00 00 00 00 09 00 08 01
+     28514 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 06 00 00 00 04 00
+# set PixelFormat @0x86008 <- 17301513 : OK status 0x0000 SUCCESS (22017 us)
+     28579 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 07 00 08 20 0c 00 00 00 00 00 00 00 00 00
+     44706 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 07 00 00 00 04 00
+# set ExposureAuto @0xc2008 <- 0 : OK status 0x0000 SUCCESS (16168 us)
+     44798 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 08 00 08 40 10 00 00 00 00 00 00 00 00 00
+     61538 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 08 00 00 00 04 00
+# set GainAuto @0x104008 <- 0 : OK status 0x0000 SUCCESS (16799 us)
+     61718 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 09 00 08 80 10 00 00 00 00 00 00 00 00 00
+     77940 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 09 00 00 00 04 00
+# set BalanceWhiteAuto @0x108008 <- 0 : OK status 0x0000 SUCCESS (16318 us)
+     78133 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0a 00 04 10 0c 00 00 00 00 00 e8 03 00 00
+     78801 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0a 00 00 00 04 00
+# set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (768 us)
+     78971 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0b 00 44 03 00 20 00 00 00 00 00 65 cd 1d
+     95610 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0b 00 00 00 04 00
+# set DeviceLinkThroughputLimit @0x20000344 <- 500000000 : OK status 0x0000 SUCCESS (16731 us)
+     95804 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0c 00 44 03 00 20 00 00 00 00 c0 20 90 02
+    112521 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0c 00 00 00 04 00
+# set DeviceLinkThroughputLimit @0x20000344 <- 43000000 : OK status 0x0000 SUCCESS (16819 us)
+    112689 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0d 00 08 20 00 20 00 00 00 00 00 00 04 00
+    112798 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0d 00 c0 69 75 01
+# get PayloadSize @0x20002008 = 24472000 (0x17569c0, register 0x17569c0)
+    112869 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0e 00 68 11 0c 00 00 00 00 00 00 00 04 00
+    113034 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0e 00 43 7b 42 01
+# get AcquisitionResultingFrameRate @0xc1168 = 21134147 (0x1427b43, register 0x1427b43)
+    113120 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 0f 00 88 11 0c 00 00 00 00 00 00 00 04 00
+    113785 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 0f 00 88 7b 36 02
+# get AcquisitionResultingFrameRate.numerator @0xc1188 = 37125000 (0x2367b88, register 0x2367b88)
+    114041 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 10 00 28 10 00 02 00 00 00 00 00 00 04 00
+    114331 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 10 00 02 f4 8f 02
+# get DeviceLinkCurrentThroughput @0x2001028 = 42988546 (0x28ff402, register 0x28ff402)
+    114485 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 11 00 08 10 00 02 00 00 00 00 00 00 04 00
+    114734 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 11 00 e8 74 f6 16
+# get DeviceMaxThroughput @0x2001008 = 385250536 (0x16f674e8, register 0x16f674e8)
+    114829 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 12 00 00 00 02 00 00 00 00 00 00 00 30 00
+    115073 CTRL IN  ep=0x82 rc=OK len=60 : 55 33 56 43 00 00 01 08 30 00 12 00 00 00 00 03 00 00 00 00 c0 69 75 01 00 00 00 00 34 00 00 00 24 00 00 00 00 04 00 00 00 00 10 00 46 00 00 00 40 3d 00 00 00 00 00 00 00 04 00 00
+# si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+    115176 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 13 00 18 00 02 00 00 00 00 00 00 04 00 00
+    115407 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 13 00 00 00 04 00
+    115476 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 14 00 1c 00 02 00 00 00 00 00 00 00 10 00
+    115700 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 14 00 00 00 04 00
+    115770 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 15 00 20 00 02 00 00 00 00 00 17 00 00 00
+    115928 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 15 00 00 00 04 00
+    115980 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 16 00 24 00 02 00 00 00 00 00 c0 69 05 00
+    116113 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 16 00 00 00 04 00
+    116159 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 17 00 28 00 02 00 00 00 00 00 00 00 00 00
+    116302 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 17 00 00 00 04 00
+    116346 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 18 00 2c 00 02 00 00 00 00 00 00 04 00 00
+    116496 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 18 00 00 00 04 00
+    116545 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 19 00 04 00 02 00 00 00 00 00 01 00 00 00
+    131856 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 19 00 00 00 04 00
+# si-enable: OK status 0x0000 SUCCESS (15371 us)
+    132042 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1a 00 04 00 0c 00 00 00 00 00 01 00 00 00
+    233784 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    334052 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    434227 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    534413 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    634636 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    734867 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    835111 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    935300 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+   1035518 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1a 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+   1124825 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1a 00 00 00 04 00
+# set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (993007 us)
+# grabq: 8 frames, 8 transfers queued (payload transfers 1048576 bytes), timeout 5000 ms, start t=1124974 us
+   1128444 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 00 00 00 00 00 00 00 00 00 00 01 00 08 ec 43 a4 41 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   1130290 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1131595 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1134332 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1137165 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1139798 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1142446 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1144980 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1147789 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1150015 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1152695 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1155381 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1158062 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1160809 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1163638 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1166194 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1168841 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1171444 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1174267 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1176875 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1179444 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1182030 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1184611 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1187542 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1188204 STRM IN  ep=0x81 rc=OK len=354752 : ...(+354752 bytes, see raw file)
+   1188551 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 00 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 0: block 0 ts 6878998555656 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 | host leader 1128482 us trailer 1188568 us
+   1696300 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 01 00 00 00 00 00 00 00 00 00 01 00 d8 64 32 c6 41 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   1699557 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1702148 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1704647 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1707221 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1709958 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1712565 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1714934 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1717681 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1720246 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1722975 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1725610 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1727946 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1730750 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1733183 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1736031 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1738633 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1741102 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1743757 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1746298 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1749080 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1751693 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1754109 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1756817 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   1757481 STRM IN  ep=0x81 rc=OK len=354752 : ...(+354752 bytes, see raw file)
+   1757861 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 01 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 1: block 1 ts 6879567832280 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 | host leader 1696341 us trailer 1757880 us
+   2265671 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 02 00 00 00 00 00 00 00 00 00 01 00 70 db 20 e8 41 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   2268881 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2271247 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2273923 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2276493 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2279342 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2281907 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2284432 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2286910 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2289549 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2292375 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2294964 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2297479 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2299943 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2302569 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2305394 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2307925 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2310472 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2312987 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2315653 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2318415 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2320981 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2323518 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2326045 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2326692 STRM IN  ep=0x81 rc=OK len=354752 : ...(+354752 bytes, see raw file)
+   2327073 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 02 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 2: block 2 ts 6880137108336 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 | host leader 2265713 us trailer 2327090 us
+   2834930 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 03 00 00 00 00 00 00 00 00 00 01 00 b8 55 0f 0a 42 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   2838209 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2840685 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2843306 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2845758 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2848631 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2850944 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2853718 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2856262 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2859060 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2861643 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2864075 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2866750 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2869228 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2872061 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2874675 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2877071 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2879793 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2882322 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2885117 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2887692 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2890242 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2892786 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2895304 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   2895899 STRM IN  ep=0x81 rc=OK len=354752 : ...(+354752 bytes, see raw file)
+   2896274 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 03 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 3: block 3 ts 6880706385336 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 | host leader 2835031 us trailer 2896293 us
+   3404212 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 04 00 00 00 00 00 00 00 00 00 01 00 a0 cc fd 2b 42 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   3407492 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3410051 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3412570 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3415133 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3417858 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3420477 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3422912 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3425589 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3428163 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3430880 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3433528 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3435908 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3438643 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3441188 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3443920 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3446548 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3448919 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3451663 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3454222 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3456952 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3459588 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3461919 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3464723 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3465375 STRM IN  ep=0x81 rc=OK len=354752 : ...(+354752 bytes, see raw file)
+   3465764 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 04 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 4: block 4 ts 6881275661472 payload 24472000 | trailer block 4 status 0x0000 valid 24472000 | host leader 3404255 us trailer 3465783 us
+   3973504 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 05 00 00 00 00 00 00 00 00 00 01 00 28 42 ec 4d 42 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   3976752 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3979246 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3981852 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3984330 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3987196 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3989725 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3992276 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3994894 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   3997381 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4000220 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4002785 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4005298 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4007929 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4010391 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4013276 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4015805 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4018360 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4020901 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4023522 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4026126 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4028854 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4031375 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4033907 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4034616 STRM IN  ep=0x81 rc=OK len=354752 : ...(+354752 bytes, see raw file)
+   4035014 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 05 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 5: block 5 ts 6881844937256 payload 24472000 | trailer block 5 status 0x0000 valid 24472000 | host leader 3973546 us trailer 4035033 us
+   4542793 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 06 00 00 00 00 00 00 00 00 00 01 00 d8 ba da 6f 42 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   4546048 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4548526 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4551082 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4553610 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4556466 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4559054 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4561569 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4564099 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4566674 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4569505 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4572124 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4574610 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4577230 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4579650 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4582524 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4585125 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4587661 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4590247 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4592745 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4595563 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4598183 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4600657 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4603318 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   4603954 STRM IN  ep=0x81 rc=OK len=354752 : ...(+354752 bytes, see raw file)
+   4604356 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 06 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 6: block 6 ts 6882414213848 payload 24472000 | trailer block 6 status 0x0000 valid 24472000 | host leader 4542835 us trailer 4604376 us
+   5111295 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 07 00 00 00 00 00 00 00 00 00 01 00 38 2f c9 91 42 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   5114498 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5117257 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5119772 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5122240 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5125088 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5127680 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5130142 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5132788 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5135288 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5138113 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5140698 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5143258 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5145917 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5148429 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5151324 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5153926 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5156518 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5159102 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5161725 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5164571 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5167226 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5169742 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5172470 STRM IN  ep=0x81 rc=OK len=1048576 : ...(+1048576 bytes, see raw file)
+   5173121 STRM IN  ep=0x81 rc=OK len=354752 : ...(+354752 bytes, see raw file)
+   5173507 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 07 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 7: block 7 ts 6882983489336 payload 24472000 | trailer block 7 status 0x0000 valid 24472000 | host leader 5111336 us trailer 5173526 us
+# grabq: 8 complete frames (8 leaders), first leader 3508 us after start, 1.758 fps, 43.0 MB/s over 3.983 s
+   5235833 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1b 00 28 01 12 00 00 00 00 00 00 00 04 00
+   5235899 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1b 00 00 00 00 00
+# get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+   5236058 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 1c 00 48 01 12 00 00 00 00 00 00 00 04 00
+   5236333 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 1c 00 2c 02 00 00
+# get TransferQueueOverflowCount @0x120148 = 556 (0x22c, register 0x22c)
+   5236473 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1d 00 24 00 0c 00 00 00 00 00 01 00 00 00
+   5236887 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1d 00 00 00 04 00
+# set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (503 us)
+   5237043 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1e 00 04 00 02 00 00 00 00 00 00 00 00 00
+   5237530 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1e 00 00 00 04 00
+# si-disable: OK status 0x0000 SUCCESS (615 us)
+   5538762 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes

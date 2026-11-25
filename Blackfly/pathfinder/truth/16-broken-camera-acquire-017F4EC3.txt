@@ -1,0 +1,74 @@
+u3vprobe serial=017F4EC3 libusb 1.0.27.11882
+NOTE 16: broken camera 017F4EC3 asked to acquire (state: several earlier start attempts since power-up, see README)
+get DeviceTemperature @0x41004 = 367 (0x16f, register 0x16f)
+get LinkErrorCount @0x20000168 = 23 (0x17, register 0x17)
+get TransferQueueOverflowCount @0x120148 = 0 (0x0, register 0x0)
+get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+get ExposureTime @0xc1004 = 997 (0x3e5, register 0x3e5)
+get Gain @0x104804 = 0 (0x0, register 0x0)
+get BlackLevelClampingEnable @0x107f84 = 0 (0x0, register 0x0)
+get Width.locked.LCK @0x81080 = 0 (0x0, register 0xc8000001)
+get TestPattern @0xf0004208 = 0 (0x0, register 0x0)
+get PayloadSize @0x20002008 = 24472000 (0x17569c0, register 0x17569c0)
+get AcquisitionResultingFrameRate @0xc1168 = 21134147 (0x1427b43, register 0x1427b43)
+get SensorDescription @0x43200 = "Sony IMX540 (1.2" Color CMOS)"
+NOTE normal start sequence
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (15368 us)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=26
+set AcquisitionStart @0xc0004 <- 1 : FAILED status 0x8006 ACCESS_DENIED (717 us)
+get Width.locked.LCK @0x81080 = 0 (0x0, register 0xc8000001)
+get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+grab: 1 frames, timeout 1500 ms, start t=29739 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 1500653 us (0 bytes)
+grab: 0 complete frames (none)
+get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+get TransferQueueOverflowCount @0x120148 = 0 (0x0, register 0x0)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (298 us)
+si-disable: OK status 0x0000 SUCCESS (385 us)
+drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+NOTE writes that work on the healthy camera
+set ExposureAuto @0xc2008 <- 0 : OK status 0x0000 SUCCESS (17526 us)
+set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (528 us)
+get ExposureTime @0xc1004 = 997 (0x3e5, register 0x3e5)
+set Width @0x81084 <- 5000 : OK status 0x0000 SUCCESS (19009 us)
+get Width @0x81084 = 5000 (0x1388, register 0x1388)
+set Width @0x81084 <- 5320 : OK status 0x0000 SUCCESS (19041 us)
+set PixelFormat @0x86008 <- 17825839 : OK status 0x0000 SUCCESS (23610 us)
+get PayloadSize @0x20002008 = 48944000 (0x2ead380, register 0x2ead380)
+set PixelFormat @0x86008 <- 17301513 : OK status 0x0000 SUCCESS (23399 us)
+set ExposureAuto @0xc2008 <- 2 : OK status 0x0000 SUCCESS (17482 us)
+  PENDING_ACK: device asks for 200 ms more
+set TestPendingAck @0xf0000404 <- 150 : OK status 0x0000 SUCCESS (151952 us)
+set TestPendingAck @0xf0000404 <- 0 : OK status 0x0000 SUCCESS (527 us)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (503 us)
+get TimestampLatchValue @0x1f0 = 8211129550000 (0x777cd75c4b0, register 0x777cd75c4b0)
+NOTE software trigger path
+set TriggerMode @0xc8424 <- 1 : OK status 0x0000 SUCCESS (898 us)
+si-enable: OK status 0x0000 SUCCESS (15999 us)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=49
+set AcquisitionStart @0xc0004 <- 1 : FAILED status 0x8006 ACCESS_DENIED (616 us)
+set TriggerSoftware @0xc8824 <- 1 : OK status 0x0000 SUCCESS (482 us)
+grab: 1 frames, timeout 700 ms, start t=2127869 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 700634 us (0 bytes)
+grab: 0 complete frames (none)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (381 us)
+si-disable: OK status 0x0000 SUCCESS (499 us)
+set TriggerMode @0xc8424 <- 0 : OK status 0x0000 SUCCESS (2097 us)
+NOTE pipeline test pattern (does not need the sensor)
+set TestPattern[PipelineStart] @0xf0004228 <- 1 : OK status 0x0000 SUCCESS (432 us)
+si-enable: OK status 0x0000 SUCCESS (15977 us)
+  ack: status=0x8006 ACCESS_DENIED cmd=0x0803 len=4 id=56
+set AcquisitionStart @0xc0004 <- 1 : FAILED status 0x8006 ACCESS_DENIED (853 us)
+grab: 1 frames, timeout 1500 ms, start t=2849080 us
+frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 1500684 us (0 bytes)
+grab: 0 complete frames (none)
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (521 us)
+si-disable: OK status 0x0000 SUCCESS (529 us)
+set TestPattern[PipelineStart] @0xf0004228 <- 0 : OK status 0x0000 SUCCESS (403 us)
+NOTE event channel
+set EventNotification @0x142008 <- 1 : OK status 0x0000 SUCCESS (283 us)
+set TestEventGenerate @0xf0002004 <- 1 : OK status 0x0000 SUCCESS (293 us)
+drain ep 0x83: OK 24 bytes
+drain ep 0x83: LIBUSB_ERROR_TIMEOUT 0 bytes
+set EventNotification @0x142008 <- 0 : OK status 0x0000 SUCCESS (511 us)

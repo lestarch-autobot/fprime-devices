@@ -1,0 +1,120 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 12: capped camera black statistics (lens cap on). BayerRG8 5320x4600. bytes = payload byte statistics
+NOTE a: exposure 1000 us, gain 0 dB, autos off
+get Gain @0x104804 = 0 (0x0, register 0x0)
+get BlackLevel @0x106804 = 0 (0x0, register 0x0)
+get BlackLevelClampingEnable @0x107f84 = 1 (0x1, register 0x1)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (16183 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164108 us)
+grab: 3 frames, timeout 3000 ms, start t=210641 us
+frame 0: block 0 type 0x0001 ts 7218621319232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 211653 us trailer 398213 us | bytes min 0 max 255 mean 0.390 var 1.347
+frame 1: block 1 type 0x0001 ts 7218684842712 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 400212 us trailer 560051 us | bytes min 0 max 255 mean 0.396 var 1.371
+frame 2: block 2 type 0x0001 ts 7218748365608 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 562059 us trailer 721845 us | bytes min 0 max 255 mean 0.394 var 1.364
+grab: 3 complete frames, first leader 1012 us after grab start, 5.708 fps, 139.7 MB/s over 0.350 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (897 us)
+si-disable: OK status 0x0000 SUCCESS (637 us)
+NOTE b: exposure 1 s, gain 0
+set ExposureTime @0xc1004 <- 1000000 : OK status 0x0000 SUCCESS (1276 us)
+si-enable: OK status 0x0000 SUCCESS (18809 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (200318 us)
+grab: 2 frames, timeout 5000 ms, start t=944142 us
+frame 0: block 0 type 0x0001 ts 7220354496336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 1945952 us trailer 2079641 us | bytes min 0 max 255 mean 2.708 var 26.577
+frame 1: block 1 type 0x0001 ts 7221355705712 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 2947144 us trailer 3088337 us | bytes min 0 max 255 mean 2.635 var 26.345
+grab: 2 complete frames, first leader 1001810 us after grab start, 0.999 fps, 24.4 MB/s over 1.001 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (2115 us)
+si-disable: OK status 0x0000 SUCCESS (2129 us)
+NOTE c: exposure 1000 us, gain max (raw 130608 = 47.99 dB)
+set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (1182 us)
+set Gain @0x104804 <- 130608 : OK status 0x0000 SUCCESS (2130 us)
+si-enable: OK status 0x0000 SUCCESS (18737 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (201093 us)
+grab: 2 frames, timeout 3000 ms, start t=3315950 us
+frame 0: block 0 type 0x0001 ts 7221726736984 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 3318044 us trailer 3492148 us | bytes min 0 max 255 mean 59.993 var 3215.315
+frame 1: block 1 type 0x0001 ts 7221790260416 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 3493866 us trailer 3634431 us | bytes min 0 max 255 mean 60.276 var 3201.813
+grab: 2 complete frames, first leader 2094 us after grab start, 5.688 fps, 139.2 MB/s over 0.176 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1346 us)
+si-disable: OK status 0x0000 SUCCESS (853 us)
+set Gain @0x104804 <- 0 : OK status 0x0000 SUCCESS (2641 us)
+NOTE d: black level 5 percent (raw 838861)
+set BlackLevel @0x106804 <- 838861 : OK status 0x0000 SUCCESS (2122 us)
+si-enable: OK status 0x0000 SUCCESS (19028 us)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (198925 us)
+grab: 2 frames, timeout 3000 ms, start t=3859584 us
+frame 0: block 0 type 0x0001 ts 7222270326280 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 3861715 us trailer 4034139 us | bytes min 13 max 255 mean 21.829 var 1.290
+frame 1: block 1 type 0x0001 ts 7222333849360 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 4036171 us trailer 4176021 us | bytes min 9 max 255 mean 21.835 var 1.296
+grab: 2 complete frames, first leader 2131 us after grab start, 5.732 fps, 140.3 MB/s over 0.174 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1282 us)
+si-disable: OK status 0x0000 SUCCESS (706 us)
+set BlackLevel @0x106804 <- 0 : OK status 0x0000 SUCCESS (1828 us)
+NOTE e: BayerRG16 (bytes are LE halves of 16 bit samples)
+set PixelFormat @0x86008 <- 17825839 : OK status 0x0000 SUCCESS (66477 us)
+si-setup: payload 48944000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 46 final1 709504 final2 0
+si-enable: OK status 0x0000 SUCCESS (16683 us)
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (1104996 us)
+grab: 2 frames, timeout 3000 ms, start t=5382611 us
+frame 0: block 0 type 0x0001 ts 7223793634824 fmt 0x0110002f 5320x4600+0+0 payload 48944000 | trailer block 0 status 0x0000 valid 48944000 size_y 4600 | host leader 5386299 us trailer 5718441 us | bytes min 0 max 255 mean 4.071 var 756.524
+frame 1: block 1 type 0x0001 ts 7223920808360 fmt 0x0110002f 5320x4600+0+0 payload 48944000 | trailer block 1 status 0x0000 valid 48944000 size_y 4600 | host leader 5719661 us trailer 6036122 us | bytes min 0 max 255 mean 4.126 var 766.487
+grab: 2 complete frames, first leader 3688 us after grab start, 3.000 fps, 146.8 MB/s over 0.333 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (2675 us)
+si-disable: OK status 0x0000 SUCCESS (742 us)
+  PENDING_ACK: device asks for 200 ms more
+set PixelFormat @0x86008 <- 17301513 : OK status 0x0000 SUCCESS (111998 us)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+NOTE f: power-up defaults: ExposureAuto, GainAuto, BalanceWhiteAuto Continuous, after 3 s of streaming
+set ExposureAuto @0xc2008 <- 2 : OK status 0x0000 SUCCESS (18105 us)
+set GainAuto @0x104008 <- 2 : OK status 0x0000 SUCCESS (18159 us)
+set BalanceWhiteAuto @0x108008 <- 2 : OK status 0x0000 SUCCESS (18115 us)
+set DeviceLinkThroughputLimit @0x20000344 <- 43000000 : OK status 0x0000 SUCCESS (18012 us)
+si-enable: OK status 0x0000 SUCCESS (16704 us)
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (1032798 us)
+grab: 6 frames, timeout 3000 ms, start t=7287913 us
+frame 0: block 0 type 0x0001 ts 7225698610232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 7290178 us trailer 7441012 us | bytes min 0 max 255 mean 1.831 var 3.686
+frame 1: block 1 type 0x0001 ts 7226267886336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 7859379 us trailer 7994276 us | bytes min 0 max 255 mean 1.157 var 3.642
+frame 2: block 2 type 0x0001 ts 7226837161848 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 8428610 us trailer 8559700 us | bytes min 0 max 255 mean 1.042 var 4.261
+frame 3: block 3 type 0x0001 ts 7227406437848 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 size_y 4600 | host leader 8997957 us trailer 9132738 us | bytes min 0 max 255 mean 1.670 var 7.222
+frame 4: block 4 type 0x0001 ts 7227975713312 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 4 status 0x0000 valid 24472000 size_y 4600 | host leader 9567228 us trailer 9714407 us | bytes min 0 max 255 mean 2.945 var 11.934
+frame 5: block 5 type 0x0001 ts 7228544989848 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 5 status 0x0000 valid 24472000 size_y 4600 | host leader 10136531 us trailer 10270894 us | bytes min 0 max 255 mean 3.956 var 15.378
+grab: 6 complete frames, first leader 2265 us after grab start, 1.757 fps, 43.0 MB/s over 2.846 s
+get ExposureTime @0xc1004 = 13323 (0x340b, register 0x340b)
+get Gain @0x104804 = 46801 (0xb6d1, register 0xb6d1)
+grab: 1 frames, timeout 3000 ms, start t=10313129 us
+frame 0: block 6 type 0x0001 ts 7229114264472 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 6 status 0x0000 valid 24472000 size_y 4600 | host leader 10704846 us trailer 10863267 us | bytes min 0 max 255 mean 2.559 var 13.019
+grab: 1 complete frames
+grab: first leader 391717 us after grab start
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (2191 us)
+si-disable: OK status 0x0000 SUCCESS (2125 us)
+set ExposureAuto @0xc2008 <- 0 : OK status 0x0000 SUCCESS (16991 us)
+set GainAuto @0x104008 <- 0 : OK status 0x0000 SUCCESS (18042 us)
+set BalanceWhiteAuto @0x108008 <- 0 : OK status 0x0000 SUCCESS (18082 us)
+set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (2286 us)
+set Gain @0x104804 <- 0 : OK status 0x0000 SUCCESS (2309 us)
+set DeviceLinkThroughputLimit @0x20000344 <- 500000000 : OK status 0x0000 SUCCESS (17940 us)
+
+NOTE histograms of saved frames (python, on the bench; frames deleted afterwards)
+truth/x12-rg16_0000.raw n 24472000 min 0 max 65530 mean 92.407 var 90667.582 top [(0, 22034149), (773, 1203273), (1264, 610542), (827, 599879), (1353, 5965), (1445, 3187)] distinct 193
+truth/x12-auto_0000.raw n 24472000 min 0 max 255 mean 2.559 var 13.019 top [(0, 13154406), (3, 4244659), (5, 3211027), (9, 1132708), (6, 836307), (7, 757807)] distinct 236

@@ -1,0 +1,59 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE 14: time to first frame. BayerRG8 full, exposure 1000 us, limit 500e6. Host times are microseconds since probe start
+NOTE run 1
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+si-enable: OK status 0x0000 SUCCESS (14809 us)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (354 us)
+get TimestampLatchValue @0x1f0 = 7196396418000 (0x68b8aa6f3d0, register 0x68b8aa6f3d0)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163382 us)
+grab: 2 frames, timeout 2000 ms, start t=191904 us
+frame 0: block 0 type 0x0001 ts 7196559619120 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 192896 us trailer 286504 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7196623142336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 287562 us trailer 381479 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 992 us after grab start, 10.563 fps, 258.5 MB/s over 0.095 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (609 us)
+si-disable: OK status 0x0000 SUCCESS (470 us)
+NOTE run 2
+si-enable: OK status 0x0000 SUCCESS (18889 us)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (1191 us)
+get TimestampLatchValue @0x1f0 = 7196771485000 (0x68ba1020548, register 0x68ba1020548)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (202489 us)
+grab: 2 frames, timeout 2000 ms, start t=608457 us
+frame 0: block 0 type 0x0001 ts 7196976230120 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 610600 us trailer 705384 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7197039753232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 706168 us trailer 799571 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 2143 us after grab start, 10.464 fps, 256.1 MB/s over 0.096 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (651 us)
+si-disable: OK status 0x0000 SUCCESS (597 us)
+NOTE run 3, exposure 100 ms
+set ExposureTime @0xc1004 <- 100000 : OK status 0x0000 SUCCESS (1368 us)
+si-enable: OK status 0x0000 SUCCESS (19002 us)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (2482 us)
+get TimestampLatchValue @0x1f0 = 7197190894000 (0x68bba01b1b0, register 0x68bba01b1b0)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (198330 us)
+grab: 2 frames, timeout 2000 ms, start t=1025007 us
+frame 0: block 0 type 0x0001 ts 7197491821792 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 1126212 us trailer 1217938 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7197593020744 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 1227413 us trailer 1319104 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 101205 us after grab start, 9.881 fps, 241.8 MB/s over 0.101 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1757 us)
+si-disable: OK status 0x0000 SUCCESS (1247 us)
+set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (1886 us)
+NOTE run 4, 640x480
+set Width @0x81084 <- 640 : OK status 0x0000 SUCCESS (22799 us)
+set Height @0x81064 <- 480 : OK status 0x0000 SUCCESS (22412 us)
+si-setup: payload 307200 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 0 final1 307200 final2 0
+si-enable: OK status 0x0000 SUCCESS (16618 us)
+set TimestampLatch @0x1f8 <- 1 : OK status 0x0000 SUCCESS (2413 us)
+get TimestampLatchValue @0x1f0 = 7197770301000 (0x68bdc8abe48, register 0x68bdc8abe48)
+  PENDING_ACK: device asks for 200 ms more
+set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164070 us)
+grab: 2 frames, timeout 2000 ms, start t=1570113 us
+frame 0: block 0 type 0x0001 ts 7197937935880 fmt 0x01080009 640x480+0+0 payload 307200 | trailer block 0 status 0x0000 valid 307200 size_y 480 | host leader 1572248 us trailer 1578683 us | bytes min 255 max 0 mean 0.000 var 0.000
+frame 1: block 1 type 0x0001 ts 7197946081280 fmt 0x01080009 640x480+0+0 payload 307200 | trailer block 1 status 0x0000 valid 307200 size_y 480 | host leader 1581101 us trailer 1586911 us | bytes min 255 max 0 mean 0.000 var 0.000
+grab: 2 complete frames, first leader 2135 us after grab start, 112.956 fps, 34.7 MB/s over 0.009 s
+set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (2393 us)
+si-disable: OK status 0x0000 SUCCESS (516 us)
+set Width @0x81084 <- 5320 : OK status 0x0000 SUCCESS (19768 us)
+set Height @0x81064 <- 4600 : OK status 0x0000 SUCCESS (19104 us)
+si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0

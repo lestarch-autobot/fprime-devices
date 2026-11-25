@@ -1,0 +1,161 @@
+# u3vprobe serial=01908168 libusb 1.0.27.11882
+     10014 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 00 00 d0 01 00 00 00 00 00 00 00 00 08 00
+     10183 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 00 00 00 00 04 00 00 00 00 00
+     11536 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 01 00 d8 01 00 00 00 00 00 00 00 00 08 00
+     11606 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 01 00 00 00 01 00 00 00 00 00
+     12736 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 02 00 14 00 01 00 00 00 00 00 00 00 04 00
+     12847 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 02 00 00 04 00 00
+     13750 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 03 00 18 00 01 00 00 00 00 00 00 00 04 00
+     13859 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 03 00 00 04 00 00
+     14740 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 04 00 20 00 01 00 00 00 00 00 00 00 08 00
+     14852 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 04 00 00 00 02 00 00 00 00 00
+     15709 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 05 00 2c 00 01 00 00 00 00 00 00 00 08 00
+     15827 CTRL IN  ep=0x82 rc=OK len=20 : 55 33 56 43 00 00 01 08 08 00 05 00 00 80 02 00 00 00 00 00
+# NOTE 08: overrun - acquisition running at 15.7 fps, host does not read for 2 s, then reads slowly (synchronous reader with statistics)
+     16747 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 06 00 08 01 12 00 00 00 00 00 00 00 04 00
+     16866 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 06 00 09 00 00 00
+# get TransferQueueMaxBlockCount @0x120108 = 9 (0x9, register 0x9)
+     17763 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 07 00 48 01 12 00 00 00 00 00 00 00 04 00
+     17885 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 07 00 2c 02 00 00
+# get TransferQueueOverflowCount @0x120148 = 556 (0x22c, register 0x22c)
+     18714 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 08 00 00 00 02 00 00 00 00 00 00 00 30 00
+     18962 CTRL IN  ep=0x82 rc=OK len=60 : 55 33 56 43 00 00 01 08 30 00 08 00 00 00 00 03 00 00 00 00 c0 69 75 01 00 00 00 00 34 00 00 00 24 00 00 00 00 04 00 00 00 00 10 00 17 00 00 00 d0 69 05 00 08 00 00 00 00 04 00 00
+# si-setup: payload 24472000 align 8 -> leader_max 1024 trailer_max 1024 transfer 1048576 x 23 final1 354752 final2 0
+     20553 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 09 00 18 00 02 00 00 00 00 00 00 04 00 00
+     20696 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 09 00 00 00 04 00
+     21977 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0a 00 1c 00 02 00 00 00 00 00 00 00 10 00
+     22141 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0a 00 00 00 04 00
+     23632 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0b 00 20 00 02 00 00 00 00 00 17 00 00 00
+     23785 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0b 00 00 00 04 00
+     25937 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0c 00 24 00 02 00 00 00 00 00 c0 69 05 00
+     26098 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0c 00 00 00 04 00
+     27015 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0d 00 28 00 02 00 00 00 00 00 00 00 00 00
+     27194 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0d 00 00 00 04 00
+     28689 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0e 00 2c 00 02 00 00 00 00 00 00 04 00 00
+     28872 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0e 00 00 00 04 00
+     30370 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 0f 00 04 00 02 00 00 00 00 00 01 00 00 00
+     44973 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 0f 00 00 00 04 00
+# si-enable: OK status 0x0000 SUCCESS (16106 us)
+     46581 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 10 00 04 00 0c 00 00 00 00 00 01 00 00 00
+    147051 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 10 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+    209046 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 10 00 00 00 04 00
+# set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (164030 us)
+   2209905 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 11 00 28 01 12 00 00 00 00 00 00 00 04 00
+   2210161 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 11 00 08 00 00 00
+# get TransferQueueCurrentBlockCount @0x120128 = 8 (0x8, register 0x8)
+   2210494 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 12 00 48 01 12 00 00 00 00 00 00 00 04 00
+   2210764 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 12 00 43 02 00 00
+# get TransferQueueOverflowCount @0x120148 = 579 (0x243, register 0x243)
+# grab: 14 frames, timeout 3000 ms, start t=2210905 us
+   2211144 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 00 00 00 00 00 00 00 00 00 00 01 00 f8 72 60 37 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   2362191 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 00 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 0: block 0 type 0x0001 ts 6988840858360 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 2211143 us trailer 2362199 us | bytes min 0 max 255 mean 0.408 var 1.410
+   2364195 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 01 00 00 00 00 00 00 00 00 00 01 00 98 bd 29 3b 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   2512982 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 01 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 1: block 1 type 0x0001 ts 6988904381848 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 2364194 us trailer 2512990 us | bytes min 0 max 255 mean 0.412 var 1.424
+   2514998 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 02 00 00 00 00 00 00 00 00 00 01 00 18 06 f3 3e 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   2665261 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 02 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 2: block 2 type 0x0001 ts 6988967904792 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 2 status 0x0000 valid 24472000 size_y 4600 | host leader 2514997 us trailer 2665269 us | bytes min 0 max 255 mean 0.413 var 1.424
+   2666246 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 03 00 00 00 00 00 00 00 00 00 01 00 f0 50 bc 42 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   2815047 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 03 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 3: block 3 type 0x0001 ts 6989031428336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 3 status 0x0000 valid 24472000 size_y 4600 | host leader 2666246 us trailer 2815056 us | bytes min 0 max 255 mean 0.416 var 1.440
+   2817063 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 04 00 00 00 00 00 00 00 00 00 01 00 40 99 85 46 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   2965758 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 04 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 4: block 4 type 0x0001 ts 6989094951232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 4 status 0x0000 valid 24472000 size_y 4600 | host leader 2817063 us trailer 2965767 us | bytes min 0 max 255 mean 0.414 var 1.433
+   2967769 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 05 00 00 00 00 00 00 00 00 00 01 00 48 e4 4e 4a 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   3116655 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 05 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 5: block 5 type 0x0001 ts 6989158474824 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 5 status 0x0000 valid 24472000 size_y 4600 | host leader 2967769 us trailer 3116663 us | bytes min 0 max 255 mean 0.417 var 1.442
+   3117810 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 06 00 00 00 00 00 00 00 00 00 01 00 b0 2c 18 4e 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   3266666 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 06 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 6: block 6 type 0x0001 ts 6989221997744 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 6 status 0x0000 valid 24472000 size_y 4600 | host leader 3117810 us trailer 3266675 us | bytes min 0 max 255 mean 0.417 var 1.440
+   3268682 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 07 00 00 00 00 00 00 00 00 00 01 00 80 77 e1 51 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   3418572 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 07 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 7: block 7 type 0x0001 ts 6989285521280 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 7 status 0x0000 valid 24472000 size_y 4600 | host leader 3268682 us trailer 3418581 us | bytes min 0 max 255 mean 0.419 var 1.448
+   3420581 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 08 00 00 00 00 00 00 00 00 00 01 00 88 c0 aa 55 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   3569140 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 08 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 8: block 8 type 0x0001 ts 6989349044360 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 8 status 0x0000 valid 24472000 size_y 4600 | host leader 3420580 us trailer 3569149 us | bytes min 0 max 255 mean 0.419 var 1.448
+   3571151 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 22 00 00 00 00 00 00 00 00 00 01 00 c0 32 1c b8 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   3795328 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 22 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 9: block 34 type 0x0001 ts 6991000646336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 34 status 0x0000 valid 24472000 size_y 4600 | host leader 3571150 us trailer 3795337 us | bytes min 0 max 255 mean 0.435 var 1.500
+   3797234 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 25 00 00 00 00 00 00 00 00 00 01 00 f8 0f 78 c3 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   3951463 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 25 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 10: block 37 type 0x0001 ts 6991191216120 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 37 status 0x0000 valid 24472000 size_y 4600 | host leader 3797233 us trailer 3951472 us | bytes min 0 max 255 mean 0.436 var 1.498
+   3953367 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 27 00 00 00 00 00 00 00 00 00 01 00 18 a3 0a cb 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   4107241 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 27 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 11: block 39 type 0x0001 ts 6991318262552 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 39 status 0x0000 valid 24472000 size_y 4600 | host leader 3953366 us trailer 4107250 us | bytes min 0 max 255 mean 0.434 var 1.496
+   4109145 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 2a 00 00 00 00 00 00 00 00 00 01 00 00 80 66 d6 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   4263005 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 2a 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 12: block 42 type 0x0001 ts 6991508832256 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 42 status 0x0000 valid 24472000 size_y 4600 | host leader 4109144 us trailer 4263014 us | bytes min 0 max 255 mean 0.434 var 1.494
+   4263736 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 2c 00 00 00 00 00 00 00 00 00 01 00 98 14 f9 dd 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   4416298 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 2c 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 13: block 44 type 0x0001 ts 6991635879064 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 44 status 0x0000 valid 24472000 size_y 4600 | host leader 4263736 us trailer 4416308 us | bytes min 0 max 255 mean 0.436 var 1.503
+# grab: 14 complete frames, first leader 238 us after grab start, 6.333 fps, 155.0 MB/s over 2.053 s
+   4417755 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 13 00 28 01 12 00 00 00 00 00 00 00 04 00
+   4417899 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 13 00 07 00 00 00
+# get TransferQueueCurrentBlockCount @0x120128 = 7 (0x7, register 0x7)
+   4418059 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 14 00 48 01 12 00 00 00 00 00 00 00 04 00
+   4418313 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 14 00 59 02 00 00
+# get TransferQueueOverflowCount @0x120148 = 601 (0x259, register 0x259)
+# NOTE stop with frames still queued, then keep reading: queued frames are still delivered?
+   4418455 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 15 00 24 00 0c 00 00 00 00 00 01 00 00 00
+   4418844 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 15 00 00 00 04 00
+# set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (515 us)
+   4419007 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 16 00 28 01 12 00 00 00 00 00 00 00 04 00
+   4419280 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 16 00 07 00 00 00
+# get TransferQueueCurrentBlockCount @0x120128 = 7 (0x7, register 0x7)
+# grab: 12 frames, timeout 1000 ms, start t=4419313 us
+   4419402 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 2e 00 00 00 00 00 00 00 00 00 01 00 f8 a4 8b e5 5b 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   4568958 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 2e 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 0: block 46 type 0x0001 ts 6991762924792 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 46 status 0x0000 valid 24472000 size_y 4600 | host leader 4419402 us trailer 4568967 us | bytes min 0 max 255 mean 0.439 var 1.513
+   5569516 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# frame 1: leader read failed: LIBUSB_ERROR_TIMEOUT after 1150201 us (0 bytes)
+# grab: 1 complete frames
+# grab: first leader 89 us after grab start
+   5569929 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 00 08 0c 00 17 00 28 01 12 00 00 00 00 00 00 00 04 00
+   5570158 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 01 08 04 00 17 00 00 00 00 00
+# get TransferQueueCurrentBlockCount @0x120128 = 0 (0x0, register 0x0)
+   5570427 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 18 00 04 00 02 00 00 00 00 00 00 00 00 00
+   5570706 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 18 00 00 00 04 00
+# si-disable: OK status 0x0000 SUCCESS (509 us)
+   5871446 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+# NOTE underrun: exposure 500 ms (2 fps) and host timeout 100 ms: the host read times out, nothing is lost
+   5871715 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 19 00 04 10 0c 00 00 00 00 00 20 a1 07 00
+   5871943 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 19 00 00 00 04 00
+# set ExposureTime @0xc1004 <- 500000 : OK status 0x0000 SUCCESS (406 us)
+   5872104 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1a 00 04 00 02 00 00 00 00 00 01 00 00 00
+   5887924 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1a 00 00 00 04 00
+# si-enable: OK status 0x0000 SUCCESS (15965 us)
+   5888244 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1b 00 04 00 0c 00 00 00 00 00 01 00 00 00
+   5988882 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 05 08 04 00 1b 00 00 00 c8 00
+#   PENDING_ACK: device asks for 200 ms more
+   6051312 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1b 00 00 00 04 00
+# set AcquisitionStart @0xc0004 <- 1 : OK status 0x0000 SUCCESS (163315 us)
+# grab: 1 frames, timeout 100 ms, start t=6051399 us
+   6152032 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 100631 us (0 bytes)
+# grab: 0 complete frames (none)
+# grab: 1 frames, timeout 100 ms, start t=6152121 us
+   6252748 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# frame 0: leader read failed: LIBUSB_ERROR_TIMEOUT after 100625 us (0 bytes)
+# grab: 0 complete frames (none)
+# grab: 2 frames, timeout 2000 ms, start t=6252836 us
+   6552678 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 00 00 00 00 00 00 00 00 00 00 01 00 d8 ea 56 b1 5c 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   6644128 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 00 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 0: block 0 type 0x0001 ts 6995182021336 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 0 status 0x0000 valid 24472000 size_y 4600 | host leader 6552677 us trailer 6644252 us | bytes min 255 max 0 mean 0.000 var 0.000
+   7052793 STRM IN  ep=0x81 rc=OK len=52 : 55 33 56 4c 00 00 34 00 01 00 00 00 00 00 00 00 00 00 01 00 50 8f 36 cf 5c 06 00 00 09 00 08 01 c8 14 00 00 f8 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+   7143449 STRM IN  ep=0x81 rc=OK len=32 : 55 33 56 54 00 00 20 00 01 00 00 00 00 00 00 00 00 00 00 00 c0 69 75 01 00 00 00 00 f8 11 00 00
+# frame 1: block 1 type 0x0001 ts 6995683217232 fmt 0x01080009 5320x4600+0+0 payload 24472000 | trailer block 1 status 0x0000 valid 24472000 size_y 4600 | host leader 7052792 us trailer 7143474 us | bytes min 255 max 0 mean 0.000 var 0.000
+# grab: 2 complete frames, first leader 299841 us after grab start, 2.000 fps, 48.9 MB/s over 0.500 s
+   7144966 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1c 00 24 00 0c 00 00 00 00 00 01 00 00 00
+   7145229 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1c 00 00 00 04 00
+# set AcquisitionStop @0xc0024 <- 1 : OK status 0x0000 SUCCESS (1659 us)
+   7146957 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1d 00 04 00 02 00 00 00 00 00 00 00 00 00
+   7147228 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1d 00 00 00 04 00
+# si-disable: OK status 0x0000 SUCCESS (1940 us)
+   7448020 STRM IN  ep=0x81 rc=LIBUSB_ERROR_TIMEOUT len=0 :
+# drain ep 0x81: LIBUSB_ERROR_TIMEOUT 0 bytes
+   7448357 CTRL OUT ep=0x02 rc=OK len=24 : 55 33 56 43 00 40 02 08 0c 00 1e 00 04 10 0c 00 00 00 00 00 e8 03 00 00
+   7448610 CTRL IN  ep=0x82 rc=OK len=16 : 55 33 56 43 00 00 03 08 04 00 1e 00 00 00 04 00
+# set ExposureTime @0xc1004 <- 1000 : OK status 0x0000 SUCCESS (560 us)

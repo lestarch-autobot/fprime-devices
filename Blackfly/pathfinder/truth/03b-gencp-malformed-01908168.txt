@@ -1,0 +1,30 @@
+u3vprobe serial=01908168 libusb 1.0.27.11882
+NOTE reference: well-formed READMEM of Width
+raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 1 (980 us)
+NOTE unknown command id 0x0900
+  ack: libusb LIBUSB_ERROR_TIMEOUT after 1000627 us
+raw: no usable ack (-7) after 1001523 us
+NOTE READMEM with scd length 8 and 8 scd bytes (count field missing)
+raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 3 (568 us)
+NOTE READMEM scd length 12 but 16 scd bytes sent
+raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 4 (2414 us)
+NOTE READMEM scd length 16 but 12 scd bytes sent
+raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 5 (2360 us)
+NOTE READMEM without request-ack flag (flags 0)
+  ack: libusb LIBUSB_ERROR_TIMEOUT after 1000710 us
+raw: no usable ack (-7) after 1002913 us
+NOTE READMEM reserved field 0xffff
+raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 7 (583 us)
+NOTE WRITEMEM with address only, no data
+raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0803 len 4 id 8 (2471 us)
+NOTE command id 0x0804 (PENDING_ACK id used as command)
+  ack: libusb LIBUSB_ERROR_TIMEOUT after 1000777 us
+raw: no usable ack (-7) after 1002973 us
+NOTE prefix only, 8 bytes
+raw: ack 16 bytes status 0x0000 SUCCESS cmd 0x0801 len 4 id 8 (545 us)
+NOTE bad magic (last: leaves the channel waiting)
+  ack: libusb LIBUSB_ERROR_TIMEOUT after 1000656 us
+raw: no usable ack (-7) after 1002930 us
+NOTE recovery check
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
+get Width @0x81084 = 5320 (0x14c8, register 0x14c8)
